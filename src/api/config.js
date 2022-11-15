@@ -1,0 +1,11 @@
+const config = {
+  api_base_url: "https://qr-eat.eu/interface",
+  api_payment_url: "https://qr-eat.eu/payv1",
+  api_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJxci1lYXQuZXUiLCJzdWIiOiIwNDhhNGE1YS01ZDFjLTExZWQtODZiMC1jMGJhNjJiZTkxOWMiLCJpYXQiOjE2Njc2NjEwNDN9.OaHUoUY8u6lDzCNzwm54dxCRSj3rqE7dWHd_iXCxmMQ",
+  google_client_id: "720766058142-mfntslaos1s7p68urq6menef98f5u5jl.apps.googleusercontent.com",
+  facebook_app_id: "560685632267441",
+  topic: "customer",
+  channel: "krms-channel",
+  sound: "notify.mp3",
+};
+export default config;

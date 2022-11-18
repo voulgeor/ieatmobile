@@ -69,7 +69,6 @@ export const useMenuStore = defineStore("menu", {
         .then((data) => {
           this.data_category[merchantSlug] = data.details.data.category;
           this.data_items[merchantSlug] = data.details.data.items;
-          console.log(data)
         })
         .catch((error) => {
           this.data_items = [];

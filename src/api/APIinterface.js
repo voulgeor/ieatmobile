@@ -532,20 +532,21 @@ const APIinterface = {
         "Content-Type": "application/json",
       };
     }
+    console.log($method);
     return api
-      .post("/" + $method, data, {
-        headers: $headers,
-      })
-      .then((result) => {
-        if (result.data.code === 1) {
-          return result.data;
-        } else {
-          throw result.data.msg;
-        }
-      })
-      .catch((error) => {
-        throw error;
-      });
+    .post("/" + $method, data, {
+      headers: $headers,
+    })
+    .then((result) => {
+      if (result.data.code === 1) {
+        return result.data;
+      } else {
+        throw result.data.msg;
+      }
+    })
+    .catch((error) => {
+      throw error;
+    });
   },
 
   async clearCart(cartUuid) {

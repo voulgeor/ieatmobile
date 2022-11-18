@@ -167,10 +167,10 @@
                   Select 1
                 </template>
                 <template v-else-if="addons.multi_option === 'multiple'">
-                  Choose up to {{ addons.multi_option_value }}
+                  Select from {{ addons.multi_option_value }} Up to {{addons.multi_option_value_max}}
                 </template>
                 <template v-else-if="addons.multi_option === 'custom'">
-                  Choose up to {{ addons.multi_option_value }}
+                  Select from {{ addons.multi_option_value }} Up to {{addons.multi_option_value_max}}
                 </template>
                 <template v-if="addons.require_addon == 1">
                   <span class="q-ml-sm text-red">(Required)</span>
@@ -181,7 +181,13 @@
               </div>
 
               <!-- addons -->
-              <div class="row q-gutter-none addon-carousel q-col-gutter-sm">
+              <div class="row q-gutter-none addon-carousel q-col-gutter-sm"
+              :data-subcat_id="addons.subcat_id"
+              :data-multi_option="addons.multi_option"
+              :data-multi_option_value="addons.multi_option_value"
+              :data-require_addon="addons.require_addon"
+              :data-pre_selected="addons.pre_selected"
+              >
                 <div
                   v-for="sub_items in addons.sub_items"
                   :key="sub_items.sub_item_id"
@@ -192,6 +198,7 @@
                     <template v-if="addons.multi_option === 'one'">
                       <q-radio
                         v-model="addons.sub_items_checked"
+                        :id="'sub_item_id' + addons.sub_item_id + addons.subcat_id"
                         :val="sub_items.sub_item_id"
                         label=""
                       >
@@ -238,6 +245,9 @@
                     <template v-else-if="addons.multi_option === 'custom'">
                       <q-checkbox
                         v-model="sub_items.checked"
+                        :data-id="addons.subcat_id"
+                        :class="'addon-items' + addons.subcat_id"
+                        :id="'sub_item_id' +sub_items.sub_item_id + addons.subcat_id"
                         :val="sub_items.sub_item_id"
                         label=""
                         :disable="sub_items.disabled"
@@ -474,6 +484,7 @@ export default {
       ingredients: [],
       ingredients_data: [],
       addons: {},
+      addons_load : false,
       special_instructions: "",
       transaction_type: "",
       if_sold_out: "",
@@ -491,6 +502,9 @@ export default {
     };
   },
   updated() {
+    if(this.addons_load==true){
+				this.ItemSummary();
+			}
     // this.resetData()
     // this.merchantSlug = this.slug
   },
@@ -613,7 +627,7 @@ export default {
             : {};
 
           const addons = data.details.data ? data.details.data.addons : {};
-          const addonItems = data.details.data
+          var addonItems = data.details.data
             ? data.details.data.addon_items
             : {};
 
@@ -681,36 +695,101 @@ export default {
           // const addonsData = []
           if (Object.keys(addons).length > 0) {
             Object.entries(addons).forEach(([sizeId, Subcat]) => {
-              const addOnsAdded = [];
+              var $addOnsAdded = [];
+              console.log(addons);
               Object.entries(Subcat).forEach(([key, child]) => {
-                const subItems = [];
+                var $subItems = [];
                 Object.entries(child.sub_items).forEach(
                   ([key2, subItemsID]) => {
                     if (addonItems[subItemsID]) {
-                      const subItemsAdd = addonItems[subItemsID];
-                      addonItems[subItemsID].checked = false;
-                      addonItems[subItemsID].disabled = false;
-                      //addonItems[subItemsID].disabled2 = false;
-                      addonItems[subItemsID].qty = 1;
-                      subItems.push(subItemsAdd);
+
+                      if(addons[sizeId][child.subcat_id].multi_option=="one" && addons[sizeId][child.subcat_id].pre_selected=="1" && key2=="0"){
+                      var check_it = (addons[sizeId][child.subcat_id].sub_items.length ==1) ? true : false;
+                      $subItems.push({
+                          'sub_item_id':addonItems[subItemsID].sub_item_id,
+                          'subcat_item_seq':addonItems[subItemsID].subcat_item_seq,
+                          'subcat_item_pseq':addonItems[subItemsID].subcat_item_pseq,
+                          'sub_item_name':addonItems[subItemsID].sub_item_name,
+                          'item_description':addonItems[subItemsID].item_description,
+                          'price':addonItems[subItemsID].price,
+                          'pretty_price':addonItems[subItemsID].pretty_price,
+                          'hasimage':addonItems[subItemsID].hasimage,
+                          'url_image':addonItems[subItemsID].url_image,
+                          'checked':check_it,
+                          'disabled':false,
+                          'qty':1
+                        });
+                      // const subItemsAdd = {
+                      //   [child.subcat_id] : addonItems[subItemsID]
+                      // };
+                      // addonItems[subItemsID].checked = check_it;
+                      // addonItems[subItemsID].disabled = false;
+                      // //addonItems[subItemsID].disabled2 = false;
+                      // addonItems[subItemsID].qty = 1;
+                      // .push($subItemsAdd);
+                      }else{
+                        $subItems.push({
+                          'sub_item_id':addonItems[subItemsID].sub_item_id,
+                          'subcat_item_seq':addonItems[subItemsID].subcat_item_seq,
+                          'subcat_item_pseq':addonItems[subItemsID].subcat_item_pseq,
+                          'sub_item_name':addonItems[subItemsID].sub_item_name,
+                          'item_description':addonItems[subItemsID].item_description,
+                          'price':addonItems[subItemsID].price,
+                          'pretty_price':addonItems[subItemsID].pretty_price,
+                          'hasimage':addonItems[subItemsID].hasimage,
+                          'url_image':addonItems[subItemsID].url_image,
+                          'checked':false,
+                          'disabled':false,
+                          'qty':1
+                        });
+                        // $subItems.push($subItemsAdd);
+                      // const subItemsAdd = {
+                      //   [child.subcat_id] : addonItems[subItemsID]
+                      // };
+                      // addonItems[subItemsID].checked = false;
+                      // addonItems[subItemsID].disabled = false;
+                      // //addonItems[subItemsID].disabled2 = false;
+                      // addonItems[subItemsID].qty = 1;
+                      // subItems.push(subItemsAdd);
+                      }
                     }
                   }
                 );
-
-                const subdata = {
-                  subcat_id: child.subcat_id,
-                  subcategory_name: child.subcategory_name,
-                  subcategory_description: child.subcategory_description,
-                  multi_option: child.multi_option,
-                  multi_option_value: child.multi_option_value,
-                  require_addon: child.require_addon,
-                  pre_selected: child.pre_selected,
-                  sub_items_checked: "",
-                  sub_items: subItems,
-                };
-                addOnsAdded.push(subdata);
+                console.log($subItems);
+                if(!empty($subItems)){
+                  var $subdata = [];
+                    $subdata= {
+                    // subcat_id: child.subcat_id,
+                    // subcategory_name: child.subcategory_name,
+                    // subcategory_description: child.subcategory_description,
+                    // multi_option: child.multi_option,
+                    // multi_option_value: child.multi_option_value,
+                    // require_addon: child.require_addon,
+                    // pre_selected: child.pre_selected,
+                    // sub_items_checked: "",
+                    // sub_items: subItems,
+                    'subcat_id': addons[sizeId][child.subcat_id].subcat_id,
+                    'subcat_seq' : addons[sizeId][child.subcat_id].subcat_seq,
+                    'subcat_pseq' : addons[sizeId][child.subcat_id].subcat_pseq,
+                    'subcat_printvis' : addons[sizeId][child.subcat_id].subcat_printvis,
+                    'subcategory_name' : addons[sizeId][child.subcat_id].subcategory_name,
+                    'subcategory_description' : addons[sizeId][child.subcat_id].subcategory_description,
+                    'multi_option' : addons[sizeId][child.subcat_id].multi_option,
+                    'multi_option_value' : addons[sizeId][child.subcat_id].multi_option_value,
+                    'multi_option_value_max' : addons[sizeId][child.subcat_id].multi_option_value_max,
+                    'multi_option_value_min' : addons[sizeId][child.subcat_id].multi_option_value_min,
+                    'require_addon' : addons[sizeId][child.subcat_id].require_addon,
+                    'pre_selected' : addons[sizeId][child.subcat_id].pre_selected,
+                    'sub_items_checked':$subItems[0]['sub_item_id'],
+                    'sub_items':$subItems
+                  };
+                  $addOnsAdded.push($subdata);
+                }
+                console.log($addOnsAdded);
+                $subItems = [] ;
               });
-              this.addons[sizeId] = addOnsAdded;
+              this.addons[sizeId] = $addOnsAdded;
+              this.addons_load = true;
             });
           }
           //

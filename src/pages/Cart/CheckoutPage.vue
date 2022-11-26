@@ -537,6 +537,18 @@
     @after-addpayment="afterAddpayment"
     @after-payment="afterPayment"
   />
+  <VivaComponents
+    ref="viva"
+    payment_code="viva"
+    title="Add Viva payment"
+    :label="{
+    submit: 'Add Viva payment',
+    notes : 'Pay using your Viva account'
+    }"
+    :payment_credentials="PaymentStore.credentials[CartStore.cart_merchant.merchant_id]"
+    @after-addpayment="afterAddpayment"
+    @after-payment="afterPayment"
+    />
 
   <PaypalComponents
     ref="paypal"
@@ -587,6 +599,7 @@
     @after-payment="afterPayment"
   />
 
+
   <!-- END PAYMENTS COMPONENTS -->
 </template>
 
@@ -631,6 +644,9 @@ export default {
     ),
     MercadopagoComponents: defineAsyncComponent(() =>
       import("components/MercadopagoComponents.vue")
+    ),
+    VivaComponents: defineAsyncComponent(() =>
+      import('components/VivaComponents.vue')
     ),
   },
   setup() {

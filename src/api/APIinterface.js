@@ -1168,6 +1168,26 @@ const APIinterface = {
       });
   },
 
+  async VivaCheckout(data) {
+    return api
+      .post(config.api_payment_url + "/VivaCheckout", data, {
+        headers: {
+          Authorization: `token ${auth.getToken()}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((result) => {
+        if (result.data.code === 1) {
+          return result.data;
+        } else {
+          throw result.data.msg;
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  },
+
   async StripeSavePayment(data) {
     return api
       .post(config.api_payment_url + "/StripeSavePayment", data, {

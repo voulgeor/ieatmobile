@@ -182,6 +182,17 @@
         :payment_credentials="PaymentStore.payment_credentials"
         @after-addpayment="afterAddpayment"
       />
+      <VivaComponents
+      ref="viva"
+      payment_code="viva"
+      title="Add Viva payment"
+      :label="{
+      submit: 'Add Viva payment',
+      notes : 'Pay using your Viva account'
+      }"
+      :payment_credentials="PaymentStore.payment_credentials"
+      @after-addpayment="afterAddpayment"
+      />
       <!-- END PAYMENTS COMPONENTS -->
     </q-page>
   </q-pull-to-refresh>
@@ -224,6 +235,9 @@ export default {
     ),
     BankComponents: defineAsyncComponent(() =>
       import("components/BankComponents.vue")
+    ),
+    VivaComponents: defineAsyncComponent(() =>
+      import('components/VivaComponents.vue')
     ),
   },
   created() {

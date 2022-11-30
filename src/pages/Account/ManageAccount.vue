@@ -53,7 +53,7 @@
           <div class="text-h6">Delete Account</div>
           <p class="font12">
             You can request to have your account deleted and personal
-            information removed. If you have both a karenderia and Caviar
+            information removed. If you have both a QR Eat and Caviar
             account, then the information associated with both will be affected
             to the extent we can identify that the accounts are owned by the
             same user.

@@ -1,8 +1,8 @@
 {
   "name": "com.bastisapp.mobileapp3",
   "version": "0.0.1",
-  "description": "Karenderia client app",
-  "author": "bastikikang@gmail.com",
+  "description": "QR Eat client app",
+  "author": "askafas@gmail.com",
   "private": true,
   "dependencies": {
     "@awesome-cordova-plugins/location-accuracy": "^5.44.0",

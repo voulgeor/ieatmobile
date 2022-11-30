@@ -1,6 +1,6 @@
 {
 	"appId": "com.bastisapp.mobileapp3",
-	"appName": "Karenderia",
+	"appName": "QR Eat",
 	"bundledWebRuntime": false,
 	"npmClient": "npm",
 	"webDir": "www",
@@ -23,8 +23,5 @@
 		"SplashScreen": {
 			"androidScaleType": "CENTER_CROP"
 		}
-	},
-	"server": {
-		"url": "http://192.168.50.147:9500"
 	}
 }

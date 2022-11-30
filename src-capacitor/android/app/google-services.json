@@ -375,7 +375,7 @@
               "client_id": "46158489047-65kr123frshvpqlbf5u8nu6mr10jdr7f.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.bastisapp.mobileapp3"
+                "bundle_id": "com.demo.qreat"
               }
             }
           ]
@@ -386,7 +386,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:46158489047:android:5e7a685029fce90a1e1792",
         "android_client_info": {
-          "package_name": "com.demo.karenderia"
+          "package_name": "com.demo.qreat"
         }
       },
       "oauth_client": [

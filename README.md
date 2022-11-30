@@ -1,6 +1,6 @@
-# Karenderia (com.bastisapp.mobileapp3)
+# QR Eat (com.bastisapp.mobileapp3)
 
-Karenderia client app
+QR Eat client app
 
 ## Install the dependencies
 ```bash

@@ -110,7 +110,7 @@ export default {
           APIinterface.hideLoadingBox(this.$q)
         })
     },
-    
+
   }
 }
 </script>

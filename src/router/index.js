@@ -23,7 +23,7 @@ export default route(function (/* { store, ssrContext } */) {
     ? createMemoryHistory
     : process.env.VUE_ROUTER_MODE === "history"
     ? createWebHistory
-    : createWebHashHistory;
+    : createWebHistory;
 
   const Router = createRouter({
     scrollBehavior: () => ({ left: 0, top: 0 }),

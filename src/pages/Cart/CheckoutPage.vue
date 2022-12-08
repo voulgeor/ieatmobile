@@ -290,6 +290,74 @@
           Discount
         </div>
 
+        <template v-if="PointsStore.loading">
+          <div class="q-pl-md q-pr-md row q-gutter-sm items-center">
+            <div class="col-2"><q-skeleton type="QCheckbox" /></div>
+            <div class="col"><q-skeleton type="rect" /></div>
+            <div class="col-3"><q-skeleton type="rect" /></div>
+          </div>
+        </template>
+        <template v-else-if="(PointsStore.count>0)">
+          <q-list class="q-mb-sm">
+            <q-item>
+              <q-item-section avatar>
+                <q-avatar color="secondary" size="md" text-color="white">
+                  <q-icon name="local_offer" size="21px"></q-icon>
+                </q-avatar>
+              </q-item-section>
+              <q-item-section>
+                <template
+                  v-if="
+                    PointsStore.redeem_points > 0
+                  "
+                >
+                  <span
+                    class=""
+                    :class="{
+                      'text-grey300': $q.dark.mode,
+                      'text-grey-8': !$q.dark.mode,
+                    }"
+                  >
+                    {{PointsStore.points_id[2]}}<br>
+                    {{PointsStore.points_id[1]}}
+                  </span>
+                </template>
+                <template v-else> Available points {{PointsStore.count}} </template>
+              </q-item-section>
+              <q-item-section side>
+                <q-btn
+                  v-if="
+                    PointsStore.redeem_points > 0
+                  "
+                  @click="
+                    removePoints(
+                      PointsStore.points_id['points'],CartStore.cart_merchant.merchant_id
+                    )
+                  "
+                  :loading="loading_points_rm"
+                  flat
+                  :color="$q.dark.mode ? 'secondary' : 'blue'"
+                  no-caps
+                  label="Remove"
+                  dense
+                  size="md"
+                />
+                <q-btn
+                  v-else
+                  @click="this.$refs.points_list.showModal(true)"
+                  flat
+                  :color="$q.dark.mode ? 'secondary' : 'blue'"
+                  no-caps
+                  dense
+                  size="md"
+                >
+                {{PointsStore.data.button_redeem}}
+              </q-btn>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </template>
+
         <template v-if="PromoStore.loading">
           <div class="q-pl-md q-pr-md row q-gutter-sm items-center">
             <div class="col-2"><q-skeleton type="QCheckbox" /></div>
@@ -521,6 +589,14 @@
     @after-removepromo="afterRemovepromo"
     :merchant_id="CartStore.cart_merchant.merchant_id"
   />
+  <PointsReedem
+    v-if="CartStore.cart_merchant.merchant_id"
+    ref="points_list"
+    :enabled_voucher="CartStore.enabled_voucher"
+    @after-applypoints="afterApplypoints"
+    @after-removepoints="afterRemovepoints"
+    :merchant_id="CartStore.cart_merchant.merchant_id"
+  />
 
   <!-- PAYMENTS COMPONENTS -->
   <StripeComponents
@@ -608,6 +684,7 @@ import { defineAsyncComponent } from "vue";
 import APIinterface from "src/api/APIinterface";
 import { useCartStore } from "stores/CartStore";
 import { usePromoStore } from "stores/PromoStore";
+import { usePointsStore } from "stores/PointsStore";
 import { useMapsStore } from "stores/StoreMaps";
 import { useDataStore } from "stores/DataStore";
 import { usePaymentStore } from "stores/PaymentStore";
@@ -629,6 +706,7 @@ export default {
       import("components/DeliverySched.vue")
     ),
     PromoList: defineAsyncComponent(() => import("components/PromoList.vue")),
+    PointsReedem: defineAsyncComponent(() => import("components/PointsReedem.vue")),
     TipsList: defineAsyncComponent(() => import("components/TipsList.vue")),
     PaymentListSaved: defineAsyncComponent(() =>
       import("components/PaymentListSaved.vue")
@@ -652,6 +730,7 @@ export default {
   setup() {
     const CartStore = useCartStore();
     const PromoStore = usePromoStore();
+    const PointsStore = usePointsStore();
     const MapsStore = useMapsStore();
     const DataStore = useDataStore();
     const PaymentStore = usePaymentStore();
@@ -659,6 +738,7 @@ export default {
     return {
       CartStore,
       PromoStore,
+      PointsStore,
       MapsStore,
       DataStore,
       PaymentStore,
@@ -699,6 +779,7 @@ export default {
       ],
       loading: false,
       loading_promo_rm: false,
+      loading_points_rm: false,
       loading_tip_rm: false,
     };
   },
@@ -755,6 +836,12 @@ export default {
       this.CartStore.getCart(false, this.payload);
     },
     afterRemovepromo() {
+      this.CartStore.getCart(false, this.payload);
+    },
+    afterApplypoints() {
+      this.CartStore.getCart(false, this.payload);
+    },
+    afterRemovepoints() {
       this.CartStore.getCart(false, this.payload);
     },
     afterApplytips() {
@@ -848,6 +935,25 @@ export default {
         })
         .then((data) => {
           this.loading_promo_rm = false;
+        });
+    },
+    removePoints(points_type, merchantID) {
+      this.loading_points_rm = true;
+      const $params = {
+        cart_uuid: APIinterface.getStorage("cart_uuid"),
+        points_type: points_type,
+      };
+      APIinterface.removePoints($params)
+        .then((data) => {
+          this.PointsStore.loadPoints(APIinterface.getStorage("cart_uuid"),merchantID);
+          this.PointsStore.redeem_points=[];
+          this.CartStore.getCart(false, this.payload);
+        })
+        .catch((error) => {
+          APIinterface.notify("dark", error, "error", this.$q);
+        })
+        .then((data) => {
+          this.loading_points_rm = false;
         });
     },
     removeTips() {

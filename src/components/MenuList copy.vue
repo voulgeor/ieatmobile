@@ -73,6 +73,8 @@ export default {
       data: [],
       data_category: [],
       data_items: [],
+      options: [],
+      options_merchant: [],
       loading: false,
       category_seleted: '',
       itemRefs: [],
@@ -94,6 +96,8 @@ export default {
         .then(data => {
           this.data_category = data.details.data.category
           this.data_items = data.details.data.items
+          this.options = data.details.data.options
+          this.options_merchant = data.details.data.options_merchant
         })
         .catch(error => {
           console.debug(error)

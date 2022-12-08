@@ -15,6 +15,8 @@ export const useMenuStore = defineStore("menu", {
     data_distance: {},
     loading_menu: true,
     data_category: {},
+    options: {},
+    options_merchant: {},
     data_items: {},
     data_gallery: {},
     gallery_images: {},
@@ -45,7 +47,6 @@ export const useMenuStore = defineStore("menu", {
           this.opening_hours[merchantSlug] = data.details.opening_hours;
           this.open_at[merchantSlug] = data.details.open_at;
           this.data_gallery[merchantSlug] = data.details.gallery;
-
           this.money_config = data.details.config;
 
           let Gallery = [];
@@ -67,12 +68,16 @@ export const useMenuStore = defineStore("menu", {
       this.loading_menu = true;
       APIinterface.geStoreMenu(merchantSlug)
         .then((data) => {
+          this.options[merchantSlug] = data.details.data.options;
+          this.options_merchant[merchantSlug] = data.details.data.options_merchant;
           this.data_category[merchantSlug] = data.details.data.category;
           this.data_items[merchantSlug] = data.details.data.items;
         })
         .catch((error) => {
           this.data_items = [];
           this.data_category = [];
+          this.options = [];
+          this.options_merchant = [];
         })
         .then((data) => {
           this.loading_menu = false;

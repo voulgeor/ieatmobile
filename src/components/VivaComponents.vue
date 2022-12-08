@@ -33,7 +33,9 @@
 </template>
 
 <script>
-import APIinterface from 'src/api/APIinterface'
+import APIinterface from 'src/api/APIinterface';
+import { Browser } from '@capacitor/browser';
+
 
 export default {
   name: 'VivaComponents',
@@ -45,7 +47,22 @@ export default {
       loading: false,
       merchant_id: '',
       merchant_type: '',
-      absoluteURL: ''
+      redirect: '',
+      absoluteURL: '',
+      order_uuid: "",
+      cart_uuid: "",
+      order_items: [],
+      order_info: [],
+      merchant: [],
+      estimation: [],
+      charge_type: "",
+      payload: [
+        "merchant_info",
+        "items",
+        "order_info",
+        "estimation",
+        "charge_type",
+      ],
     }
   },
   mounted () {
@@ -88,11 +105,13 @@ export default {
         this.merchant_id = this.payment_credentials[this.payment_code].merchant_id
         this.merchant_type = this.payment_credentials[this.payment_code].merchant_type
       }
+      this.order_uuid =data.order_uuid;
+      this.cart_uuid =data.cart_uuid;
       const $params = {
         merchant_id: this.merchant_id,
         merchant_type: this.merchant_type,
-        order_uuid: data.order_uuid,
-        cart_uuid: data.cart_uuid,
+        order_uuid: this.order_uuid,
+        cart_uuid: this.cart_uuid,
         payment_code: this.payment_code,
         absoluteURL: this.absoluteURL,
         local_id: APIinterface.getStorage('local_id')
@@ -100,8 +119,9 @@ export default {
       APIinterface.showLoadingBox("Processing payment..<br/>don't close this window", this.$q)
       APIinterface.VivaCheckout($params)
         .then(data => {
-          console.debug(data)
-          window.location.href = data.details.redirect
+          console.log(data);
+          this.redirect = data.details.redirect;
+          this.openExternal(data);
         })
         .catch(error => {
           APIinterface.notify('negative', error, 'error_outline', this.$q)
@@ -110,7 +130,44 @@ export default {
           APIinterface.hideLoadingBox(this.$q)
         })
     },
+    openExternal(data) {
+      APIinterface.openBroswer(data)
+      Browser.addListener("browserFinished", result => {
+        console.log(result);
+        APIinterface.fetchDataByToken("orderDetails", {
+        order_uuid: this.order_uuid,
+        payload: this.payload,
+      })
+        .then((data) => {
+          if(data.details.order.status=="paid"){
+          this.$router.push({
+            path: "/order/successful",
+            query: { order_uuid: this.order_uuid },
+            });
+          }
+          this.data = data.details.data;
+          this.order_items = data.details.data.items;
+          this.order_info = data.details.data.order.order_info;
+          this.merchant = data.details.data.merchant;
+          this.estimation = data.details.data.estimation;
+          this.charge_type = data.details.data.charge_type;
+        })
+        .catch((error) => {
+          this.order_items = [];
+          this.order_info = [];
+          this.merchant = [];
+          this.estimation = [];
+        })
+        .then((data) => {
+          this.loading = false;
+          if (!APIinterface.empty(done)) {
+            done();
+          }
+        });
 
+      });
+
+    }
   }
 }
 </script>

@@ -434,6 +434,38 @@
                         </template>
                       </div>
                       <!-- PRICE -->
+                      <div>
+                        <template v-if="(MenuStore.options[slug].points_enabled==1 && MenuStore.options_merchant[slug].mt_disabled_pts!=2)">
+                            <template v-if="(MenuStore.options[slug].points_disabled_merchant_settings!=1)">
+                                <template v-if="(MenuStore.options[slug].mt_points_based_earn==1)">
+                                    <template v-if="(MenuStore.data_items[slug][items_id].points_earned>0)">
+                                    <!-- <p class="points-label"> -->
+                                    <!-- < ?php echo t("Earn ");?>{{items.points_earned}}< ?php echo t(" Points");?> -->
+                                    <p class="points-label" v-html="MenuStore.data_items[slug][items_id].points_w_label"></p>
+                                    </template>
+                                </template>
+                                <template v-else-if="(MenuStore.options_merchant[slug].mt_points_based_earn==2)">
+                                        <!-- <p class="points-label"> -->
+                                            <!-- < ?php echo t("Earn ");?>{{items.points_earned}}< ?php echo t(" Points");?> -->
+                                <p class="points-label" v-html="MenuStore.data_items[slug][items_id].points_w_label"></p>
+                                </template>
+                            </template>
+                            <template v-else>
+                                <template v-if="(MenuStore.options[slug].points_based_earn==1)">
+                                    <template v-if="(MenuStore.data_items[slug][items_id].points_earned>0)">
+                                    <!-- <p class="points-label"> -->
+                                    <!-- < ?php echo t("Earn ");?>{{items.points_earned}}< ?php echo t(" Points");?> -->
+                                    <p class="points-label" v-html="data_items[slug][items_id].points_w_label"></p>
+                                    </template>
+                                </template>
+                                <template v-else-if="MenuStore.options[slug].points_based_earn==2">
+                                        <!-- <p class="points-label"> -->
+                                            <!-- < ?php echo t("Earn ");?>{{items.points_earned}}< ?php echo t(" Points");?> -->
+                                <p class="points-label" v-html="MenuStore.data_items[slug][items_id].points_w_label"></p>
+                                </template>
+                            </template>
+                        </template>
+                      </div>
                     </q-item-label>
                   </q-item-section>
                   <q-item-section side class="row items-stretch">

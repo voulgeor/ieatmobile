@@ -56,7 +56,6 @@
                 <span class="q-mr-sm">{{data_items[items_id].price[0].size_name}} <del>{{data_items[items_id].price[0].pretty_price}}</del> {{data_items[items_id].price[0].pretty_price_after_discount}}</span>
               </template>
             </template>
-
           </q-item-label>
         </q-item-section>
         <q-item-section side>
@@ -82,6 +81,7 @@
 <script>
 import APIinterface from 'src/api/APIinterface'
 import { scroll } from 'quasar'
+import { CapacitorCookiesPluginWeb } from '@capacitor/core/types/core-plugins'
 const { getScrollTarget, setVerticalScrollPosition, getVerticalScrollPosition } = scroll
 
 export default {
@@ -92,6 +92,8 @@ export default {
       data: [],
       data_category: [],
       data_items: [],
+      options: [],
+      options_merchant: [],
       loading: false,
       category_seleted: '',
       itemRefs: [],
@@ -121,6 +123,8 @@ export default {
         .then(data => {
           this.data_category = data.details.data.category
           this.data_items = data.details.data.items
+          this.options = data.details.data.options
+          this.options_merchant = data.details.data.options_merchant
           this.$emit('afterCategory', this.data_category)
         })
         .catch(error => {

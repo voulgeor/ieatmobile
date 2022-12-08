@@ -15,6 +15,8 @@ import { useDataStore } from "stores/DataStore";
 import { useDataStorePersisted } from "stores/DataStorePersisted";
 import { App } from "@capacitor/app";
 import { Network } from "@capacitor/network";
+import { Browser } from '@capacitor/browser';
+
 //import { useQuasar } from "quasar";
 
 export default defineComponent({
@@ -61,7 +63,7 @@ export default defineComponent({
         }
       }
     });
-
+    
     if (this.$q.capacitor) {
       this.checkNetwork();
       Network.addListener("networkStatusChange", (status) => {

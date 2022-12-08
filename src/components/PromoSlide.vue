@@ -26,6 +26,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import { usePromoStore } from "stores/PromoStore";
 
+
 export default {
   name: "PromoSlide",
   props: ["data"],

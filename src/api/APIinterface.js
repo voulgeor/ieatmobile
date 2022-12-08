@@ -3,6 +3,8 @@ import { LocalStorage, SessionStorage } from "quasar";
 import auth from "src/api/auth";
 import config from "src/api/config";
 import { Toast } from "@capacitor/toast";
+import { Browser } from '@capacitor/browser';
+
 
 const APIinterface = {
   setStorage(key, value) {
@@ -416,6 +418,16 @@ const APIinterface = {
       });
   },
 
+  async openBroswer(data) {
+    // return api.then((result)=>{
+      await Browser.open({ url: data.details.redirect });
+    // })
+  },
+  async closeBroswer() {
+    // return api.then((result)=>{
+      Browser.close();
+    // })
+  },
   // async getMenuItem (catId, itemUuid) {
   //   return api.post('/getMenuItem', 'cat_id=' + catId + '&item_uuid=' + itemUuid)
   //     .then(result => {
@@ -539,6 +551,7 @@ const APIinterface = {
     })
     .then((result) => {
       if (result.data.code === 1) {
+        console.log(data);
         return result.data;
       } else {
         throw result.data.msg;
@@ -996,6 +1009,66 @@ const APIinterface = {
       });
   },
 
+  async loadPoints(data) {
+    return api
+      .post("/loadPoints", data , {
+        headers: {
+          Authorization: `token ${auth.getToken()}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((result) => {
+        if (result.data.code === 1) {
+          return result.data;
+        } else {
+          throw result.data.msg;
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  },
+
+  async applyRedeemPoints(data) {
+    return api
+      .post("/applyRedeemPoints", data, {
+        headers: {
+          Authorization: `token ${auth.getToken()}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((result) => {
+        if (result.data.code === 1) {
+          return result.data;
+        } else {
+          throw result.data.msg;
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  },
+
+  async removePoints(data) {
+    return api
+      .post("/removePoints", data, {
+        headers: {
+          Authorization: `token ${auth.getToken()}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((result) => {
+        if (result.data.code === 1) {
+          return result.data;
+        } else {
+          throw result.data.msg;
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  },
+
   async loadTips(cartUuid) {
     return api
       .post("/loadTips", "cart_uuid=" + cartUuid)
@@ -1171,6 +1244,26 @@ const APIinterface = {
   async VivaCheckout(data) {
     return api
       .post(config.api_payment_url + "/VivaCheckout", data, {
+        headers: {
+          Authorization: `token ${auth.getToken()}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((result) => {
+        if (result.data.code === 1) {
+          return result.data;
+        } else {
+          throw result.data.msg;
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  },
+
+  async VivaVerifyPayment(data) {
+    return api
+      .post(config.api_payment_url + "/VivaVerifyPayment", data, {
         headers: {
           Authorization: `token ${auth.getToken()}`,
           "Content-Type": "application/json",

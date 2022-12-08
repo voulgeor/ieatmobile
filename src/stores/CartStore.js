@@ -152,6 +152,11 @@ export const useCartStore = defineStore("cartstore", {
           this.enabled_tip = data.details.enabled_tip;
           this.enabled_voucher = data.details.enabled_voucher;
 
+          this.cart_points = data.details.data.points;
+          this.points_enabled = data.details.data.points_enabled;
+          this.cart_points_cart_banner = data.details.data.points_cart_banner;
+          this.mt_disabled_pts = data.details.data.mt_disabled_pts;
+
           if (!APIinterface.empty(data.details.data.merchant)) {
             this.cart_merchant = data.details.data.merchant;
             SessionStorage.set("cart_merchant_slug", this.cart_merchant.slug);
@@ -185,6 +190,11 @@ export const useCartStore = defineStore("cartstore", {
       this.tips_data = [];
       this.enabled_tip = false;
       this.enabled_voucher = false;
+
+      this.cart_points = [];
+      this.points_enabled = 0;
+      this.cart_points_cart_banner = "";
+      this.mt_disabled_pts = 0;
     },
     hadItem() {
       if (this.items_count > 0) {

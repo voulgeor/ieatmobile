@@ -471,6 +471,10 @@ export default {
   },
   data() {
     return {
+      items_price_array : [],
+      item_seq : "",
+      item_pseq : "",
+      item_groupid : "",
       item_dialog: false,
       loading: true,
       loading_add: false,
@@ -558,6 +562,11 @@ export default {
       return true;
     },
     resetData() {
+      this.merchant_id = "",
+      this.items_price_array = [],
+      this.item_seq = "",
+      this.item_pseq = "",
+      this.item_groupid = "",
       this.item_qty = 1;
       this.items = [];
       this.item_size_id = 0;
@@ -1002,6 +1011,12 @@ export default {
       };
       const $cartUuid = APIinterface.getStorage("cart_uuid");
       const $data = {
+        merchant_id : this.items.merchant_id,
+				items_price_array : this.items.price[this.item_size_id],
+				item_seq : this.items.item_seq,
+				item_pseq : this.items.item_pseq,
+				item_groupid : this.items.item_groupid,
+			  meta : this.meta,
         slug: this.merchantSlug,
         cart_uuid: $cartUuid,
         cat_id: this.data_cat_id,

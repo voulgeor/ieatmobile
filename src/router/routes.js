@@ -375,6 +375,30 @@ const routes = [
   },
 
   {
+    path: "/viva",
+    component: () => import("layouts/NotopfooterLayout.vue"),
+    children: [
+      {
+        path: "verifypayment",
+        component: () => import("src/pages/Viva/VerifyPayment.vue"),
+        meta: { requiresAuth: true },
+      },
+    ],
+  },
+
+  {
+    path: "/orders",
+    component: () => import("layouts/NotopfooterLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("src/pages/Order/OrderList.vue"),
+        meta: { requiresAuth: true },
+      },
+    ],
+  },
+
+  {
     path: "/errornetwork",
     component: () => import("layouts/NotopfooterLayout.vue"),
     children: [

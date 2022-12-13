@@ -50,6 +50,20 @@ export default defineComponent({
 
     this.close_count = 0;
 
+    App.addListener('appUrlOpen', data => {
+      console.log('App opened with URL:', data);
+    });
+
+    App.addListener('appRestoredResult', data => {
+      console.log('Restored state:', data);
+    });
+
+    const checkAppLaunchUrl = async () => {
+      const { url } = await App.getLaunchUrl();
+
+      console.log('App opened with URL: ' + url);
+    };
+
     App.addListener("backButton", (data) => {
       this.close_count++;
       if (!data.canGoBack) {
@@ -63,7 +77,7 @@ export default defineComponent({
         }
       }
     });
-    
+
     if (this.$q.capacitor) {
       this.checkNetwork();
       Network.addListener("networkStatusChange", (status) => {

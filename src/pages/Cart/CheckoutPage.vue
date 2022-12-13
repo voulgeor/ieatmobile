@@ -308,7 +308,7 @@
               <q-item-section>
                 <template
                   v-if="
-                    PointsStore.redeem_points > 0
+                    PointsStore.points_id[0]
                   "
                 >
                   <span
@@ -327,7 +327,7 @@
               <q-item-section side>
                 <q-btn
                   v-if="
-                    PointsStore.redeem_points > 0
+                    PointsStore.points_id[0]
                   "
                   @click="
                     removePoints(
@@ -945,8 +945,8 @@ export default {
       };
       APIinterface.removePoints($params)
         .then((data) => {
-          this.PointsStore.loadPoints(APIinterface.getStorage("cart_uuid"),merchantID);
           this.PointsStore.redeem_points=[];
+          this.PointsStore.loadPoints(merchantID);
           this.CartStore.getCart(false, this.payload);
         })
         .catch((error) => {

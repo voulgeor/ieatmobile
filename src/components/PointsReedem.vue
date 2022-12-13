@@ -51,7 +51,7 @@ export default {
   props: ["merchant_id", "cart_uuid"],
   data() {
     return {
-      redeem_points: "",
+      redeem_points: [],
       show_modal: false,
       loading_apply: false,
       loading: false,
@@ -67,10 +67,10 @@ export default {
   },
   created() {
     if (Object.keys(this.PointsStore.data).length <= 0) {
-      this.PointsStore.loadPoints(APIinterface.getStorage("cart_uuid") ,this.merchant_id);
+      this.PointsStore.loadPoints(this.merchant_id);
     } else {
       if (!this.PointsStore.data[this.merchant_id]) {
-        this.PointsStore.loadPoints(APIinterface.getStorage("cart_uuid"),this.merchant_id);
+        this.PointsStore.loadPoints(this.merchant_id);
       }
     }
   },
@@ -89,7 +89,7 @@ export default {
         .then((data) => {
           this.show_modal = false;
           this.points_selected = [];
-          this.PointsStore.loadPoints(APIinterface.getStorage("cart_uuid") , this.merchant_id);
+          this.PointsStore.loadPoints(this.merchant_id);
           this.$emit("afterRemovepoints");
         })
         .catch((error) => {
@@ -112,7 +112,7 @@ export default {
           this.show_modal = false;
           this.data = data.details.data;
           this.redeem_points = "";
-          this.PointsStore.loadPoints(APIinterface.getStorage("cart_uuid"), this.merchant_id);
+          this.PointsStore.loadPoints(this.merchant_id);
           this.$emit("afterApplypoints");
         })
         .catch((error) => {

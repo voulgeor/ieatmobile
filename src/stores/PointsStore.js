@@ -5,12 +5,11 @@ export const usePointsStore = defineStore("pointsstore", {
   state: () => ({
     is_loading : false,
     loading : false,
-    redeem_points : 0,
+    redeem_points : {},
     remove_loading : false,
     redeem_disabled : true,
     total_points : {},
     data : {},
-    error : '',
     count : 0,
     points_id : {},
   }),
@@ -28,10 +27,10 @@ export const usePointsStore = defineStore("pointsstore", {
     },
   },
   actions: {
-    loadPoints(cart_uuid ,merchantID) {
+    loadPoints(merchantID) {
       this.loading = true;
       const $params = {
-        cart_uuid: cart_uuid,
+        cart_uuid: APIinterface.getStorage("cart_uuid"),
         merchant_id: merchantID,
       };
       APIinterface.loadPoints($params)

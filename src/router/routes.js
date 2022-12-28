@@ -386,17 +386,7 @@ const routes = [
     ],
   },
 
-  {
-    path: "/orders",
-    component: () => import("layouts/NotopfooterLayout.vue"),
-    children: [
-      {
-        path: "",
-        component: () => import("src/pages/Order/OrderList.vue"),
-        meta: { requiresAuth: true },
-      },
-    ],
-  },
+
 
   {
     path: "/errornetwork",

@@ -82,7 +82,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:46158489047:android:ef017388aeb867331e1792",
         "android_client_info": {
-          "package_name": "com.bastisapp.karenderia"
+          "package_name": "com.demo.qreat"
         }
       },
       "oauth_client": [
@@ -90,7 +90,7 @@
           "client_id": "46158489047-r95rbo3eus2sf0p4djpts2ll00rruphu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.bastisapp.karenderia",
+            "package_name": "com.demo.qreat",
             "certificate_hash": "bf85b3e2c6744444f1230f261ac1c730a6b45911"
           }
         },

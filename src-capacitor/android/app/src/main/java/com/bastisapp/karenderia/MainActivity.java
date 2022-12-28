@@ -13,5 +13,9 @@ import com.codetrixstudio.capacitor.GoogleAuth.GoogleAuth;
       registerPlugin(com.getcapacitor.community.facebooklogin.FacebookLogin.class);
       super.onCreate(savedInstanceState);
       registerPlugin(GoogleAuth.class);
-   }
+      // ATTENTION: This was auto-generated to handle app links.
+      Intent appLinkIntent = getIntent();
+      String appLinkAction = appLinkIntent.getAction();
+      Uri appLinkData = appLinkIntent.getData();
+    }
  }

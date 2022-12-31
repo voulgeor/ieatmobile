@@ -133,38 +133,43 @@ export default {
     openExternal(data) {
       APIinterface.openBroswer(data)
       Browser.addListener("browserFinished", result => {
-        console.log(result);
+        // console.log("Browser closed");
         APIinterface.fetchDataByToken("orderDetails", {
         order_uuid: this.order_uuid,
         payload: this.payload,
-      })
-        .then((data) => {
-          if(data.details.order.status=="paid"){
-          this.$router.push({
-            path: "/order/successful",
-            query: { order_uuid: this.order_uuid },
-            });
-          }
-          this.data = data.details.data;
-          this.order_items = data.details.data.items;
-          this.order_info = data.details.data.order.order_info;
-          this.merchant = data.details.data.merchant;
-          this.estimation = data.details.data.estimation;
-          this.charge_type = data.details.data.charge_type;
         })
-        .catch((error) => {
-          this.order_items = [];
-          this.order_info = [];
-          this.merchant = [];
-          this.estimation = [];
-        })
-        .then((data) => {
-          this.loading = false;
-          if (!APIinterface.empty(done)) {
-            done();
+          .then((data2) => {
+            // console.log("order details");
+            // var JSONObject = JSON.stringify(data2);
+            // console.log("datas:" + JSONObject);
+            if(data2.details.data.order.order_info.payment_status=="paid"){
+              // console.log("paid");
+              this.$router.push({
+                path: "/order/successful",
+                query: { order_uuid: this.order_uuid },
+              });
+              this.data = data2.details.data;
+              this.order_items = data2.details.data.items;
+              this.order_info = data2.details.data.order.order_info;
+              this.merchant = data2.details.data.merchant;
+              this.estimation = data2.details.data.estimation;
+              this.charge_type = data2.details.data.charge_type;
+          }else{
+            this.order_items = [];
+            this.order_info = [];
+            this.merchant = [];
+            this.estimation = [];
+            APIinterface.notify("dark", data2.details.data.order.payment_status.unpaid.title, "error", this.$q);
           }
-        });
 
+          })
+          .catch((error) => {
+            this.order_items = [];
+            this.order_info = [];
+            this.merchant = [];
+            this.estimation = [];
+            APIinterface.notify("dark", error, "error", this.$q);
+          });
       });
 
     }

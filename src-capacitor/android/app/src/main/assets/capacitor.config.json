@@ -1,6 +1,6 @@
 {
 	"appId": "com.bastisapp.mobileapp3",
-	"appName": "QR Eat",
+	"appName": "Karenderia",
 	"bundledWebRuntime": false,
 	"npmClient": "npm",
 	"webDir": "www",

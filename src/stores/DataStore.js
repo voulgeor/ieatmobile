@@ -20,6 +20,7 @@ export const useDataStore = defineStore("datastore", {
     car_reviews: [],
     car_estimation: [],
     car_services: [],
+    total_found: [],
     list_loading: true,
     list_loading_handle: false,
     list_data: [],
@@ -143,6 +144,7 @@ export const useDataStore = defineStore("datastore", {
           this.car_reviews[index] = data.details.reviews;
           this.car_estimation[index] = data.details.estimation;
           this.car_services[index] = data.details.services;
+          this.total_found[index] = data.details.total_found;
         })
         .catch((error) => {
           this.car_data[index] = [];

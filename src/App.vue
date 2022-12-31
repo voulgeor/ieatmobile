@@ -50,11 +50,26 @@ export default defineComponent({
 
     this.close_count = 0;
 
-    App.addListener('appUrlOpen', data => {
-      console.log('App opened with URL:', data);
+    App.addListener('appUrlOpen', (data) => {
+      console.log('App opened with URL:', data.url);
+      if(data.url){
+        // APIinterface.notify("dark", data, "error", this.$q);
+      //   var deeplink = new URL(data.url);
+      //   var path = deeplink.pathname;
+      //   if (path=="/viva/order/successful"){
+      //     var params = deeplink.searchParams;
+      //     var order_uuid = params.get('order_uuid');
+      //     this.$router.push({
+      //       path: "/order/successful",
+      //       query: { order_uuid: order_uuid },
+      //     });
+      //   }else if(path=="/viva/failed"){
+      //     APIinterface.notify("dark", t("Failed"), "error", this.$q);
+      //   }
+      }
     });
 
-    App.addListener('appRestoredResult', data => {
+    App.addListener('appRestoredResult', (data) => {
       console.log('Restored state:', data);
     });
 

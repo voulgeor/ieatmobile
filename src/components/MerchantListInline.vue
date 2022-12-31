@@ -13,13 +13,15 @@
 
       <div v-if="promos[items.merchant_id]" class="absolute-top-left">
         <div v-for="promo in promos[items.merchant_id]" :key="promo">
+          <div v-if="promo.discount_type == 'offer'">
           <q-chip
             dense
-            :color="promo.discount_type == 'voucher' ? 'light-green' : 'purple'"
+            :color="promo.discount_type == 'offer' ? 'light-green' : 'purple'"
             text-color="white"
             class="font11 text-weight-600 ellipsis"
             >{{ promo.discount_name }}</q-chip
           >
+          </div>
         </div>
 
         <q-chip

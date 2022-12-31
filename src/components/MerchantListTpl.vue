@@ -60,15 +60,18 @@
         </div>
 
         <template v-if="promos[items.merchant_id]">
+          <div v-for="promo in promos[items.merchant_id]" :key="promo">
+            <div v-if="promo.discount_type == 'offer'">
           <q-chip
-            v-for="promo in promos[items.merchant_id]"
-            :key="promo"
+
             dense
             :color="promo.discount_type == 'voucher' ? 'lightprimary' : 'green'"
             :text-color="promo.discount_type == 'voucher' ? 'dark' : 'white'"
             class="font8 ellipsis q-ma-none"
             >{{ promo.discount_name }}</q-chip
           >
+            </div>
+          </div>
         </template>
       </div>
       <div class="col-5 text-right">

@@ -8,7 +8,7 @@
   </div>
   <template v-else>
     <swiper
-      :slidesPerView="2.3"
+      :slidesPerView="DataStore.total_found[index]"
       :spaceBetween="10"
       :loop="true"
       @swiper="onSwiper"

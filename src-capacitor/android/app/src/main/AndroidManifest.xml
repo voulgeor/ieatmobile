@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.demo.qreat">
+  package="com.bastisapp.karenderia">
 
   <application
     android:usesCleartextTraffic="true"
@@ -13,18 +13,18 @@
 
     <activity
       android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-      android:name="com.demo.qreat.MainActivity"
+      android:name="com.bastisapp.karenderia.MainActivity"
       android:label="@string/title_activity_main"
       android:theme="@style/AppTheme.NoActionBarLaunch"
       android:launchMode="singleTask"
       android:exported="true">
 
-      <intent-filter>
+      <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
 
-      <intent-filter>
+      <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
 
         <category android:name="android.intent.category.DEFAULT" />
@@ -41,31 +41,7 @@
         <data
           android:scheme="https"
           android:host="qr-eat.eu"
-          android:pathPrefix="/viva/verifypayment" />
-      </intent-filter>
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-
-        <data
-          android:scheme="http"
-          android:host="192.168.1.105"
-          android:port="9500"
-          android:pathPrefix="/viva/verifypayment" />
-      </intent-filter>
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-
-        <data
-          android:scheme="https"
-          android:host="192.168.1.105"
-          android:port="9500"
-          android:pathPrefix="/viva/verifypayment" />
+          android:pathPrefix="/viva/order/successful" />
       </intent-filter>
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
@@ -76,7 +52,7 @@
         <data
           android:scheme="https"
           android:host="qr-eat.eu"
-          android:pathPattern="/order/index/" />
+          android:pathPrefix="/viva/failed" />
       </intent-filter>
 
     </activity>

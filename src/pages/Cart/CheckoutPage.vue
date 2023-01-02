@@ -289,7 +289,18 @@
         <div class="q-pl-md q-pr-md q-mb-sm font13 text-weight-bold q-pt-xs">
           Discount
         </div>
-
+        <template v-if="CartStore.points_enabled">
+            <div
+              class="q-pa-md font20 text-center"
+              style="bottom: 51px"
+              :class="{
+                'bg-grey600 text-grey300': $q.dark.mode,
+                'bg-green text-dark': !$q.dark.mode,
+              }"
+            >
+            <b>{{ CartStore.cart_points_cart_banner }}</b>
+            </div>
+          </template>
         <template v-if="PointsStore.loading">
           <div class="q-pl-md q-pr-md row q-gutter-sm items-center">
             <div class="col-2"><q-skeleton type="QCheckbox" /></div>

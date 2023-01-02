@@ -119,6 +119,18 @@
             title="Most Order Items"
             :merchant_id="CartStore.cart_merchant.merchant_id"
           />
+          <template v-if="CartStore.points_enabled">
+            <div
+              class="q-pa-md font20 text-center"
+              style="bottom: 51px"
+              :class="{
+                'bg-grey600 text-grey300': $q.dark.mode,
+                'bg-green text-dark': !$q.dark.mode,
+              }"
+            >
+            <b>{{ CartStore.cart_points_cart_banner }}</b>
+            </div>
+          </template>
         </DIV>
       </template>
     </q-page>

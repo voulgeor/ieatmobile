@@ -151,7 +151,7 @@ export const useCartStore = defineStore("cartstore", {
           this.tips_data = data.details.tips_data;
           this.enabled_tip = data.details.enabled_tip;
           this.enabled_voucher = data.details.enabled_voucher;
-
+          console.log(data);
           this.cart_points = data.details.data.points;
           this.points_enabled = data.details.data.points_enabled;
           this.cart_points_cart_banner = data.details.data.points_cart_banner;

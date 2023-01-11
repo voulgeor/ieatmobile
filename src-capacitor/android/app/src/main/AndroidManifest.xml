@@ -54,6 +54,28 @@
           android:host="qr-eat.eu"
           android:pathPrefix="/viva/failed" />
       </intent-filter>
+      <intent-filter android:autoVerify="true">
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+          android:scheme="https"
+          android:host="i-eat.eu"
+          android:pathPrefix="/viva/order/successful" />
+      </intent-filter>
+      <intent-filter android:autoVerify="true">
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+          android:scheme="https"
+          android:host="i-eat.eu"
+          android:pathPrefix="/viva/failed" />
+      </intent-filter>
 
     </activity>
 

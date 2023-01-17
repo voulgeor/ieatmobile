@@ -40,7 +40,7 @@
 
         <data
           android:scheme="https"
-          android:host="qr-eat.eu"
+          android:host="i-eat.eu"
           android:pathPrefix="/viva/order/successful" />
       </intent-filter>
       <intent-filter android:autoVerify="true">
@@ -51,7 +51,7 @@
 
         <data
           android:scheme="https"
-          android:host="qr-eat.eu"
+          android:host="i-eat.eu"
           android:pathPrefix="/viva/failed" />
       </intent-filter>
 

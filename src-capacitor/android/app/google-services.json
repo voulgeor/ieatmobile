@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "719451085736",
-    "project_id": "qr-eat-fc5ff",
-    "storage_bucket": "qr-eat-fc5ff.appspot.com"
+    "project_number": "616452304767",
+    "project_id": "i-eat-mobile",
+    "storage_bucket": "i-eat-mobile.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:719451085736:android:a1532d52f6cd4cb5379b9d",
+        "mobilesdk_app_id": "1:616452304767:android:1a639274fea76c421eb44a",
         "android_client_info": {
           "package_name": "com.demo.ieat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "719451085736-1547q7brqfipof57acb8dof0ksbtfa7l.apps.googleusercontent.com",
+          "client_id": "616452304767-1dmmg8di18m32aispkimvbnjmss1egvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.demo.ieat",
+            "certificate_hash": "2d5547707cdbe596df24d73984dce77f2b0448df"
+          }
+        },
+        {
+          "client_id": "616452304767-pkofsv0gtr7jlssgchn35t73k180bb8o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyClXp4LOPpBpYhbuzkQe-7Bj8Nj2mCrtDU"
+          "current_key": "AIzaSyDg1_zLmV4F_2nyKvYP94gHEO6rF9ZrocU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "719451085736-1547q7brqfipof57acb8dof0ksbtfa7l.apps.googleusercontent.com",
+              "client_id": "616452304767-pkofsv0gtr7jlssgchn35t73k180bb8o.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

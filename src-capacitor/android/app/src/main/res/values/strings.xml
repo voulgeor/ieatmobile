@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">QR EAT</string>
-    <string name="title_activity_main">QR EAT</string>
+    <string name="app_name">i-eat Mobile</string>
+    <string name="title_activity_main">i-eat Mobile</string>
     <string name="package_name">com.demo.ieat</string>
     <string name="custom_url_scheme">com.demo.ieat</string>
-    <string name="facebook_app_id">361247692401530</string>
-    <string name="facebook_client_token">689406887a5c762366bf911f14226fcf</string>
-    <string name="server_client_id">46158489047-vptkm75h1okppmo5k0btqor6n8hki0dp.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">560685632267441</string>
+    <string name="facebook_client_token">13ec7f2ffa57a9708b6c644f97bce597</string>
+    <string name="server_client_id">651182431547-n8n4hmtvg2ohkn8foc87p2f56vq5bpi5.apps.googleusercontent.com</string>
 </resources>

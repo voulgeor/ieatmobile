@@ -1,9 +1,9 @@
 {
-  "name": "com.bastisapp.mobileapp3",
+  "name": "com.demo.ieat",
   "version": "0.0.1",
-  "description": "Karenderia client app",
-  "productName": "Karenderia",
-  "author": "bastikikang@gmail.com",
+  "description": "Online Multi Restaurant App",
+  "productName": "i-eat Mobile",
+  "author": "askafas@gmail.com",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",

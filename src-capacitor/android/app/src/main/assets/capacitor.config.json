@@ -1,6 +1,6 @@
 {
-	"appId": "com.bastisapp.mobileapp3",
-	"appName": "Karenderia",
+	"appId": "com.demo.ieat",
+	"appName": "i-eat Mobile",
 	"bundledWebRuntime": false,
 	"npmClient": "npm",
 	"webDir": "www",
@@ -17,7 +17,7 @@
 				"profile",
 				"email"
 			],
-			"serverClientId": "46158489047-vptkm75h1okppmo5k0btqor6n8hki0dp.apps.googleusercontent.com",
+			"serverClientId": "651182431547-n8n4hmtvg2ohkn8foc87p2f56vq5bpi5.apps.googleusercontent.com",
 			"forceCodeForRefreshToken": true
 		},
 		"SplashScreen": {

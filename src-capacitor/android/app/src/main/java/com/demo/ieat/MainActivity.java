@@ -1,4 +1,4 @@
-package com.bastisapp.karenderia;
+package com.demo.ieat;
 
 import com.getcapacitor.BridgeActivity;
 import android.content.Intent;

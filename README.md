@@ -1,6 +1,6 @@
-# Karenderia (com.bastisapp.mobileapp3)
+# Karenderia (com.demo.ieat)
 
-Karenderia client app
+i-eat Mobile
 
 ## Install the dependencies
 ```bash

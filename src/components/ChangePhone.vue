@@ -9,7 +9,7 @@
             'text-dark': !$q.dark.mode,
           }"
         >
-          Your phone number
+          {{ $t('Your phone number') }}
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn
@@ -29,7 +29,7 @@
         <q-card-section>
           <!-- <div class="text-h5 text-weight-bold col">Phone Number</div> -->
           <div class="font12">
-            A 6 digit OTP will be sent via SMS to verify your mobile number
+            {{ $t('A 6 digit OTP will be sent via SMS to verify your mobile number') }}
           </div>
 
           <div class="radius8 q-pa-sm border-grey">
@@ -56,7 +56,7 @@
                   <template v-slot:no-option>
                     <q-item>
                       <q-item-section class="text-grey">
-                        No results
+                        {{ $t('No results') }}
                       </q-item-section>
                     </q-item>
                   </template>
@@ -71,7 +71,7 @@
             :disabled="hasChangePhone"
             :loading="loading"
             type="submit"
-            label="Save"
+            :label="$t('Save')"
             unelevated
             :color="hasChangePhone == false ? 'primary' : 'grey-5'"
             :text-color="hasChangePhone == false ? 'white' : 'dark'"

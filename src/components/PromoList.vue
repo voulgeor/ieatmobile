@@ -9,7 +9,7 @@
             'text-dark': !$q.dark.mode,
           }"
         >
-          Add a promo
+          {{ $t('Add a promo') }}
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn
@@ -31,7 +31,7 @@
             <div class="col b">
               <q-input
                 v-model="promo_code"
-                label="Enter promo code"
+                :label="$t('Enter promo code')"
                 outlined
                 lazy-rules
                 :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -49,14 +49,14 @@
                 text-color="white"
                 no-caps
                 class="full-width"
-                label="Apply"
+                :label="$t('Apply')"
                 size="lg"
               />
             </div>
           </div>
         </q-form>
 
-        <h6 class="text-weight-bold q-ma-none q-pt-md">Available promotions</h6>
+        <h6 class="text-weight-bold q-ma-none q-pt-md">{{ $t('Available promotions') }}</h6>
       </q-card-section>
 
       <q-list separator>

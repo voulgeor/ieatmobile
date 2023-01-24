@@ -27,7 +27,7 @@
       </div>
       <div class="row items-center justify-between">
         <q-chip size="sm" color="mygrey">
-          <span class="text-dark">Restaurant</span>
+          <span class="text-dark">{{ $t('Restaurant') }}</span>
         </q-chip>
         <div class="font11 text-grey">
           <span

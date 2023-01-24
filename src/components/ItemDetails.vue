@@ -75,7 +75,7 @@
         <!-- SIZE  -->
         <div class="q-mb-sm">
           <div class="font13 text-weight-bold no-margin line-normal q-pb-sm">
-            Size
+            {{ $t('Size') }}
           </div>
           <q-btn-toggle
             v-model="item_size_id"
@@ -94,10 +94,10 @@
         <!-- Cooking Reference  -->
         <div v-if="cooking_data.length > 0" class="q-mb-sm">
           <div class="font13 text-weight-bold no-margin line-normal">
-            Cooking Reference
+            {{ $t('Cooking Reference') }}
           </div>
           <div class="text-grey font12 text-weight-medium q-mb-sm">
-            Optional
+            {{ $t('Optional') }}
           </div>
           <q-btn-toggle
             v-model="cooking_ref"
@@ -116,10 +116,10 @@
         <!-- Ingredients  -->
         <div v-if="ingredients_data.length > 0" class="q-mb-sm">
           <div class="font13 text-weight-bold no-margin line-normal">
-            Ingredients
+            {{ $t('Ingredients') }}
           </div>
           <div class="text-grey font12 text-weight-medium q-mb-sm">
-            Optional
+            {{ $t('Optional') }}
           </div>
 
           <q-btn-group
@@ -164,19 +164,19 @@
               </div>
               <div class="text-grey font12 text-weight-medium q-mb-sm">
                 <template v-if="addons.multi_option === 'one'">
-                  Select 1
+                  {{ $t('Select 1') }}
                 </template>
                 <template v-else-if="addons.multi_option === 'multiple'">
-                  Select from {{ addons.multi_option_value }} Up to {{addons.multi_option_value_max}}
+                  {{ $t('Select from') }} {{ addons.multi_option_value }} {{ $t('Up to') }} {{addons.multi_option_value_max}}
                 </template>
                 <template v-else-if="addons.multi_option === 'custom'">
-                  Select from {{ addons.multi_option_value }} Up to {{addons.multi_option_value_max}}
+                  {{ $t('Select from') }} {{ addons.multi_option_value }} {{ $t('Up to') }} {{addons.multi_option_value_max}}
                 </template>
                 <template v-if="addons.require_addon == 1">
-                  <span class="q-ml-sm text-red">(Required)</span>
+                  <span class="q-ml-sm text-red">{{ $t('(Required)') }}</span>
                 </template>
                 <template v-else>
-                  <span class="q-ml-sm">(Optional)</span>
+                  <span class="q-ml-sm">{{ $t('(Optional)') }}</span>
                 </template>
               </div>
 
@@ -349,7 +349,7 @@
         </template>
         <!-- ADDONS -->
 
-        <div class="text-weight-bold font13 q-mt-sm">Special Instructions</div>
+        <div class="text-weight-bold font13 q-mt-sm">{{ $t('Special Instructions') }}</div>
         <q-input
           v-model="special_instructions"
           autogrow
@@ -357,7 +357,7 @@
           class="q-pa-none"
         />
 
-        <div class="text-weight-bold font13 q-mt-sm">If sold out</div>
+        <div class="text-weight-bold font13 q-mt-sm">{{ $t('If sold out') }}</div>
         <q-select
           outlined
           dense
@@ -422,7 +422,7 @@
               dense
             >
               <div class="row justify-between items-center fit">
-                <div class="text-weight-medium">Add to cart</div>
+                <div class="text-weight-medium">{{ $t('Add to cart') }}</div>
                 <div class="text-weight-bold">
                   <NumberFormat :amount="item_total"></NumberFormat>
                 </div>

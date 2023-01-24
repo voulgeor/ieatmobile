@@ -15,7 +15,7 @@
         <div
           class="absolute-top fit z-top text-weight-medium flex flex-center text-white font11"
         >
-          Closed
+          {{ $t('Closed') }}
         </div>
       </template>
     </div>
@@ -27,7 +27,7 @@
           v-if="promos[items.merchant_id]"
           class="font8 text-primary text-weight-bold"
         >
-          PROMO
+          {{ $t('PROMO') }}
         </div>
         <div class="font13 text-weight-bold no-margin line-normal">
           {{ items.restaurant_name }}
@@ -104,7 +104,7 @@
                         items.charge_type
                       ].estimation
                     }}
-                    min
+                    {{ $t('min') }}
                   </template>
                 </span>
               </q-chip>

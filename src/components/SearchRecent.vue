@@ -13,7 +13,7 @@
 
    <q-list dense v-else >
       <template v-if="hasData">
-        <q-item-label header class="text-weight-medium" >Recent searches</q-item-label>
+        <q-item-label header class="text-weight-medium" >{{ $t('Recent searches') }}</q-item-label>
 
        <template v-for="(item,index) in data_recent" :key="item" >
         <q-item
@@ -36,7 +36,7 @@
 
       </template>
 
-      <q-item-label header class="text-grey font12 text-weight-light">Cuisine</q-item-label>
+      <q-item-label header class="text-grey font12 text-weight-light">{{ $t('Cuisine') }}</q-item-label>
       <template v-for="items in data" :key="items" >
       <q-item
       :to="{name: 'quicksearch', query: {q : items.cuisine_name } }"

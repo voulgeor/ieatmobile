@@ -19,9 +19,9 @@
         style="height: 160px; max-width: 150px"
       />
       <div class="text-h5 text-weight-bold line-normal">
-        You don't have any save stores here!
+        {{ $t("You don't have any save stores here!") }}
       </div>
-      <p class="text-grey font12">Let's change that!</p>
+      <p class="text-grey font12">{{ $t("Let's change that!") }}</p>
     </div>
   </template>
 
@@ -146,7 +146,7 @@
                                   items.charge_type
                                 ].estimation
                               }}
-                              min
+                              {{ $t('min') }}
                             </template>
                           </span>
                         </q-chip>

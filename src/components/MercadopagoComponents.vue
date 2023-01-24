@@ -36,9 +36,9 @@
               :color="$q.dark.mode ? 'grey300' : 'primary'"
               outlined
               v-model="credit_card_number"
-              label="Card number"
+              :label="$t('Card number')"
               :rules="[
-                (val) => (val && val.length > 0) || 'this field is required',
+                (val) => (val && val.length > 0) || $t('this field is required'),
               ]"
               mask="#### #### #### ####"
             />
@@ -52,10 +52,10 @@
                 :color="$q.dark.mode ? 'grey300' : 'primary'"
                 outlined
                 v-model="expiry_date"
-                label="Exp. date"
+                :label="$t('Exp. date')"
                 class="no-margin"
                 :rules="[
-                  (val) => (val && val.length > 0) || 'this field is required',
+                  (val) => (val && val.length > 0) || $t('this field is required'),
                 ]"
                 mask="##/##"
               />
@@ -67,10 +67,10 @@
                 :color="$q.dark.mode ? 'grey300' : 'primary'"
                 outlined
                 v-model="cvv"
-                label="Security Code"
+                :label="$t('Security Code')"
                 class="no-margin"
                 :rules="[
-                  (val) => (val && val.length > 0) || 'this field is required',
+                  (val) => (val && val.length > 0) || $t('this field is required'),
                 ]"
                 mask="####"
               />
@@ -87,9 +87,9 @@
                 outlined
                 v-model="card_name"
                 class="no-margin"
-                label="Card name"
+                :label="$t('Card name')"
                 :rules="[
-                  (val) => (val && val.length > 0) || 'this field is required',
+                  (val) => (val && val.length > 0) || $t('this field is required'),
                 ]"
               />
             </div>
@@ -115,10 +115,10 @@
                 :color="$q.dark.mode ? 'grey300' : 'primary'"
                 outlined
                 v-model="identification_number"
-                label="Identification Number"
+                :label="$t('Identification Number')"
                 class="no-margin"
                 :rules="[
-                  (val) => (val && val.length > 0) || 'this field is required',
+                  (val) => (val && val.length > 0) || $t('this field is required'),
                 ]"
                 mask="####"
               />
@@ -169,9 +169,9 @@
 
       <q-form @submit="SubmitPayment">
         <q-card-section class="q-pa-md">
-          <h5 class="text-weight-bold no-margin">Verification</h5>
+          <h5 class="text-weight-bold no-margin">{{ $t('Verification') }}</h5>
           <div class="q-ma-sm">
-            <p class="font12">Enter CVV for card {{ card_number }}</p>
+            <p class="font12">{{ $t('Enter CVV for card') }} {{ card_number }}</p>
           </div>
 
           <q-input
@@ -180,10 +180,10 @@
             color="warning"
             outlined
             v-model="verify_cvv"
-            label="Security Code"
+            :label="$t('Security Code')"
             class="no-margin"
             :rules="[
-              (val) => (val && val.length > 0) || 'this field is required',
+              (val) => (val && val.length > 0) || $t('this field is required'),
             ]"
             mask="####"
           />

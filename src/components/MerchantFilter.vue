@@ -9,7 +9,7 @@
             'text-dark': !$q.dark.mode,
           }"
         >
-          Filter Your Search
+          {{ $t('Filter Your Search') }}
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn
@@ -27,7 +27,7 @@
       </q-toolbar>
       <q-card-section class="q-pt-none q-pl-md">
         <div class="row justify-between">
-          <div class="font13 text-weight-bold text-h5">Filter</div>
+          <div class="font13 text-weight-bold text-h5">{{ $t('Filter') }}</div>
           <q-btn
             v-if="hasFilter"
             @click="resetFilter"
@@ -51,7 +51,7 @@
           :options="DataStore.sort_by"
           class="rounded-group2 text-weight-bold line-1"
         />
-        <div class="font13 text-weight-bold text-h5">Price Range</div>
+        <div class="font13 text-weight-bold text-h5">{{ $t('Price Range') }}</div>
         <q-btn-toggle
           v-if="hasPriceData"
           v-model="price_range"
@@ -65,10 +65,10 @@
           class="rounded-group2 text-weight-bold line-1"
         />
 
-        <div class="font13 text-weight-bold text-h5">Max Delivery Fee</div>
+        <div class="font13 text-weight-bold text-h5">{{ $t('Max Delivery Fee') }}</div>
         <q-slider v-model="max_delivery_fee" :min="1" :max="20" />
 
-        <div class="font13 text-weight-bold text-h5">Ratings</div>
+        <div class="font13 text-weight-bold text-h5">{{ $t('Ratings') }}</div>
         <q-btn-toggle
           v-model="rating"
           toggle-color="secondary"
@@ -87,7 +87,7 @@
           ]"
         />
 
-        <div class="font13 text-weight-bold text-h5">Cuisine</div>
+        <div class="font13 text-weight-bold text-h5">{{ $t('Cuisine') }}</div>
         <q-btn-group
           v-if="hasCuisineData"
           no-caps

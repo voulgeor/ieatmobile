@@ -25,7 +25,7 @@
               'text-dark': !$q.dark.mode,
             }"
           >
-            Delivery Address
+            {{ $t('Delivery Address') }}
           </q-toolbar-title>
         </q-toolbar>
 
@@ -98,7 +98,7 @@
               <div class="q-gutter-sm">
                 <q-input
                   v-model="location_name"
-                  label="Aparment, suite or floor"
+                  :label="$t('Aparment, suite or floor')"
                   outlined
                   lazy-rules
                   :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -124,7 +124,7 @@
                 <q-input
                   v-model="delivery_instructions"
                   autogrow
-                  label="Add delivery instructions"
+                  :label="$t('Add delivery instructions')"
                   outlined
                   lazy-rules
                   :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -133,7 +133,7 @@
                   class="input-borderless"
                 />
 
-                <div class="text-h6">Address label</div>
+                <div class="text-h6">{{ $t('Address label') }}</div>
 
                 <q-btn-toggle
                   v-model="address_label"
@@ -151,7 +151,7 @@
                   <q-btn
                     type="submit"
                     :loading="loading"
-                    label="Save Address"
+                    :label="$t('Save Address')"
                     unelevated
                     no-caps
                     color="primary text-white"
@@ -189,7 +189,7 @@
                       'text-dark': !$q.dark.mode,
                     }"
                   >
-                    Delivery Address
+                  {{ $t('Delivery Address') }}
                   </q-toolbar-title>
                 </q-toolbar>
               </div>
@@ -221,7 +221,7 @@
 
             <q-footer class="q-pl-md q-pr-md q-pt-sm q-pb-sm bg-white">
               <q-btn
-                label="Save"
+                :label="$t('Save')"
                 :loading="loading"
                 @click="validateCoordinates"
                 unelevated
@@ -267,7 +267,7 @@ export default {
       location_name: "",
       delivery_options: "",
       delivery_instructions: "",
-      address_label: "Home",
+      address_label: "$t('Home')",
       attributes: [],
       delivery_options_data: [],
       address_label_data: [],

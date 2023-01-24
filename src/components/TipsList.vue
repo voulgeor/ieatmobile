@@ -23,7 +23,7 @@
             'text-dark': !$q.dark.mode,
           }"
         >
-          Add Tips
+          {{ $t('Add Tips') }}
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn
@@ -43,7 +43,7 @@
         <q-card-section>
           <q-input
             v-model="manual_tip"
-            label="Enter amount"
+            :label="$t('Enter amount')"
             outlined
             lazy-rules
             :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -52,13 +52,13 @@
             class="input-borderless"
             type="number"
             :rules="[
-              (val) => (val && val.length > 0) || 'Please enter valid amount',
+              (val) => (val && val.length > 0) || $t('Please enter valid amount'),
             ]"
           />
 
           <q-btn
             type="submit"
-            label="Save"
+            :label="$t('Save')"
             :loading="loading"
             unelevated
             color="primary"

@@ -9,7 +9,7 @@
             'text-dark': !$q.dark.mode,
           }"
         >
-          Delivery Details
+          {{ $t('Delivery Details') }}
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn
@@ -55,7 +55,7 @@
                     >
                       {{ order_status[items.status] }}
                     </span>
-                    <span v-else> items.status </span>
+                    <span v-else> {{items.status}} </span>
                   </template>
                   <div>{{ items.remarks }}</div>
                 </q-timeline-entry>
@@ -73,7 +73,7 @@
                     >
                       {{ order_status[items.status] }}
                     </span>
-                    <span v-else> items.status </span>
+                    <span v-else> {{items.status}} </span>
                   </template>
                   <div class="text-grey">{{ items.remarks }}</div>
                 </q-timeline-entry>

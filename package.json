@@ -38,7 +38,7 @@
     "quasar": "^2.8.4",
     "swiper": "^8.4.3",
     "vue": "^3.0.0",
-    "vue-i18n": "^9.0.0",
+    "vue-i18n": "^9.3.0-beta.16",
     "vue-plugin-load-script": "^2.1.1",
     "vue-router": "^4.0.0",
     "vue3-carousel": "^0.1.46",
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^3.3.1",
+    "@intlify/vue-i18n-loader": "^4.2.0",
     "@quasar/app-vite": "^1.1.2",
     "@volar-plugins/vetur": "latest",
     "autoprefixer": "^10.4.2",

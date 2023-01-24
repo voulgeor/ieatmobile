@@ -4,7 +4,7 @@
       <q-card-section>
         <q-list>
           <q-item-label header class="q-pa-none font11 q-mb-sm"
-            >SORT</q-item-label
+            >{{ $t('SORT') }}</q-item-label
           >
 
           <q-item

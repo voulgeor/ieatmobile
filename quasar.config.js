@@ -73,19 +73,34 @@ module.exports = configure(function (/* ctx */) {
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
+      chainWebpack: chain => {
+        chain.module
+          .rule('i18n-resource')
+            .test(/\.(json5?|ya?ml)$/)
+              .include.add(path.resolve(__dirname, './src/i18n'))
+              .end()
+            .type('javascript/auto')
+            .use('i18n-resource')
+              .loader('@intlify/vue-i18n-loader')
+        chain.module
+          .rule('i18n')
+            .resourceQuery(/blockType=i18n/)
+            .type('javascript/auto')
+            .use('i18n')
+              .loader('@intlify/vue-i18n-loader')
+      },
+      // vitePlugins: [
+      //   [
+      //     "@intlify/vite-plugin-vue-i18n",
+      //     {
+      //       // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
+      //       compositionOnly: false,
 
-      vitePlugins: [
-        [
-          "@intlify/vite-plugin-vue-i18n",
-          {
-            // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
-            // compositionOnly: false,
-
-            // you need to set i18n resource including paths !
-            include: path.resolve(__dirname, "./src/i18n/**"),
-          },
-        ],
-      ],
+      //       // you need to set i18n resource including paths !
+      //       include: path.resolve(__dirname, "./src/i18n/**"),
+      //     },
+      //   ],
+      // ],
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer

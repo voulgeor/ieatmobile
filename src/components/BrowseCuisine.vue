@@ -9,7 +9,7 @@
             'text-dark': !$q.dark.mode,
           }"
         >
-          All Cuisine
+          {{ $t('All Cuisine') }}
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn

@@ -68,7 +68,7 @@
             class="light-dimmed"
           />
           <div>
-            <p class="font11 text-grey">This store has no reviews yet!</p>
+            <p class="font11 text-grey">{{ $t('This store has no reviews yet!') }}</p>
           </div>
       </div>
 

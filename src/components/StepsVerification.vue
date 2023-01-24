@@ -20,9 +20,9 @@
 
       <q-form @submit="onSubmit">
         <q-card-section class="text-center">
-          <h4 class="text-weight-bold q-mt-none">2-Step Verification</h4>
+          <h4 class="text-weight-bold q-mt-none">{{ $t('2-Step Verification') }}</h4>
           <p class="text-weight-medium line-normal">
-            For your security, we want to make sure it's really you.
+            {{ $t("For your security, we want to make sure it's really you.") }}
           </p>
 
           <p v-if="sent_message2" class="text-weight-bold font11">
@@ -34,10 +34,10 @@
             :color="$q.dark.mode ? 'grey300' : 'primary'"
             outlined
             v-model="code"
-            label="Code"
+            :label="$t('Code')"
             maxlength="6"
             lazy-rules
-            :rules="[(val) => (val && val.length > 0) || 'Code is required']"
+            :rules="[(val) => (val && val.length > 0) || $t('Code is required')]"
             mask="######"
           />
 
@@ -62,12 +62,12 @@
               flat
               color="blue"
               no-caps
-              label="Resend"
+              :label="$t('Resend')"
               dense
               size="sm"
             />
             <p v-else class="font11 q-ma-none">
-              <u>Resend Code in {{ counter }}</u>
+              <u>{{ $t('Resend Code in') }} {{ counter }}</u>
             </p>
           </div>
         </q-card-section>

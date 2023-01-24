@@ -17,7 +17,7 @@
         class="q-mr-sm"
         :text-color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Profile</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold"> {{ $t('Profile') }}</q-toolbar-title>
       <NotiButton></NotiButton>
     </q-toolbar>
   </q-header>

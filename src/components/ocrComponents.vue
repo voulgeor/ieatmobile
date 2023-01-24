@@ -36,9 +36,9 @@
               :color="$q.dark.mode ? 'grey300' : 'primary'"
               outlined
               v-model="credit_card_number"
-              label="Card number"
+              :label="$t('Card number')"
               :rules="[
-                (val) => (val && val.length > 0) || 'this field is required',
+                (val) => (val && val.length > 0) || $t('this field is required'),
               ]"
               mask="#### #### #### ####"
             />
@@ -52,10 +52,10 @@
                 :color="$q.dark.mode ? 'grey300' : 'primary'"
                 outlined
                 v-model="expiry_date"
-                label="Exp. date"
+                :label="$t('Exp. date')"
                 class="no-margin"
                 :rules="[
-                  (val) => (val && val.length > 0) || 'this field is required',
+                  (val) => (val && val.length > 0) || $t('this field is required'),
                 ]"
                 mask="##/##"
               />
@@ -67,10 +67,10 @@
                 :color="$q.dark.mode ? 'grey300' : 'primary'"
                 outlined
                 v-model="cvv"
-                label="Security Code"
+                :label="$t('Security Code')"
                 class="no-margin"
                 :rules="[
-                  (val) => (val && val.length > 0) || 'this field is required',
+                  (val) => (val && val.length > 0) || $t('this field is required'),
                 ]"
                 mask="####"
               />
@@ -87,9 +87,9 @@
                 outlined
                 v-model="card_name"
                 class="no-margin"
-                label="Card name"
+                :label="$t('Card name')"
                 :rules="[
-                  (val) => (val && val.length > 0) || 'this field is required',
+                  (val) => (val && val.length > 0) || $t('this field is required'),
                 ]"
               />
             </div>
@@ -101,9 +101,9 @@
                 outlined
                 v-model="billing_address"
                 class="no-margin"
-                label="Billing address"
+                :label="$t('Billing address')"
                 :rules="[
-                  (val) => (val && val.length > 0) || 'this field is required',
+                  (val) => (val && val.length > 0) || $t('this field is required'),
                 ]"
               />
             </div>

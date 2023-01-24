@@ -3,7 +3,7 @@
     <q-card>
       <q-toolbar class="text-primary top-toolbar q-pl-md" dense>
         <q-toolbar-title class="text-dark text-weight-bold">
-          Categories
+          {{ $t('Categories') }}
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn

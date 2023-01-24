@@ -29,7 +29,7 @@
           class="q-mb-sm light-dimmed"
         />
         <p class="text-grey">
-          We're sorry. We were not able to find a match with your filters.
+          {{ $t("We're sorry. We were not able to find a match with your filters.") }}
         </p>
       </q-card-section>
 

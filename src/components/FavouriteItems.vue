@@ -19,9 +19,9 @@
         style="height: 160px; max-width: 150px"
       />
       <div class="text-h5 text-weight-bold line-normal">
-        You don't have any save items here!
+        {{ $t("You don't have any save items here!") }}
       </div>
-      <p class="text-grey font12">Let's change that!</p>
+      <p class="text-grey font12">{{ $t("Let's change that!") }}</p>
     </div>
   </template>
 
@@ -85,7 +85,7 @@
             </div>
 
             <q-btn
-              label="Add to cart"
+              :label="$t('Add to cart')"
               no-caps
               dense
               class="fit q-mt-sm"

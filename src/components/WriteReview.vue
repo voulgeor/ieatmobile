@@ -3,7 +3,7 @@
         @submit="onSubmit"
         >
         <q-card-section  class="q-pb-none" >
-          <h4 class="text-weight-bold q-mt-none q-mb-md" >Write A Review</h4>
+          <h4 class="text-weight-bold q-mt-none q-mb-md" >{{ $t('Write A Review') }}</h4>
 
           <div class="q-mb-md">
 
@@ -17,32 +17,32 @@
           />
           </div>
 
-          <h6 class="text-weight-bold no-margin q-pb-sm">What did you like?</h6>
+          <h6 class="text-weight-bold no-margin q-pb-sm">{{ $t('What did you like?')}}</h6>
           <q-input
           v-model="tags_like"
           outlined
           class="q-mb-md full-width"
           color="warning"
-          label="Describe in few words"
+          :label="$t('Describe in few words')"
           dense
-          :rules="[ val => val.length <= 50 || 'Please use maximum 50 characters']"
+          :rules="[ val => val.length <= 50 || $t('Please use maximum 50 characters')]"
           />
 
-          <h6 class="text-weight-bold no-margin q-pb-sm">What did you not like?</h6>
+          <h6 class="text-weight-bold no-margin q-pb-sm">{{ $t('What did you notlike?')}}</h6>
           <q-input
           v-model="tags_not_like"
           outlined
           class="q-mb-md full-width"
           color="warning"
-          label="Describe in few words"
+          :label="$t('Describe in few words')"
           dense
-           :rules="[ val => val.length <= 50 || 'Please use maximum 50 characters']"
+           :rules="[ val => val.length <= 50 || $t('Please use maximum 50 characters')]"
           />
 
-          <h6 class="text-weight-bold no-margin q-pb-sm">Add Photos</h6>
+          <h6 class="text-weight-bold no-margin q-pb-sm">{{ $t('Add Photos') }}</h6>
            <q-uploader
             :url="upload_api"
-            label="Drop files here to upload"
+            :label="$t('Drop files here to upload')"
             color="warning"
             text-color="dark"
             no-thumbnails
@@ -59,7 +59,7 @@
             @uploaded="afterUploaded"
           />
 
-          <h6 class="text-weight-bold no-margin q-pb-sm">Write your review</h6>
+          <h6 class="text-weight-bold no-margin q-pb-sm">{{ $t('Write A Review') }}</h6>
            <q-input
           v-model="review_content"
           autogrow
@@ -67,14 +67,14 @@
           class="full-width"
           color="warning"
           label="Your review helps us to make better choices"
-          :rules="[ val => val && val.length > 0 || 'This field is required']"
+          :rules="[ val => val && val.length > 0 || $t('This field is required')]"
           />
 
           <div class="q-pb-sm">
             <q-checkbox v-model="as_anonymous"
             size="sm"
             color="warning"
-            label="post review as anonymous" />
+            :label="$t('post review as anonymous')" />
           </div>
 
         </q-card-section>
@@ -89,7 +89,7 @@
             :loading="loading"
             style="letter-spacing:2px;"
             >
-            Add Review
+            {{ $t('Add Review') }}
             </q-btn>
         </q-card-actions>
         </q-form>

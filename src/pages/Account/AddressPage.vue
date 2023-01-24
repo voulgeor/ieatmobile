@@ -10,7 +10,7 @@
         color="dark"
       />
       <q-toolbar-title class="text-dark text-center text-weight-bold">
-        Address
+        {{ $t('Address') }}
       </q-toolbar-title>
       <q-btn
         to="/cart"
@@ -37,7 +37,7 @@
           <q-item>
             <q-item-section>
               <q-item-label lines="2" class="font12 text-weight-bold"
-                >Quezon City</q-item-label
+                >{{ $t('Quezon City') }}</q-item-label
               >
               <q-item-label caption class="font12 text-weight-medium">
                 <div class="cursor-pointer">
@@ -98,7 +98,7 @@
           label="Add delivery instructions"
         />
 
-        <div class="text-h6">Address label</div>
+        <div class="text-h6">{{ $t('Address label') }}</div>
 
         <q-btn-toggle
           v-model="address_label"

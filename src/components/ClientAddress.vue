@@ -9,7 +9,7 @@
             'text-dark': !$q.dark.mode,
           }"
         >
-          Address
+          {{ $t('Address') }}
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn
@@ -63,7 +63,7 @@
         :to="{ name: 'map', query: { url: this.redirect } }"
       >
         <q-icon name="o_add" color="primary" class="q-mr-md" />
-        <div>Add a new address</div>
+        <div>{{ $t('Add a new address') }}</div>
       </q-btn>
     </q-card>
   </q-dialog>

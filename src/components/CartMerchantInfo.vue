@@ -72,7 +72,7 @@
             flat
             :color="$q.dark.mode ? 'secondary' : 'blue'"
             no-caps
-            label="Change order settings"
+            :label="$t('Change order settings')"
             dense
             size="sm"
             @click="this.$emit('onClickchange')"

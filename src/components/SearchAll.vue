@@ -1,5 +1,5 @@
 <template>
-  <div>My component</div>
+  <div>{{ $t('My component') }}</div>
 </template>
 
 <script>

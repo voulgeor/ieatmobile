@@ -9,7 +9,7 @@
     size="lg"
   >
     <div class="row justify-between full-width">
-      <div class="col text-left text-dark">Continue with Google</div>
+      <div class="col text-left text-dark">{{ $t('Continue with Google') }}</div>
       <div class="col-1 text-right text-dark">
         <q-icon name="lab la-google-plus-g" />
       </div>

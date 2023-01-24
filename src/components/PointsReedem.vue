@@ -10,7 +10,7 @@
                 type="number"
                 step=100
                 mask="#########"
-                label="Enter points to reedem"
+                :label="$t('Enter points to reedem')"
                 outlined
                 lazy-rules
                 :bg-color="$q.dark.mode ? 'grey600' : 'input'"

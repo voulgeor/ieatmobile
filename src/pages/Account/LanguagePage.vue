@@ -18,7 +18,7 @@
           class="q-mr-sm"
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
-        <q-toolbar-title class="text-weight-bold">Language</q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">{{$t('Language')}}</q-toolbar-title>
       </q-toolbar>
     </q-header>
     <q-page
@@ -96,13 +96,14 @@
 <script>
 import { useDataStore } from "stores/DataStore";
 import { useDataStorePersisted } from "stores/DataStorePersisted";
-
+import { useI18n } from 'vue-i18n'
 export default {
   name: "LanguagePage",
   setup() {
+    const { locale } = useI18n({ useScope: 'global' })
     const DataStore = useDataStore();
     const DataStorePersisted = useDataStorePersisted();
-    return { DataStore, DataStorePersisted };
+    return { DataStore, DataStorePersisted,locale };
   },
   data() {
     return {
@@ -111,10 +112,12 @@ export default {
   },
   created() {
     this.language = this.DataStorePersisted.app_language;
+    this.locale = this.DataStorePersisted.app_language;
   },
   methods: {
     setLanguage() {
       this.DataStorePersisted.app_language = this.language;
+      this.locale = this.language;
       this.$router.push("/account-menu");
     },
     refresh(done) {

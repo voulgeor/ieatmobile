@@ -17,10 +17,10 @@
           class="text-weight-bold no-margin"
           v-if="cancel_response.refund_status === 'full_refund'"
         >
-          Are you sure?
+          {{ $t('Are you sure?') }}
         </h5>
         <h5 class="text-weight-bold no-margin" v-else>
-          How would you like to proceed?
+          {{ $t('How would you like to proceed?') }}
         </h5>
 
         <div class="q-mt-md">
@@ -46,7 +46,7 @@
           @click="applyCancelOrder"
           size="md"
         >
-          Cancel order
+          {{ $t('Cancel order') }}
         </q-btn>
 
         <q-space class="q-pa-sm"></q-space>
@@ -60,7 +60,7 @@
           v-close-popup
           size="md"
         >
-          Don't Cancel
+          {{ $t("Don't Cancel") }}
         </q-btn>
       </q-card-actions>
     </q-card>

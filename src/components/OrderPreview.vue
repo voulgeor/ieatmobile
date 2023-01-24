@@ -3,7 +3,7 @@
     <q-card class="rounded-borders-top">
       <q-toolbar class="text-primary top-toolbar q-pl-md" dense>
         <q-toolbar-title class="text-dark text-weight-bold">
-          Order <span class="text-primary">#{{ data.order_id_raw }}</span>
+          {{ $t('Order') }} <span class="text-primary">#{{ data.order_id_raw }}</span>
         </q-toolbar-title>
         <q-space></q-space>
         <q-btn
@@ -26,7 +26,7 @@
             flat
             :color="$q.dark.mode ? 'secondary' : 'blue'"
             no-caps
-            label="Veiw full order details"
+            :label="$t('Veiw full order details')"
             dense
             size="sm"
             :to="{
@@ -88,7 +88,7 @@
         <div
           class="row items-center justify-between q-pl-xl q-pt-sm border-grey-top text-weight-bold"
         >
-          <div>Total</div>
+          <div>{{ $t('Total') }}</div>
           <div>{{ data.total }}</div>
         </div>
       </div>

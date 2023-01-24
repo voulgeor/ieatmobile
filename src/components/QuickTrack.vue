@@ -42,7 +42,7 @@
             :to="`/account/trackorder?order_uuid=${order_uuid}`"
             unelevated
             no-caps
-            label="Track"
+            :label="$t('Track')"
             color="primary"
           ></q-btn>
         </div>

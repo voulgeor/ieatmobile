@@ -111,7 +111,7 @@
                             service_name
                           ][items.charge_type].estimation
                         }}
-                        min
+                        {{ $t('min') }}
                       </template>
                     </template>
                   </template>

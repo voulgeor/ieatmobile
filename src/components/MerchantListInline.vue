@@ -30,7 +30,7 @@
           color="red"
           text-color="white"
           class="font11 text-weight-600 ellipsis"
-          >Closed</q-chip
+          >{{ $t('Closed') }}</q-chip
         >
       </div>
       <div v-else class="absolute-top-left">
@@ -40,7 +40,7 @@
           color="red"
           text-color="white"
           class="font11 text-weight-600 ellipsis"
-          >Closed</q-chip
+          >{{ $t('Closed') }}</q-chip
         >
       </div>
     </div>
@@ -105,7 +105,7 @@
                           items.charge_type
                         ].estimation
                       }}
-                      min
+                      {{ $t('min') }}
                     </template>
                   </span>
                 </q-chip>

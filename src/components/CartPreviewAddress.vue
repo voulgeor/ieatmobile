@@ -34,7 +34,7 @@
             <template v-if="transaction_type==='delivery'">
               {{attributes.address_label}}
             </template>
-            <template v-else>Restaurant</template>
+            <template v-else>{{ $t('Restaurant') }}</template>
           </q-chip>
         </q-item-label>
         <q-item-label lines="2" class="font13 text-weight-medium">
@@ -46,7 +46,7 @@
           </template>
         </q-item-label>
         <q-item-label v-if="transaction_type==='delivery'" class="font12 text-weight-light">
-          <span class="text-weight-medium">Delivery options:</span> {{attributes.delivery_instructions}}
+          <span class="text-weight-medium">{{ $t('Delivery options:') }}</span> {{attributes.delivery_instructions}}
         </q-item-label>
       </q-item-section>
     </q-item>

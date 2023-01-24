@@ -15,7 +15,7 @@
         text-color="dark"
         no-caps
       >
-        <div class="row fit items-center">test</div>
+        <div class="row fit items-center">{{ $t('test') }}</div>
       </q-btn>
     </swiper-slide>
   </swiper>

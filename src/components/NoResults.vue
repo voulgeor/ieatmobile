@@ -6,9 +6,9 @@
       spinner-color="primary"
       style="height: 160px; max-width: 150px"
     />
-    <div class="text-h5 text-weight-bold">No Results</div>
+    <div class="text-h5 text-weight-bold">{{ $t('No Results') }}</div>
     <p class="text-grey font12">
-      We're sorry. We were not able to find a match with your filters.
+      {{ $t("We're sorry. We were not able to find a match with your filters.") }}
     </p>
     <q-btn
       label="Filter again"

@@ -1,5 +1,5 @@
 <template>
-  <div>My SearchResto</div>
+  <div>{{ $t('My SearchResto') }}</div>
 </template>
 
 <script>

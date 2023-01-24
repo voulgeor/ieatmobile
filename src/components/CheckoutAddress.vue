@@ -38,7 +38,7 @@
           {{address.formatted_address}}
         </q-item-label>
         <q-item-label class="font12 text-weight-light">
-          <span class="text-weight-medium">Delivery options:</span> {{attributes.delivery_instructions}}
+          <span class="text-weight-medium">{{ $t('Delivery options:') }}</span> {{attributes.delivery_instructions}}
         </q-item-label>
       </q-item-section>
     </q-item>

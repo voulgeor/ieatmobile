@@ -37,7 +37,7 @@
 
     <template v-if="!PaymentStore.data[merchant_id] && !PaymentStore.loading">
       <div class="q-pl-md q-pr-md font12 text-dark">
-        You don't have payment saved yet.
+        {{ $t("You don't have payment saved yet.") }}
       </div>
     </template>
   </template>

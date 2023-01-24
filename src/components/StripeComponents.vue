@@ -36,17 +36,17 @@
             outlined
             v-model="cardholder_name"
             :rules="[
-              (val) => (val && val.length > 0) || 'this field is required',
+              (val) => (val && val.length > 0) || $t('this field is required'),
             ]"
-            label="Cardholder name"
+            :label="$t('Cardholder name')"
           />
           <div class="q-mb-md" ref="card_element"></div>
 
           <p class="font11">
-            I authorise {website_name} to send instructions to the financial
-            institution that issued my card to take payments from my card
-            account in accordance with the terms of my agreement with
-            {website_name}
+            {{ $t('I authorise {website_name} to send instructions to the financial') }}
+            {{ $t('institution that issued my card to take payments from my card') }}
+            {{ $t('account in accordance with the terms of my agreement with') }}
+            {{ $t('{website_name}') }}
           </p>
 
           <q-inner-loading :showing="visible" label-style="font-size: 1.1em" />

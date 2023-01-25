@@ -109,7 +109,7 @@ const APIinterface = {
   },
 
   getLocalID() {
-    const errorMessage = { code: 2, message: "Local id not found" };
+    const errorMessage = { code: 2, message: this.$t("Local id not found") };
     const localId = APIinterface.getStorage("local_id");
     if (!APIinterface.empty(localId)) {
       return localId;

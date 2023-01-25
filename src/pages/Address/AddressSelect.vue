@@ -10,7 +10,7 @@
         color="dark"
       />
       <q-toolbar-title class="text-dark text-center text-weight-bold">
-        Delivery Address
+        {{ $t('Delivery Address') }}
       </q-toolbar-title>
     </q-toolbar>
   </q-header>
@@ -32,10 +32,10 @@
           </q-item-section>
           <q-item-section>
             <q-item-label lines="2" class="font12 text-weight-bold"
-              >Share your location</q-item-label
+              >{{ $t('Share your location') }}</q-item-label
             >
             <q-item-label caption class="font12 text-weight-medium"
-              >Enabled location services</q-item-label
+              >{{ $t('Enabled location services') }}</q-item-label
             >
           </q-item-section>
           <q-item-section side>
@@ -73,10 +73,10 @@
           </q-item-section>
           <q-item-section>
             <q-item-label lines="2" class="font12 text-weight-bold"
-              >Choose from Map</q-item-label
+              >{{ $t('Choose from Map') }}</q-item-label
             >
             <q-item-label caption class="font12 text-weight-medium"
-              >select your address from map</q-item-label
+              >{{ $t('select your address from map') }}</q-item-label
             >
           </q-item-section>
           <q-item-section side>
@@ -136,7 +136,7 @@
                   items.address.address2
                 }}</q-item-label>
                 <q-item-label caption class="font11 text-weight-medium"
-                  >Home</q-item-label
+                  >{{ $t('Home') }}</q-item-label
                 >
               </q-item-section>
               <q-item-section side>
@@ -242,8 +242,8 @@ export default {
     deleteConfirm(addressUuid) {
       this.$q
         .dialog({
-          title: "Confirm",
-          message: "Are you sure you want to Delete?",
+          title: this.$t("Confirm"),
+          message: this.$t("Are you sure you want to Delete?"),
           persistent: true,
           ok: {
             unelevated: true,
@@ -251,7 +251,7 @@ export default {
             rounded: true,
             "text-color": "black",
             size: "md",
-            label: "Yes",
+            label: this.$t("Yes"),
             "no-caps": true,
           },
           cancel: {
@@ -260,7 +260,7 @@ export default {
             color: "grey-3",
             "text-color": "black",
             size: "md",
-            label: "Cancel",
+            label: this.$t("Cancel"),
             "no-caps": true,
           },
         })
@@ -304,7 +304,7 @@ export default {
         this.locate_loading = false;
         APIinterface.notify(
           "negative",
-          "Browser doesn't support Geolocation",
+          this.$t("Browser doesn't support Geolocation"),
           "error_outline",
           this.$q
         );
@@ -325,7 +325,7 @@ export default {
           } else {
             APIinterface.notify(
               "negative",
-              "This location is not available",
+              this.$t("This location is not available"),
               "error_outline",
               this.$q
             );

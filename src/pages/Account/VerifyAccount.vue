@@ -76,10 +76,10 @@
                 no-caps
                 flat
                 text-color="text=dark"
-                >Resend Code</q-btn
+                >{{ $t('Resend Code') }}</q-btn
               >
               <p v-else class="q-ma-none no-margin">
-                <u>Resend Code in {{ counter }}</u>
+                <u>{{ $t('Resend Code in') }} {{ counter }}</u>
               </p>
 
               <q-space class="q-pa-sm"></q-space>
@@ -87,7 +87,7 @@
               <q-card-actions vertical align="center">
                 <q-btn
                   type="submit"
-                  label="Verify Now"
+                  :label="$t('Verify Now')"
                   unelevated
                   color="primary"
                   text-color="white"

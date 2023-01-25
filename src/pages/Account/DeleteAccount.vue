@@ -17,7 +17,7 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Delete Account</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Delete Account') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
   <q-page
@@ -38,13 +38,11 @@
     >
       <q-card-section>
         <h5 class="text-weight-bold q-ma-none">
-          You are requesting to have your account deleted and personal
-          information removed.
+          {{ $t('You are requesting to have your account deleted and personal information removed.') }}
         </h5>
         <q-space class="q-pa-sm"></q-space>
         <p class="text-weight-medium q-ma-none">
-          You will permanently lose all your orders, reviews,favorites and
-          profile information, there is no turning back.
+          {{ $t('You will permanently lose all your orders, reviews,favorites and profile information, there is no turning back.') }}
         </p>
       </q-card-section>
     </q-card>
@@ -54,7 +52,7 @@
       class="bg-grey-1 q-pl-md q-pr-md q-pb-sm q-pt-sm text-dark"
     >
       <q-btn
-        label="Confirm Deletion"
+        :label="$t('Confirm Deletion')"
         unelevated
         no-caps
         color="primary text-white"

@@ -18,34 +18,34 @@
       <q-inner-loading :showing="inner_loading" color="primary" size="md" />
       <div class="text-center">
         <q-form @submit="onSubmit" class="q-gutter-md">
-          <h5 class="text-weight-bold q-mb-lg">Fill your information</h5>
+          <h5 class="text-weight-bold q-mb-lg">{{ $t('Fill your information') }}</h5>
 
           <div class="w-75 margin-auto">
             <q-input
               v-model="first_name"
-              label="First name"
+              :label="$t('First name')"
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'This field is required',
+                (val) => (val && val.length > 0) || $t('This field is required'),
               ]"
             />
 
             <q-input
               v-model="last_name"
-              label="Last name"
+              :label="$t('Last name')"
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'This field is required',
+                (val) => (val && val.length > 0) || $t('This field is required'),
               ]"
             />
 
             <q-input
               v-model="email_address"
-              label="Email address"
+              :label="$t('Email address')"
               disable
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'This field is required',
+                (val) => (val && val.length > 0) || $t('This field is required'),
               ]"
             />
 
@@ -55,7 +55,7 @@
               mask="##############"
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'This field is required',
+                (val) => (val && val.length > 0) || $t('This field is required'),
               ]"
             >
               <template v-slot:prepend>
@@ -86,7 +86,7 @@
                   <template v-slot:no-option>
                     <q-item>
                       <q-item-section class="text-grey">
-                        No results
+                        {{ $t('No results') }}
                       </q-item-section>
                     </q-item>
                   </template>
@@ -97,10 +97,10 @@
             <q-input
               v-model="password"
               :type="field_type"
-              label="Password"
+              :label="$t('Password')"
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'This field is required',
+                (val) => (val && val.length > 0) || $t('This field is required'),
               ]"
             >
               <template v-slot:append>
@@ -118,10 +118,10 @@
             <q-input
               :type="field_type1"
               v-model="cpassword"
-              label="Confirm Password"
+              :label="$t('Confirm Password')"
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'This field is required',
+                (val) => (val && val.length > 0) || $t('This field is required'),
               ]"
             >
               <template v-slot:append>
@@ -143,7 +143,7 @@
               <q-btn
                 :loading="loading"
                 type="submit"
-                label="Submit"
+                :label="$t('Submit')"
                 unelevated
                 color="primary"
                 text-color="white"

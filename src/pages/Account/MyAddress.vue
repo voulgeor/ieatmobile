@@ -18,7 +18,7 @@
           class="q-mr-sm"
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
-        <q-toolbar-title class="text-weight-bold">Address</q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">{{ $t('Address') }}</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -44,14 +44,14 @@
       <template v-else-if="!hasData && !loading">
         <div class="full-width text-center">
           <div class="text-h5 text-weight-bold line-normal">
-            You don't have address added yet
+            {{ $t("You don't have address added yet") }}
           </div>
-          <p class="text-grey font12 no-margin">Let's change that!</p>
+          <p class="text-grey font12 no-margin">{{ $t("Let's change that!") }}</p>
           <q-btn
             flat
             color="blue"
             no-caps
-            label="Add new address"
+            :label="$t('Add new address')"
             dense
             size="sm"
             :to="{
@@ -134,7 +134,7 @@
               path: '/location/map',
               query: { url: '/account/my-address' },
             }"
-            label="Add new address"
+            :label="$t('Add new address')"
             unelevated
             no-caps
             color="primary text-white"

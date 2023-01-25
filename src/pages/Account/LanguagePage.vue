@@ -18,7 +18,7 @@
           class="q-mr-sm"
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
-        <q-toolbar-title class="text-weight-bold">{{$t('Language')}}</q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">{{ $t('Language') }}</q-toolbar-title>
       </q-toolbar>
     </q-header>
     <q-page
@@ -80,7 +80,7 @@
         class="bg-grey-1 q-pl-md q-pr-md q-pb-sm q-pt-sm text-dark"
       >
         <q-btn
-          label="Save"
+          :label="$t('Save')"
           unelevated
           no-caps
           color="primary text-white"

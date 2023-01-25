@@ -11,7 +11,7 @@
         :disable="account_deleted"
       />
       <q-toolbar-title class="text-dark text-center text-weight-bold">
-        Manage Account
+        {{ $t('Manage Account') }}
       </q-toolbar-title>
       <div></div>
     </q-toolbar>
@@ -23,22 +23,20 @@
       <q-card-section class="q-pa-md">
         <template v-if="account_deleted">
           <div class="text-h6 text-weight-bold">
-            Your account is being deleted
+            {{ $t('Your account is being deleted') }}
           </div>
           <p class="font12">
-            You will be automatically logged out. Your account will be deleted
-            in the next few minutes.
+            {{ $t('You will be automatically logged out. Your account will be deleted in the next few minutes.') }}
           </p>
           <p class="font12">
-            Note: We may retain some information when permitted by law.
+            {{ $t('Note: We may retain some information when permitted by law.') }}
           </p>
         </template>
 
         <template v-else>
-          <div class="text-h6">Account Data</div>
+          <div class="text-h6">{{ $t('Account Data') }}</div>
           <p class="font12">
-            You can request an archive of your personal information. We'll
-            notify you when it's ready to download.
+            {{ $t("You can request an archive of your personal information. We'll notify you when it's ready to download.") }}
           </p>
           <q-btn
             @click="requestData"
@@ -50,17 +48,13 @@
             no-caps
           />
           <q-separator spaced></q-separator>
-          <div class="text-h6">Delete Account</div>
+          <div class="text-h6">{{ $t('Delete Account') }}</div>
           <p class="font12">
-            You can request to have your account deleted and personal
-            information removed. If you have both a QR Eat and Caviar
-            account, then the information associated with both will be affected
-            to the extent we can identify that the accounts are owned by the
-            same user.
+            {{ $t('You can request to have your account deleted and personal information removed.') }}
           </p>
           <q-btn
             @click="beforeDelete"
-            label="Request Delete Account"
+            :label="$t('Request Delete Account')"
             size="md"
             flat
             dense
@@ -146,9 +140,9 @@ export default {
     confirmDeletion() {
       this.$q
         .dialog({
-          title: "Confirm account deletion",
+          title: this.$t("Confirm account deletion"),
           message:
-            "Are you sure you want to delete your account and customer data? \n  This action is permanent and cannot be undone.",
+            this.$t("Are you sure you want to delete your account and customer data? \n  This action is permanent and cannot be undone."),
           persistent: true,
           position: "bottom",
           ok: {
@@ -157,7 +151,7 @@ export default {
             rounded: false,
             "text-color": "black",
             size: "md",
-            label: "Yes delete my account",
+            label: this.$t("Yes delete my account"),
             "no-caps": true,
           },
           cancel: {
@@ -166,7 +160,7 @@ export default {
             color: "grey-3",
             "text-color": "black",
             size: "md",
-            label: "Cancel",
+            label: this.$t("Cancel"),
             "no-caps": true,
           },
         })

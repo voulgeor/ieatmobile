@@ -50,7 +50,7 @@
                 <template v-if="DataStore.sort_list[sort_by]">
                   {{ DataStore.sort_list[sort_by] }}
                 </template>
-                <template v-else> Sort </template>
+                <template v-else> {{ $t('Sort') }} </template>
               </div>
               <q-icon name="las la-angle-down" size="15px" />
             </div>
@@ -94,7 +94,7 @@
           class="text-grey q-pt-sm q-pb-xs"
           :class="{ 'min-height-inherit flex flex-center q-pa-none': !hasData }"
         >
-          <template v-if="hasData"> {{ total_found }} restaurant </template>
+          <template v-if="hasData"> {{ total_found }} {{ $t('restaurant') }} </template>
           <template v-else>
             <NoResults @filter-again="filterAgain"></NoResults>
           </template>

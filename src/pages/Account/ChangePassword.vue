@@ -16,7 +16,7 @@
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
       <q-toolbar-title class="text-weight-bold"
-        >Change Password</q-toolbar-title
+        >{{ $t('Change Password') }}</q-toolbar-title
       >
     </q-toolbar>
   </q-header>
@@ -41,7 +41,7 @@
           <q-input
             v-model="old_password"
             type="password"
-            label="Current Password"
+            :label="$t('Current Password')"
             outlined
             lazy-rules
             :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -54,7 +54,7 @@
           <q-input
             v-model="new_password"
             type="password"
-            label="New Password"
+            :label="$t('New Password')"
             outlined
             lazy-rules
             :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -67,7 +67,7 @@
           <q-input
             v-model="confirm_password"
             type="password"
-            label="Retype New Password"
+            :label="$t('Retype New Password')"
             outlined
             lazy-rules
             :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -83,7 +83,7 @@
           >
             <q-btn
               type="submit"
-              label="Save"
+              :label="$t('Save')"
               unelevated
               no-caps
               color="primary text-white"

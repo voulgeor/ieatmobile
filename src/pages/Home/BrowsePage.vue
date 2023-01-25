@@ -2,7 +2,7 @@
   <q-page padding class="q-pl-md q-pr-md">
     <q-input
       v-model="q"
-      label="Search food and restaurants"
+      :label="$t('Search food and restaurants')"
       outlined
       lazy-rules
       bg-color="input"
@@ -18,7 +18,7 @@
 
     <q-space class="q-pa-xs"></q-space>
 
-    <div class="font13 text-weight-bold text-h5">Recently Search</div>
+    <div class="font13 text-weight-bold text-h5">{{ $t('Recently Search') }}</div>
 
     <q-btn-toggle
       v-model="recently_search"
@@ -36,7 +36,7 @@
       ]"
     />
 
-    <div class="font13 text-weight-bold text-h5">Popular Cuisines</div>
+    <div class="font13 text-weight-bold text-h5">{{ $t('Popular Cuisines') }}</div>
 
     <q-btn-toggle
       v-model="cuisine"
@@ -54,7 +54,7 @@
       ]"
     />
 
-    <div class="font13 text-weight-bold text-h5">Popular Items Near You</div>
+    <div class="font13 text-weight-bold text-h5">{{ $t('Popular Items Near You') }}</div>
   </q-page>
 </template>
 

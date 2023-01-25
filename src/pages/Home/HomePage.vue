@@ -17,7 +17,7 @@
           >
             <q-input
               v-model="q"
-              label="Search food and restaurants"
+              :label="$t('Search food and restaurants')"
               @click="goSearch"
               readonly
               outlined
@@ -44,19 +44,19 @@
         </q-page-sticky>
 
         <h5 class="text-weight-bold q-ma-none">
-          Hello,
+          {{ $t('Hello,') }}
           <span v-if="userData" class="text-secondary">{{
             userData.first_name
           }}</span>
-          <span v-else class="text-secondary">Guest</span>
+          <span v-else class="text-secondary">{{ $t('Guest') }}</span>
         </h5>
-        <p class="text-weight-medium q-ma-none">Find your delicious dish</p>
+        <p class="text-weight-medium q-ma-none">{{ $t('Find your delicious dish') }}</p>
 
         <q-space class="q-pa-xs"></q-space>
 
         <q-input
           v-model="q"
-          label="Search food and restaurants"
+          :label="$t('Search food and restaurants')"
           @click="goSearch"
           readonly
           outlined
@@ -92,7 +92,7 @@
           </template>
           <div v-else class="row">
             <div class="col">
-              <div class="text-h5 text-weight-medium">Explore Cuisine</div>
+              <div class="text-h5 text-weight-medium">{{ $t('Explore Cuisine') }}</div>
             </div>
             <div class="col text-right">
               <q-btn
@@ -128,7 +128,7 @@
           <template v-else>
             <div v-if="DataStore.hasCarData(0)" class="row">
               <div class="col">
-                <div class="text-h5 text-weight-medium">Popular Near You</div>
+                <div class="text-h5 text-weight-medium">{{ $t('Popular Near You') }}</div>
               </div>
               <div class="col text-right">
                 <q-btn
@@ -138,7 +138,7 @@
                   }"
                   flat
                   :color="$q.dark.mode ? 'grey300' : 'secondary'"
-                  label="Show All"
+                  :label="$t('Show All')"
                   no-caps
                   class="text-weight-600"
                   dense
@@ -166,7 +166,7 @@
           <template v-else>
             <div v-if="DataStore.hasCarData(1)" class="row">
               <div class="col">
-                <div class="text-h5 text-weight-medium">Recommended</div>
+                <div class="text-h5 text-weight-medium">{{ $t('Recommended') }}</div>
               </div>
               <div class="col text-right">
                 <q-btn
@@ -176,7 +176,7 @@
                   }"
                   flat
                   :color="$q.dark.mode ? 'grey300' : 'secondary'"
-                  label="Show All"
+                  :label="$t('Show All')"
                   no-caps
                   class="text-weight-600"
                   dense
@@ -256,7 +256,7 @@
                   no-caps
                   flat
                   dense
-                  label="Show All"
+                  :label="$t('Show All')"
                 ></q-btn>
               </template>
               <template v-else>
@@ -267,7 +267,7 @@
                     'text-dark': !$q.dark.mode,
                   }"
                 >
-                  No Results
+                  {{ $t('No Results') }}
                 </div>
               </template>
             </div>

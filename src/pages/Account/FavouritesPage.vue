@@ -18,7 +18,7 @@
           class="q-mr-sm"
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
-        <q-toolbar-title class="text-weight-bold">Favourites</q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">{{ $t('Favourites') }}</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -39,13 +39,13 @@
       >
         <q-tab
           name="restaurant"
-          label="Restaurants"
+          :label="$t('Restaurants')"
           no-caps
           content-class="text-weight-500 "
         />
         <q-tab
           name="food"
-          label="Items"
+          :label="$t('Items')"
           no-caps
           content-class="text-weight-500 "
         />

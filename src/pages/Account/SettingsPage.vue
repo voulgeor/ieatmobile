@@ -10,7 +10,7 @@
         class="q-mr-sm"
         color="dark"
       />
-      <q-toolbar-title class="text-weight-bold">Settings</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Settings') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
 
@@ -28,7 +28,7 @@
       <q-list>
         <q-item>
           <q-item-section>
-            <q-item-label>Receive push notifications</q-item-label>
+            <q-item-label>{{ $t('Receive push notifications') }}</q-item-label>
           </q-item-section>
           <q-item-section side>
             <q-toggle v-model="app_push_notifications" />
@@ -37,7 +37,7 @@
 
         <q-item>
           <q-item-section>
-            <q-item-label>Receive SMS notifications</q-item-label>
+            <q-item-label>{{ $t('Receive SMS notifications') }}</q-item-label>
           </q-item-section>
           <q-item-section side>
             <q-toggle v-model="app_sms_notifications" />
@@ -46,7 +46,7 @@
 
         <q-item>
           <q-item-section>
-            <q-item-label>Promotional Push notifications</q-item-label>
+            <q-item-label>{{ $t('Promotional Push notifications') }}</q-item-label>
           </q-item-section>
           <q-item-section side>
             <q-toggle v-model="promotional_push_notifications" />
@@ -55,7 +55,7 @@
 
         <q-item>
           <q-item-section>
-            <q-item-label>Receive offers by email</q-item-label>
+            <q-item-label>{{ $t('Receive offers by email') }}</q-item-label>
           </q-item-section>
           <q-item-section side>
             <q-toggle v-model="offers_email_notifications" />
@@ -71,7 +71,7 @@
       <q-btn
         @click="saveSettings"
         :loading="loading2"
-        label="Save"
+        :label="$t('Save')"
         unelevated
         no-caps
         color="primary text-white"

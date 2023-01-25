@@ -20,7 +20,7 @@
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
         <q-toolbar-title class="text-weight-bold"
-          >Orders Details</q-toolbar-title
+          >{{ $t('Orders Details') }}</q-toolbar-title
         >
       </q-toolbar>
     </q-header>
@@ -46,7 +46,7 @@
           <q-item class="q-pl-none q-pr-none">
             <q-item-section>
               <q-item-label class="text-dark text-weight-bold"
-                >Order ID</q-item-label
+                >{{ $t('Order ID') }}</q-item-label
               >
               <q-item-label caption class="font12">
                 <span class="q-mr-sm text-weight-bold"
@@ -115,8 +115,8 @@
             >
               <q-item-section>
                 <q-item-label caption class="font12">
-                  <div class="text-weight-bold">Write Review</div>
-                  <div class="text-weight-light font11">Rate your order!</div>
+                  <div class="text-weight-bold">{{ $t('Write Review') }}</div>
+                  <div class="text-weight-light font11">{{ $t('Rate your order!') }}</div>
                 </q-item-label>
               </q-item-section>
               <q-item-section avatar>
@@ -128,7 +128,7 @@
 
         <template v-if="hasRefund">
           <q-list class="qlist-no-padding">
-            <q-expansion-item expand-separator label="Refund Issued">
+            <q-expansion-item expand-separator :label="$t('Refund Issued')">
               <q-list>
                 <q-item>
                   <q-item-section>
@@ -137,16 +137,16 @@
                       :key="refund"
                     >
                       <q-item-label caption class="font12"
-                        >Description: {{ refund.description }}</q-item-label
+                        >{{ $t('Description') }}: {{ refund.description }}</q-item-label
                       >
                       <q-item-label caption class="font12"
-                        >Amount: {{ refund.trans_amount }}</q-item-label
+                        >{{ $t('Amount') }}: {{ refund.trans_amount }}</q-item-label
                       >
                       <q-item-label caption class="font12"
-                        >Issued to: {{ refund.used_card }}</q-item-label
+                        >{{ $t('Issued to') }}: {{ refund.used_card }}</q-item-label
                       >
                       <q-item-label caption class="font12"
-                        >Date issued: {{ refund.date }}</q-item-label
+                        >{{ $t('Date issued') }}: {{ refund.date }}</q-item-label
                       >
                     </template>
                   </q-item-section>
@@ -206,12 +206,12 @@
 
                       <template v-if="items.item_changes == 'replacement'">
                         <div class="m-0 text-grey">
-                          Replace "{{ items.item_name_replace }}"
+                          {{ $t('Replace') }} "{{ items.item_name_replace }}"
                         </div>
                         <q-badge
                           color="primary"
                           text-color="white"
-                          label="Replacement"
+                          :label="$t('Replacement')"
                         />
                       </template>
                     </p>
@@ -307,7 +307,7 @@
 
             <q-item class="q-pb-none" style="min-height: auto">
               <q-item-section class="text-weight-medium font13">
-                Summary
+                {{ $t('Summary') }}
               </q-item-section>
             </q-item>
 
@@ -348,7 +348,7 @@
                   :disable="!allowed_to_cancel"
                   @click="this.$refs.cancel_order.showModal(this.order_uuid)"
                 >
-                  <div>Cancel</div>
+                  <div>{{ $t('Cancel') }}</div>
                   <q-icon
                     right
                     name="las la-angle-right"
@@ -366,7 +366,7 @@
                   :href="pdf_link"
                   target="_blank"
                 >
-                  <div>Download PDF</div>
+                  <div>{{ $t('Download PDF') }}</div>
                   <q-icon
                     right
                     name="las la-angle-right"
@@ -554,7 +554,7 @@ export default {
     },
     copyClipboard(text) {
       navigator.clipboard.writeText(text);
-      APIinterface.notify("light-green", "Copied", "check_circle", this.$q);
+      APIinterface.notify("light-green", this.$t("Copied"), "check_circle", this.$q);
     },
     Buyagain() {
       const $params = {

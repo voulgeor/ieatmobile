@@ -16,7 +16,7 @@
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
       <q-toolbar-title class="text-weight-bold">
-        Order #{{ order_info.order_id }}
+        {{ $t('Order') }} #{{ order_info.order_id }}
       </q-toolbar-title>
     </q-toolbar>
   </q-header>

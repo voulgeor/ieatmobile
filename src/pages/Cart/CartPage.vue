@@ -18,7 +18,7 @@
           class="q-mr-sm"
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
-        <q-toolbar-title class="text-weight-bold">Your Order</q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">{{ $t('Your Order') }}</q-toolbar-title>
         <q-btn
           v-if="CartStore.hasItem"
           @click="this.$refs.cart_details.clearCart()"
@@ -45,7 +45,7 @@
           />
           <div class="text-h5 text-weight-bold">Your cart is empty</div>
           <p class="text-grey font12">
-            You don't have any orders here! let's change that!
+            {{ $t("You don't have any orders here! let's change that!") }}
           </p>
         </div>
       </template>
@@ -82,8 +82,8 @@
         <q-list v-if="!CartStore.cart_loading" class="border-grey-top">
           <q-item>
             <q-item-section>
-              <div class="text-weight-bold">Cutlery</div>
-              <div class="text-grey">Include utensils, napkins, etc.</div>
+              <div class="text-weight-bold">{{ $t('Cutlery') }}</div>
+              <div class="text-grey">{{ $t('Include utensils, napkins, etc.') }}</div>
             </q-item-section>
             <q-item-section side>
               <q-toggle
@@ -109,7 +109,7 @@
               }"
             >
               <q-icon name="las la-plus" size="15px"></q-icon>
-              <div class="q-pl-sm">Add more items</div>
+              <div class="q-pl-sm">{{ $t('Add more items') }}</div>
             </q-btn>
           </div>
 
@@ -166,7 +166,7 @@
       }"
     >
       <div class="row items-center justify-between fit">
-        <div class="text-weight-bold">Checkout</div>
+        <div class="text-weight-bold">{{ $t('Checkout') }}</div>
         <div class="text-weight-bold">
           {{ CartStore.cart_subtotal.value }}
         </div>
@@ -194,6 +194,7 @@ import { useCartStore } from "stores/CartStore";
 //import { useTransactionStore } from "stores/Transaction.js";
 import APIinterface from "src/api/APIinterface";
 import { useDeliveryschedStore } from "stores/DeliverySched";
+import { throwStatement } from "@babel/types";
 
 export default {
   name: "CartPage",
@@ -327,7 +328,7 @@ export default {
       console.log(this.CartStore.transaction_info.whento_deliver);
       if (this.CartStore.transaction_info.whento_deliver == "schedule") {
         let $message =
-          "You are placing and order for {date} at {time}. Would you like to continue?";
+          this.$t("You are placing and order for {date} at {time}. Would you like to continue?");
 
         $message = $message.replace(
           "{date}",
@@ -340,7 +341,7 @@ export default {
 
         this.$q
           .dialog({
-            title: "Ordering for later?",
+            title: this.$t("Ordering for later?"),
             message: $message,
             persistent: true,
             position: "standard",
@@ -352,7 +353,7 @@ export default {
               rounded: false,
               "text-color": "white",
               size: "md",
-              label: "Continue",
+              label: this.$t("Continue"),
               "no-caps": true,
             },
             cancel: {
@@ -361,7 +362,7 @@ export default {
               color: "grey-3",
               "text-color": "black",
               size: "md",
-              label: "Cancel",
+              label: this.$t("Cancel"),
               "no-caps": true,
             },
           })

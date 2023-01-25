@@ -57,21 +57,21 @@
         <q-route-tab
           name="home"
           icon="las la-home"
-          label="Home"
+          :label="$t('Home')"
           no-caps
           to="/home"
         />
         <q-route-tab
           name="browse"
           icon="search"
-          label="Search"
+          :label="$t('Search')"
           no-caps
           to="/search"
         />
         <q-route-tab
           name="cart"
           icon="las la-shopping-bag"
-          label="Cart"
+          :label="$t('Cart')"
           no-caps
           to="/cart"
         >
@@ -83,7 +83,7 @@
         <q-route-tab
           name="account"
           icon="las la-user-alt"
-          label="Account"
+          :label="$t('Account')"
           no-caps
           to="/account-menu"
         />

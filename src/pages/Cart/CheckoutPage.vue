@@ -19,7 +19,7 @@
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
         <q-toolbar-title class="text-weight-bold"
-          >Order Confirmation</q-toolbar-title
+          >{{ $t('Order Confirmation') }}</q-toolbar-title
         >
       </q-toolbar>
     </q-header>
@@ -44,9 +44,9 @@
             spinner-color="primary"
             style="height: 80px; max-width: 80px"
           />
-          <div class="text-h5 text-weight-bold">Your cart is empty</div>
+          <div class="text-h5 text-weight-bold">{{ $t('Your cart is empty') }}</div>
           <p class="text-grey font12">
-            You don't have any orders here! let's change that!
+            {{ $t("You don't have any orders here! let's change that!") }}
           </p>
         </div>
       </template>
@@ -129,7 +129,7 @@
                 flat
                 :color="$q.dark.mode ? 'secondary' : 'blue'"
                 no-caps
-                label="Change order settings"
+                :label="$t('Change order settings')"
                 dense
                 size="sm"
                 class="q-pt-none"
@@ -146,7 +146,7 @@
           <span class="text-capitalize">{{
             CartStore.transaction_info.transaction_type
           }}</span>
-          Details
+          {{ $t('Details') }}
         </div>
 
         <q-list dense>
@@ -192,7 +192,7 @@
                 flat
                 :color="$q.dark.mode ? 'secondary' : 'blue'"
                 no-caps
-                label="Change"
+                :label="$t('Change')"
                 dense
                 size="md"
                 @click="this.$refs.client_address.showModal(true)"
@@ -217,7 +217,7 @@
                 flat
                 :color="$q.dark.mode ? 'secondary' : 'blue'"
                 no-caps
-                label="Change"
+                :label="$t('Change')"
                 dense
                 size="md"
               />
@@ -231,9 +231,9 @@
               </q-avatar>
             </q-item-section>
             <q-item-section>
-              <q-item-label>Cutlery</q-item-label>
+              <q-item-label>{{ $t('Cutlery') }}</q-item-label>
               <q-item-label caption
-                >Include utensils, napkins, etc.</q-item-label
+                >{{ $t('Include utensils, napkins, etc.') }}</q-item-label
               >
             </q-item-section>
             <q-item-section side>
@@ -248,7 +248,7 @@
         <q-list bordered>
           <q-expansion-item
             expand-separator
-            label="Order Details"
+            :label="$t('Order Details')"
             :caption="
               CartStore.items_count > 0
                 ? `${CartStore.items_count} items`
@@ -279,7 +279,7 @@
                   }"
                 >
                   <q-icon name="las la-plus" size="15px"></q-icon>
-                  <div class="q-pl-sm">Add more items</div>
+                  <div class="q-pl-sm">{{ $t('Add more items') }}</div>
                 </q-btn>
               </div>
             </DIV>
@@ -287,7 +287,7 @@
         </q-list>
 
         <div class="q-pl-md q-pr-md q-mb-sm font13 text-weight-bold q-pt-xs">
-          Discount
+          {{ $t('Discount') }}
         </div>
         <template v-if="CartStore.points_enabled">
             <div
@@ -333,7 +333,7 @@
                     {{PointsStore.points_id[1]}}
                   </span>
                 </template>
-                <template v-else> Available points {{PointsStore.count}} </template>
+                <template v-else> {{ $t('Available points') }} {{PointsStore.count}} </template>
               </q-item-section>
               <q-item-section side>
                 <q-btn
@@ -349,7 +349,7 @@
                   flat
                   :color="$q.dark.mode ? 'secondary' : 'blue'"
                   no-caps
-                  label="Remove"
+                  :label="$t('Remove')"
                   dense
                   size="md"
                 />
@@ -409,7 +409,7 @@
                     }}
                   </span>
                 </template>
-                <template v-else> Add a promo </template>
+                <template v-else> {{ $t('Add a promo') }} </template>
               </q-item-section>
               <q-item-section side>
                 <q-btn
@@ -433,7 +433,7 @@
                   flat
                   :color="$q.dark.mode ? 'secondary' : 'blue'"
                   no-caps
-                  label="Remove"
+                  :label="$t('Remove')"
                   dense
                   size="md"
                 />
@@ -443,7 +443,7 @@
                   flat
                   :color="$q.dark.mode ? 'secondary' : 'blue'"
                   no-caps
-                  label="Add"
+                  :label="$t('Add')"
                   dense
                   size="md"
                 />
@@ -455,7 +455,7 @@
         <div
           class="q-pl-md q-pr-md q-mt-sm ellipsis font13 text-weight-bold q-pt-xs border-grey-top"
         >
-          Summary
+          {{ $t('Summary') }}
         </div>
         <q-list dense class="text-grey qlist-min-height text-weight-medium">
           <template v-for="summary in CartStore.cart_summary" :key="summary">
@@ -482,13 +482,13 @@
           class="q-pl-md q-pr-md q-mb-sm q-pt-xs"
         >
           <div class="row items-center q-mb-sm justify-between">
-            <div class="font13 text-weight-bold">Tips</div>
+            <div class="font13 text-weight-bold">{{ $t('Tips') }}</div>
             <q-btn
               v-if="CartStore.tips_data.tips > 0"
               flat
               :color="$q.dark.mode ? 'secondary' : 'blue'"
               no-caps
-              label="Remove tips"
+              :label="$t('Remove tips')"
               dense
               size="md"
               @click="removeTips"
@@ -509,12 +509,12 @@
         <!-- <pre>{{ payment_uuid }}</pre> -->
         <div class="q-pl-md q-pr-md q-mt-sm q-pt-xs border-grey-top">
           <div class="row items-center justify-between">
-            <div class="font13 text-weight-bold">Payment</div>
+            <div class="font13 text-weight-bold">{{ $t('Payment') }}</div>
             <q-btn
               flat
               :color="$q.dark.mode ? 'secondary' : 'blue'"
               no-caps
-              label="Add"
+              :label="$t('Add')"
               dense
               size="md"
               to="/account/payments/new?redirect=/checkout"
@@ -613,10 +613,10 @@
   <StripeComponents
     ref="stripe"
     payment_code="stripe"
-    title="Add Stripe"
+    :title="$t('Add Stripe')"
     :label="{
-      submit: 'Add Stripe',
-      notes: 'Add your card account',
+      submit: this.$t('Add Stripe'),
+      notes: this.$t('Add your card account'),
     }"
     :payment_credentials="
       PaymentStore.credentials[CartStore.cart_merchant.merchant_id]
@@ -627,10 +627,10 @@
   <VivaComponents
     ref="viva"
     payment_code="viva"
-    title="Add Viva payment"
+    :title="$t('Add Viva payment')"
     :label="{
-    submit: 'Add Viva payment',
-    notes : 'Pay using your Viva account'
+    submit: this.$t('Add Viva payment'),
+    notes : this.$t('Pay using your Viva account')
     }"
     :payment_credentials="PaymentStore.credentials[CartStore.cart_merchant.merchant_id]"
     @after-addpayment="afterAddpayment"
@@ -640,13 +640,13 @@
   <PaypalComponents
     ref="paypal"
     payment_code="paypal"
-    title="Add Paypal"
+    :title="$t('Add Paypal')"
     :label="{
-      submit: 'Add Paypal',
-      notes: 'Pay using your paypal account',
-      payment_title: 'Pay using Paypal',
+      submit: this.$t('Add Paypal'),
+      notes: this.$t('Pay using your paypal account'),
+      payment_title: this.$t('Pay using Paypal'),
       payment_subtitle:
-        'You will re-direct to paypal account to login to your account.',
+      this.$t('You will re-direct to paypal account to login to your account.'),
     }"
     :payment_credentials="
       PaymentStore.credentials[CartStore.cart_merchant.merchant_id]
@@ -658,10 +658,10 @@
   <RazorpayComponents
     ref="razorpay"
     payment_code="razorpay"
-    title="Add Razorpay"
+    :title="$t('Add Razorpay')"
     :label="{
-      submit: 'Submit',
-      notes: 'Pay using your Razorpay account',
+      submit: this.$t('Submit'),
+      notes: this.$t('Pay using your Razorpay account'),
     }"
     :payment_credentials="
       PaymentStore.credentials[CartStore.cart_merchant.merchant_id]
@@ -673,11 +673,11 @@
   <MercadopagoComponents
     ref="mercadopago"
     payment_code="mercadopago"
-    title="Add Mercadopago"
+    :title="$t('Add Mercadopago')"
     :label="{
-      submit: 'Add Mercadopago',
-      submit_form: 'Submit',
-      notes: 'Pay using your mercadopago account',
+      submit: this.$t('Add Mercadopago'),
+      submit_form: this.$t('Submit'),
+      notes: this.$t('Pay using your mercadopago account'),
     }"
     :payment_credentials="
       PaymentStore.credentials[CartStore.cart_merchant.merchant_id]
@@ -922,11 +922,11 @@ export default {
     },
     transactionText(data) {
       if (data === "delivery") {
-        return "Delivery to";
+        return this.$t("Delivery to");
       } else if (data === "pickup") {
-        return "Pickup to";
+        return this.$t("Pickup to");
       } else if (data === "dinein") {
-        return "Go to";
+        return this.$t("Go to");
       }
     },
     removePromo(merchantID, data) {

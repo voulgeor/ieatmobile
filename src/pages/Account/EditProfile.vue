@@ -17,7 +17,7 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Edit Profile</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Edit Profile') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
 
@@ -81,7 +81,7 @@
       <q-uploader
         v-if="upload_enabled"
         :url="upload_api"
-        label="Upload files"
+        :label="$t('Upload files')"
         :color="$q.dark.mode ? 'grey600' : 'primary'"
         :text-color="$q.dark.mode ? 'grey300' : 'white'"
         no-thumbnails
@@ -110,37 +110,37 @@
         <q-card-section>
           <q-input
             v-model="first_name"
-            label="First name"
+            :label="$t('First name')"
             outlined
             lazy-rules
             :bg-color="$q.dark.mode ? 'grey600' : 'input'"
             :label-color="$q.dark.mode ? 'grey300' : 'grey'"
             :rules="[
-              (val) => (val && val.length > 0) || 'This field is required',
+              (val) => (val && val.length > 0) || $t('This field is required'),
             ]"
           />
 
           <q-input
             v-model="last_name"
-            label="Last name"
+            :label="$t('Last name')"
             outlined
             lazy-rules
             :bg-color="$q.dark.mode ? 'grey600' : 'input'"
             :label-color="$q.dark.mode ? 'grey300' : 'grey'"
             :rules="[
-              (val) => (val && val.length > 0) || 'This field is required',
+              (val) => (val && val.length > 0) || $t('This field is required'),
             ]"
           />
 
           <q-input
             v-model="email_address"
-            label="Email address"
+            :label="$t('Email address')"
             outlined
             lazy-rules
             :bg-color="$q.dark.mode ? 'grey600' : 'input'"
             :label-color="$q.dark.mode ? 'grey300' : 'grey'"
             :rules="[
-              (val) => (val && val.length > 0) || 'This field is required',
+              (val) => (val && val.length > 0) || $t('This field is required'),
             ]"
           />
 
@@ -154,7 +154,7 @@
             borderless
             class="input-borderless"
             :rules="[
-              (val) => (val && val.length > 0) || 'This field is required',
+              (val) => (val && val.length > 0) || $t('This field is required'),
             ]"
           >
             <template v-slot:prepend>
@@ -186,7 +186,7 @@
                 <template v-slot:no-option>
                   <q-item>
                     <q-item-section class="text-grey">
-                      No results
+                      {{ $t('No results') }}
                     </q-item-section>
                   </q-item>
                 </template>
@@ -199,7 +199,7 @@
       <q-space class="q-pa-sm"></q-space>
       <q-btn
         type="submit"
-        label="Save"
+        :label="$t('Save')"
         unelevated
         no-caps
         color="primary text-white"

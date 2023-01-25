@@ -71,7 +71,7 @@
               to="/account/allorder"
               flat
               no-caps
-              label="My All orders"
+              :label="$t('My All orders')"
               class="line-height-one q-pa-none"
               :text-color="$q.dark.mode ? 'bluegrey500' : 'dark'"
             ></q-btn>
@@ -94,7 +94,7 @@
             <q-btn
               flat
               no-caps
-              label="Offers & Coupons"
+              :label="$t('Offers & Coupons')"
               class="line-height-one q-pa-none"
               :to="{
                 path: 'feed',
@@ -119,7 +119,7 @@
               to="/account/my-address"
               flat
               no-caps
-              label="Your Addresses"
+              :label="$t('Your Addresses')"
               class="line-height-one q-pa-none"
               :text-color="$q.dark.mode ? 'bluegrey500' : 'dark'"
             ></q-btn>
@@ -141,7 +141,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-user-alt" />
           </q-item-section>
-          <q-item-section>Manage Profile</q-item-section>
+          <q-item-section>{{ $t('Manage Profile') }}</q-item-section>
           <q-item-section side>
             <q-btn
               round
@@ -158,7 +158,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-lock" />
           </q-item-section>
-          <q-item-section>Change Password</q-item-section>
+          <q-item-section>{{ $t('Change Password') }}</q-item-section>
           <q-item-section side>
             <q-btn
               round
@@ -175,7 +175,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-credit-card" />
           </q-item-section>
-          <q-item-section>Payment</q-item-section>
+          <q-item-section>{{ $t('Payments') }}</q-item-section>
           <q-item-section side>
             <q-btn
               round
@@ -192,7 +192,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="lab la-gratipay" />
           </q-item-section>
-          <q-item-section>Favourites</q-item-section>
+          <q-item-section>{{ $t('Favourites') }}</q-item-section>
           <q-item-section side>
             <q-btn
               round
@@ -209,7 +209,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-bell" />
           </q-item-section>
-          <q-item-section>Push Notifications</q-item-section>
+          <q-item-section>{{ $t('Push Notifications') }}</q-item-section>
           <q-item-section side>
             <q-toggle
               v-model="app_push_notifications"
@@ -223,7 +223,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-bell" />
           </q-item-section>
-          <q-item-section>Promotional Notifications</q-item-section>
+          <q-item-section>{{ $t('Promotional Notifications') }}</q-item-section>
           <q-item-section side>
             <q-toggle
               v-model="promotional_push_notifications"
@@ -237,7 +237,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-credit-card" />
           </q-item-section>
-          <q-item-section>Language</q-item-section>
+          <q-item-section>{{ $t('Language') }}</q-item-section>
           <q-item-section side v-if="DataStore.language_data">
             <template v-for="lang in DataStore.language_data.data" :key="lang">
               <q-btn
@@ -258,7 +258,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-adjust" />
           </q-item-section>
-          <q-item-section>Dark Mode</q-item-section>
+          <q-item-section>{{ $t('Dark Mode') }}</q-item-section>
           <q-item-section side>
             <q-toggle v-model="theme_mode" color="secondary" />
           </q-item-section>
@@ -285,7 +285,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-user-slash" />
           </q-item-section>
-          <q-item-section>Delete Account</q-item-section>
+          <q-item-section>{{ $t('Delete Account') }}</q-item-section>
           <q-item-section side>
             <q-btn
               round
@@ -302,7 +302,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-user-friends" />
           </q-item-section>
-          <q-item-section>Invite Friends</q-item-section>
+          <q-item-section>{{ $t('Invite Friends') }}</q-item-section>
           <q-item-section side>
             <q-btn
               round
@@ -319,7 +319,7 @@
           <q-item-section avatar>
             <q-icon color="grey-5" name="las la-balance-scale" />
           </q-item-section>
-          <q-item-section>Legal</q-item-section>
+          <q-item-section>{{ $t('Legal') }}</q-item-section>
           <q-item-section side>
             <q-btn
               round
@@ -353,7 +353,7 @@
           <q-item-section avatar>
             <q-icon color="secondary" name="las la-sign-out-alt" />
           </q-item-section>
-          <q-item-section>Logout</q-item-section>
+          <q-item-section>{{ $t('Logout') }}</q-item-section>
           <q-item-section side>
             <q-btn
               round
@@ -436,8 +436,8 @@ export default {
     logout() {
       this.$q
         .dialog({
-          title: "Logout",
-          message: "Are you sure you want to logout?",
+          title: this.$t('Logout'),
+          message: this.$t('Are you sure you want to logout?'),
           persistent: true,
           position: "standard",
           transitionShow: "fade",
@@ -448,7 +448,7 @@ export default {
             rounded: false,
             "text-color": "white",
             size: "md",
-            label: "Yes",
+            label: this.$t('Yes'),
             "no-caps": true,
           },
           cancel: {
@@ -457,7 +457,7 @@ export default {
             color: "grey-3",
             "text-color": "black",
             size: "md",
-            label: "Cancel",
+            label: this.$t('Cancel'),
             "no-caps": true,
           },
         })
@@ -526,11 +526,11 @@ export default {
             .catch((error) => console.log("Error sharing", error));
         } else {
           if (this.$q.capacitor) {
-            APIinterface.showToast("Share not supported");
+            APIinterface.showToast(this.$t('Share not supported'));
           } else {
             APIinterface.notify(
               "dark",
-              "Share not supported",
+              this.$t('Share not supported'),
               "error",
               this.$q
             );

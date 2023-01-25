@@ -76,14 +76,14 @@
           color="dark"
           bg-color="white"
           borderless
-          label="Aparment, suite or floor"
+          :label="$t('Aparment, suite or floor')"
         />
         <q-space class="q-pa-sm" />
         <q-select
           outlined
           v-model="delivery_options"
           :options="options"
-          label="Delivery Options"
+          :label="$t('Delivery Options')"
           dense
         />
         <q-space class="q-pa-sm" />
@@ -95,7 +95,7 @@
           color="dark"
           bg-color="white"
           borderless
-          label="Add delivery instructions"
+          :label="$t('Add delivery instructions')"
         />
 
         <div class="text-h6">{{ $t('Address label') }}</div>
@@ -113,10 +113,10 @@
           class="font11 bg-grey-2 q-mb-md text-weight-600"
           spread
           :options="[
-            { label: 'Home', value: 1 },
-            { label: 'Work', value: 2 },
-            { label: 'School', value: 3 },
-            { label: 'other', value: 'other' },
+            { label: this.$t('Home'), value: 1 },
+            { label: this.$t('Work'), value: 2 },
+            { label: this.$t('School'), value: 3 },
+            { label: this.$t('other'), value: 'other' },
           ]"
         />
 
@@ -126,7 +126,7 @@
 
       <q-card-actions vertical align="center">
         <q-btn
-          label="Save Address"
+          :label="$t('Save Address')"
           unelevated
           color="primary"
           text-color="dark"
@@ -134,7 +134,7 @@
           class="full-width"
         />
         <q-btn
-          label="Cancel"
+          :label="$t('Cancel')"
           flat
           text-color="amber-14"
           no-caps
@@ -158,8 +158,8 @@ export default {
       delivery_options: "",
       delivery_instructions: "",
       address_label: 1,
-      edit_address: "Guadalupe nuevo makati city",
-      options: ["leave at my door", "hand it to me", "meet outside"],
+      edit_address: this.$t("Guadalupe nuevo makati city"),
+      options: [this.$t("leave at my door"), this.$t("hand it to me"), this.$t("meet outside")],
     };
   },
   mounted() {

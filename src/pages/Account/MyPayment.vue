@@ -17,7 +17,7 @@
           :text-color="$q.dark.mode ? 'white' : 'dark'"
           unelevated
         />
-        <q-toolbar-title class="text-weight-bold">Payment</q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">{{ $t('Payment') }}</q-toolbar-title>
       </q-toolbar>
     </q-header>
     <q-page
@@ -31,13 +31,13 @@
       <template v-if="!hasData && !loading">
         <div class="min-height-inherit flex flex-center">
           <div class="full-width text-center q-pb-xl">
-            <div class="text-h5 text-weight-bold">No Payment available</div>
-            <p class="text-grey font12">you have not added payment yet</p>
+            <div class="text-h5 text-weight-bold">{{ $t('No Payment available') }}</div>
+            <p class="text-grey font12">{{ $t('you have not added payment yet') }}</p>
             <q-btn
               flat
               color="blue"
               no-caps
-              label="Add new payment"
+              :label="$t('Add new payment')"
               dense
               size="sm"
               to="/account/payments/new"
@@ -150,7 +150,7 @@
           >
             <q-btn
               type="submit"
-              label="Add new payment"
+              :label="$t('Add new payment')"
               unelevated
               no-caps
               color="primary text-white"

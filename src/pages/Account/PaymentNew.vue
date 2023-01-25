@@ -18,7 +18,7 @@
           class="q-mr-sm"
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
-        <q-toolbar-title class="text-weight-bold">New Payment</q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">{{ $t('New Payment') }}</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -34,8 +34,8 @@
       <template v-if="!PaymentStore.hasData && !PaymentStore.loading2">
         <div class="min-height-inherit flex flex-center">
           <div class="full-width text-center q-pb-xl">
-            <div class="text-h5 text-weight-bold">No Payment available</div>
-            <p class="text-grey font12">There is no payment available</p>
+            <div class="text-h5 text-weight-bold">{{ $t('No Payment available') }}</div>
+            <p class="text-grey font12">{{ $t('There is no payment available') }}</p>
           </div>
         </div>
       </template>
@@ -98,11 +98,11 @@
       <codComponents
         ref="cod"
         payment_code="cod"
-        title="Add Cash On delivery"
+        :title="$t('Add Cash On delivery')"
         :label="{
-          submit: 'Add Cash',
+          submit: this.$t('Add Cash'),
           notes:
-            'Cash on Delivery or COD is a payment method that allows pay for the items you have ordered only when it gets delivered.',
+            this.$t('Cash on Delivery or COD is a payment method that allows pay for the items you have ordered only when it gets delivered.'),
         }"
         :payment_credentials="PaymentStore.payment_credentials"
         @after-addpayment="afterAddpayment"
@@ -111,9 +111,9 @@
       <ocrComponents
         ref="ocr"
         payment_code="ocr"
-        title="Add Credit card"
+        :title="$t('Add Credit card')"
         :label="{
-          submit: 'Add Card',
+          submit: $t('Add Card'),
           notes: '',
         }"
         :payment_credentials="PaymentStore.payment_credentials"
@@ -123,10 +123,10 @@
       <StripeComponents
         ref="stripe"
         payment_code="stripe"
-        title="Add Stripe"
+        :title="$t('Add Stripe')"
         :label="{
-          submit: 'Add Stripe',
-          notes: 'Add your card account',
+          submit: this.$t('Add Stripe'),
+          notes: this.$t('Add your card account'),
         }"
         :payment_credentials="PaymentStore.payment_credentials"
         @after-addpayment="afterAddpayment"
@@ -135,13 +135,13 @@
       <PaypalComponents
         ref="paypal"
         payment_code="paypal"
-        title="Add Paypal"
+        :title="$t('Add Paypal')"
         :label="{
-          submit: 'Add Paypal',
-          notes: 'Pay using your paypal account',
-          payment_title: 'Pay using Paypal',
+          submit: this.$t('Add Paypal'),
+          notes: this.$t('Pay using your paypal account'),
+          payment_title: this.$t('Pay using Paypal'),
           payment_subtitle:
-            'You will re-direct to paypal account to login to your account.',
+          this.$t('You will re-direct to paypal account to login to your account.'),
         }"
         :payment_credentials="PaymentStore.payment_credentials"
         @after-addpayment="afterAddpayment"
@@ -150,10 +150,10 @@
       <RazorpayComponents
         ref="razorpay"
         payment_code="razorpay"
-        title="Add Razorpay"
+        :title="$t('Add Razorpay')"
         :label="{
-          submit: 'Submit',
-          notes: 'Pay using your Razorpay account',
+          submit: this.$t('Submit'),
+          notes: this.$t('Pay using your Razorpay account'),
         }"
         :payment_credentials="PaymentStore.payment_credentials"
         @after-addpayment="afterAddpayment"
@@ -162,10 +162,10 @@
       <MercadopagoComponents
         ref="mercadopago"
         payment_code="mercadopago"
-        title="Add Mercadopago"
+        :title="$t('Add Mercadopago')"
         :label="{
-          submit: 'Add Mercadopago',
-          notes: 'Pay using your mercadopago account',
+          submit: this.$t('Add Mercadopago'),
+          notes: this.$t('Pay using your mercadopago account'),
         }"
         :payment_credentials="PaymentStore.payment_credentials"
         @after-addpayment="afterAddpayment"
@@ -174,10 +174,10 @@
       <BankComponents
         ref="bank"
         payment_code="bank"
-        title="Add Bank Transfer"
+        :title="$t('Add Bank Transfer')"
         :label="{
-          submit: 'Add Payment',
-          notes: 'Pay using bank Transfer',
+          submit: this.$t('Add Payment'),
+          notes: this.$t('Pay using bank Transfer'),
         }"
         :payment_credentials="PaymentStore.payment_credentials"
         @after-addpayment="afterAddpayment"
@@ -185,10 +185,10 @@
       <VivaComponents
       ref="viva"
       payment_code="viva"
-      title="Add Viva payment"
+      :title="$t('Add Viva payment')"
       :label="{
-      submit: 'Add Viva payment',
-      notes : 'Pay using your Viva account'
+      submit: this.$t('Add Viva payment'),
+      notes : this.$t('Pay using your Viva account')
       }"
       :payment_credentials="PaymentStore.payment_credentials"
       @after-addpayment="afterAddpayment"

@@ -39,7 +39,7 @@
           <q-input
             v-model="q"
             ref="category"
-            label="Search category"
+            :label="$t('Search category')"
             dense
             outlined
             color="grey"

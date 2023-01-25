@@ -17,8 +17,8 @@
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
         <q-toolbar-title class="text-weight-bold">
-          <template v-if="hold">{{ itemToDelete }} selected</template>
-          <template v-else>Notifications</template>
+          <template v-if="hold">{{ itemToDelete }} {{ $t('selected') }}</template>
+          <template v-else>{{ $t('Notifications') }}</template>
         </q-toolbar-title>
         <q-btn
           v-if="hold"
@@ -120,7 +120,7 @@
         <template v-if="hasData">
           <template v-if="data_done && data.length >= 10">
             <div class="row justify-center q-my-sm">
-              <p class="font12 text-grey">end of results</p>
+              <p class="font12 text-grey">{{ $t('end of results') }}</p>
             </div>
           </template>
         </template>
@@ -132,9 +132,9 @@
               spinner-color="primary"
               style="height: 150px; max-width: 200px"
             />
-            <div class="text-h5 text-weight-bold">No notifications</div>
+            <div class="text-h5 text-weight-bold">{{ $t('No notifications') }}</div>
             <p class="text-grey font12">
-              If there is notification it will show here
+              {{ $t('If there is notification it will show here') }}
             </p>
           </div>
         </template>
@@ -279,8 +279,8 @@ export default {
     deleteAll() {
       this.$q
         .dialog({
-          title: "Delete all",
-          message: "Are you sure want to delete all notifications?",
+          title: this.$t("Delete all"),
+          message: this.$t("Are you sure want to delete all notifications?"),
           transitionShow: "fade",
           transitionHide: "fade",
           ok: {
@@ -289,7 +289,7 @@ export default {
             rounded: false,
             "text-color": "white",
             size: "md",
-            label: "Okay",
+            label: this.$t("Okay"),
             "no-caps": true,
           },
         })

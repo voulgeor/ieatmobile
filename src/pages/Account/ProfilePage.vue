@@ -10,7 +10,7 @@
         color="dark"
       />
       <q-toolbar-title class="text-dark text-center text-weight-bold">
-        Profile
+        {{ $t('Profile') }}
       </q-toolbar-title>
       <NotiButton></NotiButton>
     </q-toolbar>
@@ -38,7 +38,7 @@
 
           <q-btn
             to="/account/edit-profile"
-            label="Edit Profile"
+            :label="$t('Edit Profile')"
             flat
             dense
             text-color="amber-14"
@@ -64,7 +64,7 @@
             <q-item-section>
               <q-item-label
                 class="text-weight-medium line-normal ellipsis full-width"
-                >Settings</q-item-label
+                >{{ $t('Settings') }}</q-item-label
               >
             </q-item-section>
             <q-item-section side>
@@ -92,7 +92,7 @@
             <q-item-section>
               <q-item-label
                 class="text-weight-medium line-normal ellipsis full-width"
-                >Change Password</q-item-label
+                >{{ $t('Change Password') }}</q-item-label
               >
             </q-item-section>
             <q-item-section side>
@@ -120,7 +120,7 @@
             <q-item-section>
               <q-item-label
                 class="text-weight-medium line-normal ellipsis full-width"
-                >Manage Account</q-item-label
+                >{{ $t('Manage Account') }}</q-item-label
               >
             </q-item-section>
             <q-item-section side>
@@ -174,8 +174,8 @@ export default {
     logout() {
       this.$q
         .dialog({
-          title: "Logout",
-          message: "Are you sure you want to logout?",
+          title: this.$t("Logout"),
+          message: this.$t("Are you sure you want to logout?"),
           persistent: true,
           position: "bottom",
           ok: {
@@ -184,7 +184,7 @@ export default {
             rounded: false,
             "text-color": "black",
             size: "md",
-            label: "Yes",
+            label: this.$t("Yes"),
             "no-caps": true,
           },
           cancel: {
@@ -193,7 +193,7 @@ export default {
             color: "grey-3",
             "text-color": "black",
             size: "md",
-            label: "Cancel",
+            label: this.$t("Cancel"),
             "no-caps": true,
           },
         })

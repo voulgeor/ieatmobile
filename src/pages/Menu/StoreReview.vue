@@ -17,7 +17,7 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Reviews</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Reviews') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
   <q-pull-to-refresh @refresh="refresh">
@@ -29,9 +29,9 @@
         <template v-slot:default>
           <template v-if="!hasData && !loading">
             <div class="text-center">
-              <div class="font16 text-weight-bold">No reviews found</div>
+              <div class="font16 text-weight-bold">{{ $t('No reviews found') }}</div>
               <p class="font11">
-                There is no review available for this restaurant
+                {{ $t('There is no review available for this restaurant') }}
               </p>
             </div>
           </template>

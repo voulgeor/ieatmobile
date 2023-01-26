@@ -20,7 +20,7 @@
           replace="true"
         />
         <q-toolbar-title class="text-weight-bold"
-          >Your Order Successfully!</q-toolbar-title
+          >{{ $t('Your Order Successfully!') }}</q-toolbar-title
         >
       </q-toolbar>
     </q-header>
@@ -107,11 +107,11 @@ export default {
     },
     estimatedLabel(service_code) {
       if (service_code == "pickup") {
-        return "Estimated Pickup Time";
+        return this.$t("Estimated Pickup Time");
       } else if (service_code == "dinein") {
-        return "Estimated Dinein Time";
+        return this.$t("Estimated Dinein Time");
       }
-      return "Estimated Delivery Time";
+      return this.$t("Estimated Delivery Time");
     },
   },
 };

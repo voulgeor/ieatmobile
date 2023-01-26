@@ -15,7 +15,7 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Add Address</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Add Address') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
   <q-page class="bg-grey-1 row items-stretch">
@@ -30,7 +30,7 @@
         <q-input
           v-model="address_search"
           @click="modal = !modal"
-          label="Enter your location"
+          :label="$t('Enter your location')"
           outlined
           lazy-rules
           :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -110,12 +110,12 @@
             <template v-if="!hasAddress">
               {{ address }}
             </template>
-            <template v-else> Location is not available </template>
+            <template v-else> {{ $t('Location is not available') }} </template>
           </div>
         </div>
 
         <q-btn
-          label="Confirm Location"
+          :label="('Confirm Location')"
           @click="setLocation"
           :disable="hasAddress || geocoder_loading"
           :loading="loading"
@@ -148,7 +148,7 @@
         <SearchAddress
           ref="search_address"
           @after-selectaddress="afterSelectaddress"
-          placeholder="Enter your location"
+          :placeholder="('Enter your location')"
         />
       </q-card-section>
     </q-card>
@@ -324,7 +324,7 @@ export default {
       if (APIinterface.empty(this.data.place_id)) {
         APIinterface.notify(
           "dark",
-          "Enter your location or select on the map",
+          this.$t("Enter your location or select on the map"),
           "error",
           this.$q
         );

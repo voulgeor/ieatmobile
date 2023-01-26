@@ -17,11 +17,11 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Info</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t(Info) }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
   <q-page class="q-pl-md q-pr-md">
-    <template v-if="MenuStore.loadin_info"> loading </template>
+    <template v-if="MenuStore.loadin_info"> {{ $t('loading') }} </template>
 
     <template v-else>
       <template v-if="MenuStore.data_info[slug]">
@@ -33,7 +33,7 @@
           icon="las la-map-marker-alt"
         >
           <span class="text-grey"
-            >Few words about
+            >{{ $t('Few words about') }}
             {{ MenuStore.data_info[slug].restaurant_name }}</span
           >
         </q-chip>
@@ -51,7 +51,7 @@
           class="q-pa-none"
           icon="las la-map-marker-alt"
         >
-          <span class="text-grey">Address</span>
+          <span class="text-grey">{{ $t('Address') }}</span>
         </q-chip>
 
         <div class="row items-center q-gutter-sm">
@@ -69,7 +69,7 @@
                 flat
                 :color="$q.dark.mode ? 'secondary' : 'blue'"
                 no-caps
-                label="Get directions"
+                :label="$t('Get directions')"
                 dense
                 size="sm"
                 :href="MenuStore.data_info[slug].map_direction"
@@ -81,7 +81,7 @@
                 flat
                 :color="$q.dark.mode ? 'secondary' : 'blue'"
                 no-caps
-                label="Get directions"
+                :label="$t('Get directions')"
                 dense
                 size="sm"
                 :href="MenuStore.data_info[slug].map_direction"
@@ -100,13 +100,13 @@
           class="q-pa-none"
           icon="las la-clock"
         >
-          <span class="text-grey">Opening hours</span>
+          <span class="text-grey">{{ $t('Opening hours') }}</span>
         </q-chip>
 
         <q-list v-if="MenuStore.open_at[slug]">
           <q-expansion-item
             expand-separator
-            label="Today"
+            :label="$t('Today')"
             :caption="MenuStore.open_at[slug]"
           >
             <q-card
@@ -145,7 +145,7 @@
             class="q-pa-none"
             icon="las la-photo-video"
           >
-            <span class="text-grey">Gallery</span>
+            <span class="text-grey">{{ $t('Gallery') }}</span>
           </q-chip>
 
           <div

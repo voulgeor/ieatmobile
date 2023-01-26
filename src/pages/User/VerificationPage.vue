@@ -24,7 +24,7 @@
          <q-space class="q-pa-md"></q-space>
 
          <q-card-actions vertical align="center">
-          <q-btn label="Verify Now" unelevated color="primary" text-color="dark" class="full-width text-weight-bold"  />
+          <q-btn :label="$t('Verify Now')" unelevated color="primary" text-color="dark" class="full-width text-weight-bold"  />
         </q-card-actions>
 
         <q-space class="q-pa-lg"></q-space>

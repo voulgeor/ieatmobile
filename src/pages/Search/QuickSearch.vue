@@ -15,7 +15,7 @@
       <q-input
         v-model="q"
         ref="items"
-        label="Food, Restaurant, drinks etc"
+        :label="$t('Food, Restaurant, drinks etc')"
         dense
         outlined
         color="grey"
@@ -41,14 +41,14 @@
       <div class="col font12">
         <template v-if="tab === 'food'">
           <template v-if="hasItems">
-            <b class="text-green-5">{{ totalItemFound }}</b> results for "{{
+            <b class="text-green-5">{{ totalItemFound }}</b> {{ $t('results for') }} "{{
               q
             }}"
           </template>
         </template>
         <template v-else>
           <template v-if="hasData">
-            <b class="text-green-5">{{ totalFound }}</b> results for "{{ q }}"
+            <b class="text-green-5">{{ totalFound }}</b> {{ $t('results for') }} "{{ q }}"
           </template>
         </template>
       </div>
@@ -66,8 +66,8 @@
       align="justify"
       narrow-indicator
     >
-      <q-tab name="food" label="Food" no-caps />
-      <q-tab name="restaurant" label="Restaurants" no-caps />
+      <q-tab name="food" :label="$t('Food')" no-caps />
+      <q-tab name="restaurant" :label="$t('Restaurants')" no-caps />
     </q-tabs>
     <q-separator />
 
@@ -139,7 +139,7 @@
                 style="height: 80px; max-width: 80px"
                 class="light-dimmed"
               />
-              <p class="font11 text-grey">No results for "{{ q }}"</p>
+              <p class="font11 text-grey">{{ $t('No results for') }} "{{ q }}"</p>
             </div>
           </div>
         </template>
@@ -217,7 +217,7 @@
                 style="height: 80px; max-width: 80px"
                 class="light-dimmed"
               />
-              <p class="font11 text-grey">No results for "{{ q }}"</p>
+              <p class="font11 text-grey">{{ $t('No results for') }} "{{ q }}"</p>
             </div>
           </div>
         </template>
@@ -259,7 +259,7 @@
             </template>
           </q-avatar>
         </div>
-        <div class="col text-weight-600">View Order</div>
+        <div class="col text-weight-600">{{ $t('View Order') }}</div>
         <div class="col text-right text-weight-bold">
           <template v-if="CartStore.data">
             {{ CartStore.data.data.subtotal.value }}

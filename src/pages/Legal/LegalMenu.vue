@@ -17,7 +17,7 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Legal</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Legal') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
   <q-page padding>

@@ -18,7 +18,7 @@
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
       <q-toolbar-title class="text-weight-bold"
-        >Search menu items</q-toolbar-title
+        >{{ $t('Search menu items') }}</q-toolbar-title
       >
     </q-toolbar>
   </q-header>
@@ -26,7 +26,7 @@
     <div class="col-12">
       <q-input
         v-model="q"
-        label="Search"
+        :label="$t('Search')"
         outlined
         lazy-rules
         :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -80,9 +80,9 @@
         <div class="flex flex-center" style="min-height: 89%">
           <div class="text-center full-width">
             <template v-if="hasFilter && !awaitingSearch">
-              <div class="text-h5 text-weight-bold">No items found</div>
+              <div class="text-h5 text-weight-bold">{{ $t('No items found') }}</div>
               <p class="text-grey font12">
-                Sorry, we couldn't find any results
+                {{ $t("Sorry, we couldn't find any results") }}
               </p>
             </template>
             <template v-else>
@@ -92,9 +92,9 @@
                 spinner-color="primary"
                 style="height: 80px; max-width: 80px"
               />
-              <div class="text-h5 text-weight-bold">Search Items</div>
+              <div class="text-h5 text-weight-bold">{{ $t('Search Items') }}</div>
               <p class="text-grey font12">
-                Search items from
+                {{ $t('Search items from') }}
                 <template v-if="MenuStore.data_info[slug]">
                   {{ MenuStore.data_info[slug].restaurant_name }}
                 </template>
@@ -132,7 +132,7 @@
       }"
     >
       <div class="row items-center justify-between fit">
-        <div class="text-weight-bold">Checkout</div>
+        <div class="text-weight-bold">{{ $t('Checkout') }}</div>
         <div class="text-weight-bold">
           {{ CartStore.cart_subtotal.value }}
         </div>

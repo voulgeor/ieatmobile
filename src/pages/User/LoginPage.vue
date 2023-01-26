@@ -17,18 +17,18 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Sigin In</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Sigin In') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
   <q-page padding class="flex flex-center">
     <div class="full-width q-pa-md">
-      <h5 class="text-weight-bold">Let's Sign You In</h5>
+      <h5 class="text-weight-bold">{{ $t("Let's Sign You In") }}</h5>
       <p class="text-weight-medium q-ma-none">
-        Enter your email and password for sigin.
+        {{ $t('Enter your email and password for sigin.') }}
       </p>
       <q-btn
         flat
-        label="Don't have an account?"
+        :label="$t('Dont have an account?')"
         no-caps
         class="q-pa-none text-weight-bold min-height q-mb-md"
         color="secondary"
@@ -38,7 +38,7 @@
       <q-form @submit="onSubmit">
         <q-input
           v-model="username"
-          label="Email"
+          :label="$t('Email')"
           outlined
           lazy-rules
           :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -46,7 +46,7 @@
           borderless
           class="input-borderless"
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
         />
 
@@ -58,10 +58,10 @@
           :label-color="$q.dark.mode ? 'grey300' : 'grey'"
           borderless
           class="input-borderless"
-          label="Password"
+          :label="$t('Password')"
           lazy-rules
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
         >
           <template v-slot:append>
@@ -81,14 +81,14 @@
             <q-checkbox
               dense
               v-model="remember"
-              label="Remember Me"
+              :label="$t('Remember Me')"
               color="primary"
             />
           </div>
           <div class="col text-right">
             <q-btn
               flat
-              label="Forgot Password?"
+              :label="$t('Forgot Password?')"
               no-caps
               class="q-pa-none text-weight-bold min-height q-mb-md"
               color="secondary"
@@ -101,7 +101,7 @@
         <q-btn
           :loading="loading"
           type="submit"
-          label="Sign In"
+          :label="$t('Sign In')"
           unelevated
           no-caps
           color="primary text-white"
@@ -111,7 +111,7 @@
         <div class="text-center q-pt-md q-pb-sm">
           <q-btn
             flat
-            label="Continue as guest"
+            :label="$t('Continue as guest')"
             no-caps
             class="q-pa-none text-weight-bold min-height"
             color="secondary"
@@ -144,7 +144,7 @@
           to="/user/login-phone"
         >
           <div class="row justify-between full-width">
-            <div class="col text-left text-white">Continue with Phone</div>
+            <div class="col text-left text-white">{{ $t('Continue with Phone') }}</div>
             <div class="col-1 text-right text-white">
               <q-icon name="las la-phone" />
             </div>

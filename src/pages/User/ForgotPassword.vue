@@ -16,23 +16,23 @@
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
       <q-toolbar-title class="text-weight-bold"
-        >Forgot Password</q-toolbar-title
+        >{{ $t('Forgot Password') }}</q-toolbar-title
       >
     </q-toolbar>
   </q-header>
   <q-page padding class="flex flex-center">
     <div class="full-width q-pa-md">
-      <h5 class="text-weight-bold">Let's Get your account back!</h5>
+      <h5 class="text-weight-bold">{{ $t("Let's Get your account back!") }}</h5>
 
       <p class="text-weight-medium q-ma-none" v-if="steps == 1">
-        Enter your email to receive instructions for resetting your password.
+        {{ $t('Enter your email to receive instructions for resetting your password.') }}
       </p>
       <p v-else class="rounded-borders border-green q-pa-sm">
         {{ data.msg }}
       </p>
       <q-btn
         flat
-        label="Already have an account?"
+        :label="$t('Already have an account?')"
         no-caps
         class="q-pa-none text-weight-bold min-height q-mb-md"
         color="secondary"
@@ -42,9 +42,9 @@
       <q-form @submit="onSubmit" v-if="steps == 1">
         <q-input
           v-model="email"
-          label="Email"
+          :label="$t('Email')"
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
           outlined
           lazy-rules
@@ -57,7 +57,7 @@
         <q-btn
           :loading="loading"
           type="submit"
-          label="Reset Password"
+          :label="$t('Reset Password')"
           unelevated
           no-caps
           color="primary text-white"
@@ -76,7 +76,7 @@
             color="myblue"
             no-caps
             class="font13 q-ma-none"
-            ><u>Resend reset email</u></q-btn
+            ><u>{{ $t('Resend reset email') }}</u></q-btn
           >
           <q-btn
             @click="steps = 1"
@@ -85,11 +85,11 @@
             color="secondary"
             no-caps
             class="font13 q-ma-none"
-            ><u>Enter email again</u></q-btn
+            ><u>{{ $t('Enter email again') }}</u></q-btn
           >
         </template>
         <p v-else class="font11 q-ma-none">
-          <u>Resend Code in {{ counter }}</u>
+          <u>{{ $t('Resend Code in') }} {{ counter }}</u>
         </p>
       </div>
     </div>

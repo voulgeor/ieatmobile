@@ -2,7 +2,7 @@
   <q-page padding>
      <q-input
       v-model="q"
-      label="Food, groceries, drinks etc"
+      :label="$t('Food, groceries, drinks etc')"
       rounded
       dense
       outlined
@@ -25,16 +25,16 @@
       align="justify"
       narrow-indicator
     >
-      <q-tab name="all" label="All" no-caps />
-      <q-tab name="restaurant" label="Restaurants" no-caps />
-      <q-tab name="food" label="Food" no-caps />
+      <q-tab name="all" :label="$t('All')" no-caps />
+      <q-tab name="restaurant" :label="$t('Restaurants')" no-caps />
+      <q-tab name="food" :label="$t('Food')" no-caps />
     </q-tabs>
      <q-separator />
 
      <q-tab-panels v-model="tab" animated transition-next="fade" transition-prev="fade">
        <q-tab-panel name="all" class="q-pl-none q-pr-none">
           <q-list dense class="">
-            <q-item-label header>Mexican</q-item-label>
+            <q-item-label header>{{ $t('Mexican') }}</q-item-label>
             <template v-for="i in 2" :key="i" >
             <q-item clickable v-ripple>
               <q-item-section avatar >
@@ -47,8 +47,8 @@
                 </q-avatar>
               </q-item-section>
               <q-item-section class="font12">
-                <div class="font12 text-weight-medium q-mb-xs">Chipotle Mexican Grill</div>
-                 <p class="font11 text-grey height-normal no-margin ellipsis-2-lines">Chinese, american, italian &bull; $$</p>
+                <div class="font12 text-weight-medium q-mb-xs">{{ $t('Chipotle Mexican Grill') }}</div>
+                 <p class="font11 text-grey height-normal no-margin ellipsis-2-lines">{{ $t('Chinese, american, italian') }} &bull; $$</p>
               </q-item-section>
             </q-item>
             <q-separator spaced inset="item" />

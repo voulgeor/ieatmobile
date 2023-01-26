@@ -18,19 +18,19 @@
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
       <q-toolbar-title class="text-weight-bold"
-        >Sigin With Phone</q-toolbar-title
+        >{{ $t('Sigin With Phone') }}</q-toolbar-title
       >
     </q-toolbar>
   </q-header>
   <q-page padding class="flex flex-center">
     <div class="full-width q-pa-md">
-      <h5 class="text-weight-bold">Let's Sign You In</h5>
+      <h5 class="text-weight-bold">{{ $t("Let's Sign You In") }}</h5>
       <p class="text-weight-medium q-ma-none">
-        Enter your phone number and password for sigin.
+        {{ $t('Enter your phone number and password for sigin.') }}
       </p>
       <q-btn
         flat
-        label="Don't have an account?"
+        :label="$t('Dont have an account?')"
         no-caps
         class="q-pa-none text-weight-bold min-height q-mb-md"
         color="secondary"
@@ -80,7 +80,7 @@
               <template v-slot:no-option>
                 <q-item>
                   <q-item-section class="text-grey">
-                    No results
+                    {{ $t('No results') }}
                   </q-item-section>
                 </q-item>
               </template>
@@ -96,7 +96,7 @@
           :label-color="$q.dark.mode ? 'grey300' : 'grey'"
           borderless
           class="input-borderless"
-          label="Password"
+          :label="$t('Password')"
           lazy-rules
           :rules="[
             (val) => (val && val.length > 0) || 'This field is required',
@@ -119,14 +119,14 @@
             <q-checkbox
               dense
               v-model="remember"
-              label="Remember Me"
+              :label="$t('Remember Me')"
               color="primary"
             />
           </div>
           <div class="col text-right">
             <q-btn
               flat
-              label="Forgot Password?"
+              :label="$t('Forgot Password?')"
               no-caps
               class="q-pa-none text-weight-bold min-height q-mb-md"
               color="secondary"
@@ -139,7 +139,7 @@
         <q-btn
           :loading="loading"
           type="submit"
-          label="Sign In"
+          :label="$t('Sign In')"
           unelevated
           no-caps
           color="primary text-white"
@@ -149,7 +149,7 @@
         <div class="text-center q-pa-sm">
           <q-btn
             flat
-            label="Continue as guest"
+            :label="$t('Continue as guest')"
             no-caps
             class="q-pa-none text-weight-bold min-height"
             color="secondary"

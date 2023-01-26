@@ -47,13 +47,13 @@
         <div class="q-pa-md">
           <template v-if="hasData">
             <h5 class="no-margin text-weight-bold q-pb-sm">
-              Search results for “{{ q }}” ({{ totalFound }})
+              {{ $t('Search results for') }} “{{ q }}” ({{ totalFound }})
             </h5>
           </template>
           <template v-else>
-            <h5 class="no-margin text-weight-bold">No results for “{{ q }}”</h5>
+            <h5 class="no-margin text-weight-bold">{{ $t('No results for') }} “{{ q }}”</h5>
             <p class="text-grey font13">
-              Sorry, no product matched for your search. Please try again.
+              {{ $t('Sorry, no product matched for your search. Please try again.') }}
             </p>
           </template>
         </div>
@@ -137,7 +137,7 @@
             </template>
           </q-avatar>
         </div>
-        <div class="col text-weight-600">View Order</div>
+        <div class="col text-weight-600">{{ $t('View Order') }}</div>
         <div class="col text-right text-weight-bold">
           <template v-if="CartStore.data">
             {{ CartStore.data.data.subtotal.value }}

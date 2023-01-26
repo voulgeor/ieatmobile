@@ -18,7 +18,7 @@
           class="q-mr-sm"
           :color="$q.dark.mode ? 'white' : 'dark'"
         />
-        <q-toolbar-title class="text-weight-bold">Orders</q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">{{ $t('Orders') }}</q-toolbar-title>
 
         <q-btn
           v-if="is_search"
@@ -50,7 +50,7 @@
         <div class="q-pl-md q-pr-md text-center q-pt-sm">
           <template v-if="is_search">
             <div v-if="hasData" class="text-h5 text-weight-bold">
-              Search result
+              {{ $t('Search result') }}
             </div>
           </template>
           <template v-else>
@@ -143,7 +143,7 @@
                     </div>
 
                     <div class="font13">
-                      Order ID<span
+                      {{ $t('Order ID') }}<span
                         class="text-secondary q-ml-sm text-weight-bold"
                         >#{{ order.order_id_raw }}</span
                       >
@@ -158,7 +158,7 @@
                       </div>
                     </div>
                     <div class="row justify-between items-center">
-                      <div class="font13">Payment</div>
+                      <div class="font13">{{ $t('Payment') }}</div>
                       <div
                         class="font12"
                         v-if="payment_list[order.payment_code]"
@@ -248,7 +248,7 @@
         <q-form @submit="onSubmit">
           <q-input
             v-model="q"
-            label="Search order"
+            :label="$t('Search order')"
             outlined
             lazy-rules
             :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -314,19 +314,19 @@ export default {
       items: {},
       orderTabs: [
         {
-          label: "All",
+          label: this.$t("All"),
           value: "all",
         },
         {
-          label: "Active",
+          label: this.$t("Active"),
           value: "active",
         },
         {
-          label: "Past Order",
+          label: this.$t("Past Order"),
           value: "past_order",
         },
         {
-          label: "Cancel Order",
+          label: this.$t("Cancel Order"),
           value: "cancel_order",
         },
       ],
@@ -346,23 +346,23 @@ export default {
     },
     NodataMessage() {
       if (this.is_search) {
-        return "No results found";
+        return this.$t("No results found");
       } else {
         if (this.order_tab == "all") {
-          return "You don't have any orders here!";
+          return this.$t( "You don't have any orders here!");
         } else {
-          return "No results";
+          return this.$t("No results");
         }
       }
     },
     NodataMessage2() {
       if (this.is_search) {
-        return "Sorry, we couldn't find any results";
+        return this.$t("Sorry, we couldn't find any results");
       } else {
         if (this.order_tab == "all") {
-          return "Let's change that";
+          return this.$t("Let's change that");
         } else {
-          return "no current order with this status";
+          return this.$t("no current order with this status");
         }
       }
     },

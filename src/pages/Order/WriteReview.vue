@@ -36,7 +36,7 @@
           'text-dark': !$q.dark.mode,
         }"
       >
-        Write Review
+        {{ $t('Write Review') }}
       </q-toolbar-title>
     </q-toolbar>
   </q-header>
@@ -54,10 +54,10 @@
         />
       </div>
 
-      <h6 class="text-weight-bold no-margin q-pb-sm">What did you like?</h6>
+      <h6 class="text-weight-bold no-margin q-pb-sm">{{ $t('What did you like?') }}</h6>
       <q-input
         v-model="tags_like"
-        label="Describe in few words"
+        :label="$t('Describe in few words')"
         outlined
         lazy-rules
         :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -69,11 +69,11 @@
         ]"
       />
 
-      <h6 class="text-weight-bold no-margin q-pb-sm">What did you not like?</h6>
+      <h6 class="text-weight-bold no-margin q-pb-sm">{{ $t('What did you not like?') }}</h6>
 
       <q-input
         v-model="tags_not_like"
-        label="Describe in few words"
+        :label="$t('Describe in few words')"
         outlined
         lazy-rules
         :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -85,10 +85,10 @@
         ]"
       />
 
-      <h6 class="text-weight-bold no-margin q-pb-sm">Add Photos</h6>
+      <h6 class="text-weight-bold no-margin q-pb-sm">{{ $t('Add Photos') }}</h6>
       <q-uploader
         :url="upload_api"
-        label="Drop files here to upload"
+        :label="$t('Drop files here to upload')"
         :color="$q.dark.mode ? 'grey600' : 'secondary'"
         :text-color="$q.dark.mode ? 'grey300' : 'white'"
         no-thumbnails
@@ -106,7 +106,7 @@
         @uploaded="afterUploaded"
       />
 
-      <h6 class="text-weight-bold no-margin q-pb-sm">Write your review</h6>
+      <h6 class="text-weight-bold no-margin q-pb-sm">{{ $t('Write your review') }}</h6>
 
       <q-input
         v-model="review_content"
@@ -117,7 +117,7 @@
         :label-color="$q.dark.mode ? 'grey300' : 'grey'"
         borderless
         class="input-borderless"
-        :rules="[(val) => (val && val.length > 0) || 'This field is required']"
+        :rules="[(val) => (val && val.length > 0) || $t('This field is required')]"
       />
 
       <div class="q-pb-sm">
@@ -125,7 +125,7 @@
           v-model="as_anonymous"
           size="sm"
           color="secondary"
-          label="post review as anonymous"
+          :label="$t('post review as anonymous')"
         />
       </div>
     </q-page>
@@ -140,7 +140,7 @@
         class="full-width"
         :loading="loading"
         style="letter-spacing: 2px"
-        label="Add Review"
+        :label="$t('Add Review')"
         size="lg"
       />
     </q-footer>
@@ -177,7 +177,7 @@ export default {
     onRejectedFiles(rejectedEntries) {
       APIinterface.notify(
         "negative",
-        `${rejectedEntries.length} file(s) did not pass validation constraints`,
+        `${rejectedEntries.length}` + this.$t('file(s) did not pass validation constraints'),
         "error_outline",
         this.$q
       );

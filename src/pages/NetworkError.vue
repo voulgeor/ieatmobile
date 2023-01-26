@@ -8,16 +8,16 @@
         style="max-width: 150px"
       />
       <q-space class="q-pa-sm"></q-space>
-      <div class="text-h5 text-weight-bold">We're having trouble loading</div>
+      <div class="text-h5 text-weight-bold">{{("We're having trouble loading")}}</div>
       <div class="text-grey font12">
-        xPlease check your Network connectivity and try again
+        {{ $t('Please check your Network connectivity and try again') }}
       </div>
       <q-space class="q-pa-sm"></q-space>
       <q-btn
         @click="CheckNetwork"
         outline
         style="color: dark"
-        label="Try Again"
+        :label="$t('Try Again')"
         no-caps
       />
     </div>

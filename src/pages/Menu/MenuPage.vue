@@ -85,10 +85,10 @@
               <span
                 v-if="StoreOpen.store_close"
                 class="font13 text-green text-weight-bold"
-                >Close</span
+                >{{ $t('Close') }}</span
               >
               <span v-else class="font13 text-weight-bold text-green"
-                >Open</span
+                >{{ $t('Open') }}</span
               >
             </template>
           </div>
@@ -97,7 +97,7 @@
               :color="$q.dark.mode ? 'grey600' : 'mygrey'"
               :text-color="$q.dark.mode ? 'grey300' : 'dark'"
               icon-right="las la-angle-right"
-              label="INFO"
+              :label="$t('INFO')"
               size="sm"
               unelevated
               no-caps
@@ -167,7 +167,7 @@
                     }"
                     >{{ MenuStore.data_info[slug].ratings }}</span
                   >
-                  +{{ MenuStore.data_info[slug].review_count }} ratings</span
+                  +{{ MenuStore.data_info[slug].review_count }} {{ $t('ratings') }}</span
                 >
                 <q-icon name="las la-angle-right" color="dark" />
               </q-chip>
@@ -204,9 +204,9 @@
                         DeliveryschedStore.transaction_type
                       ][MenuStore.data_charge_type[slug]].estimation
                     }}
-                    min
+                    {{ $t('min') }}
                   </template>
-                  <template v-else> N/A </template>
+                  <template v-else> {{ $t('N/A') }} </template>
                 </template>
               </span>
               <!-- <q-icon name="las la-angle-right" color="dark" /> -->
@@ -243,14 +243,14 @@
               }"
             >
               <div class="text-weight-medium text-h5 line-normal">
-                Store is close
+                {{ $t('Store is close') }}
               </div>
               <div class="font12">{{ StoreOpen.message }}</div>
               <q-btn
                 flat
                 :color="$q.dark.mode ? 'secondary' : 'blue'"
                 no-caps
-                label="Schedule Order"
+                :label="$t('Schedule Order')"
                 dense
                 size="sm"
                 @click="this.$refs.delivery_sched.showSched(true)"
@@ -278,7 +278,7 @@
               </div>
               <q-btn
                 @click="this.$refs.delivery_sched.showSched(true)"
-                label="Change"
+                :label="$t('Change')"
                 unelevated
                 flat
                 no-caps
@@ -299,7 +299,7 @@
             <div class="col">
               <q-input
                 v-model="q"
-                label="Search food and restaurants"
+                :label="$t('Search food and restaurants')"
                 outlined
                 lazy-rules
                 :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -328,7 +328,7 @@
                     !this.$refs.categories_modal.modal
                 "
               >
-                <div class="q-mr-xs">Categories</div>
+                <div class="q-mr-xs">{{ $t('Categories') }}</div>
                 <q-icon name="las la-angle-down" color="dark" size="14px" />
               </q-btn>
             </div>
@@ -559,7 +559,7 @@
         class="radius10 fit"
       >
         <div class="row items-center justify-between fit">
-          <div>View Order</div>
+          <div>{{ $t('View Order') }}</div>
           <div class="text-weight-bold">
             {{ CartStore.cart_subtotal.value }}
           </div>

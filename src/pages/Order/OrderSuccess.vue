@@ -20,7 +20,7 @@
           replace="true"
         />
         <q-toolbar-title class="text-weight-bold"
-          >Your Order Successfully!</q-toolbar-title
+          >{{ $t('Your Order Successfully!') }}</q-toolbar-title
         >
       </q-toolbar>
     </q-header>
@@ -40,9 +40,9 @@
       </template>
       <template v-else-if="!loading && !hasData">
         <div class="text-center full-width">
-          <div class="text-h5 text-weight-bold">No results data</div>
+          <div class="text-h5 text-weight-bold">{{ $t('No results data') }}</div>
           <p class="text-grey font12">
-            Sorry we cannot find what your looking for.
+            {{ $t('Sorry we cannot find what your looking for.') }}
           </p>
         </div>
       </template>
@@ -80,23 +80,23 @@
         </div>
         <div class="border-grey-top"></div>
 
-        <div class="text-h5 text-weight-bold">Order Details</div>
+        <div class="text-h5 text-weight-bold">{{ $t('Order Details') }}</div>
         <div class="row items-start justify-between">
-          <div class="text-grey">Order #</div>
+          <div class="text-grey">{{ $t('Order') }} #</div>
           <div class="text-weight-bold">{{ order_info.order_id }}</div>
         </div>
         <div class="row items-start justify-between">
-          <div class="text-grey">Order from</div>
+          <div class="text-grey">{{ $t('Order from') }}</div>
           <div class="text-weight-bold">{{ merchant.restaurant_name }}</div>
         </div>
         <div class="row items-start justify-between">
-          <div class="text-grey col-2">Delivery</div>
+          <div class="text-grey col-2">{{ $t('Delivery') }}</div>
           <div class="col-8 text-right">
             {{ order_info.delivery_address }}
           </div>
         </div>
         <div class="row items-start justify-between">
-          <div class="text-grey col text-weight-bold">Total</div>
+          <div class="text-grey col text-weight-bold">{{ $t('Total') }}</div>
           <div class="col text-right text-weight-bold">
             {{ order_info.pretty_total }}
           </div>
@@ -109,11 +109,11 @@
             <template v-slot:header>
               <q-item-section>
                 <q-item-label>
-                  <span class="text-weight-bold">View Details</span>
+                  <span class="text-weight-bold">{{ $t('View Details') }}</span>
                   <span class="text-grey font13 q-ml-sm"
                     >({{ order_items.length }}
-                    <template v-if="order_items.length > 2"> items </template>
-                    <template v-else> item </template>
+                    <template v-if="order_items.length > 2"> {{ $t('items') }} </template>
+                    <template v-else> {{ $t('item') }} </template>
                     )</span
                   >
                 </q-item-label>
@@ -142,12 +142,12 @@
 
                         <template v-if="items.item_changes == 'replacement'">
                           <div class="m-0 text-grey">
-                            Replace "{{ items.item_name_replace }}"
+                            {{ $t('Replace') }} "{{ items.item_name_replace }}"
                           </div>
                           <q-badge
                             color="primary"
                             text-color="white"
-                            label="Replacement"
+                            :label="$t('Replacement')"
                           />
                         </template></p
                     ></q-item-label>
@@ -219,7 +219,7 @@
             unelevated
             no-caps
             size="lg"
-            label="Track your order"
+            :label="$t('Track your order')"
             color="primary"
             text-color="white"
             class="full-width"
@@ -308,11 +308,11 @@ export default {
     },
     estimatedLabel(service_code) {
       if (service_code == "pickup") {
-        return "Estimated Pickup Time";
+        return this.$t("Estimated Pickup Time");
       } else if (service_code == "dinein") {
-        return "Estimated Dinein Time";
+        return this.$t("Estimated Dinein Time");
       }
-      return "Estimated Delivery Time";
+      return this.$t("Estimated Delivery Time");
     },
   },
 };

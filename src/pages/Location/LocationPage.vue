@@ -8,9 +8,9 @@
         style="height: 130px; max-width: 120px"
       />
 
-      <h5 class="text-weight-bold">Let's find best restaurant</h5>
+      <h5 class="text-weight-bold">{{ $t("Let's find best restaurant") }}</h5>
       <p class="text-weight-medium q-ma-none">
-        Set your location to started searching for restaurant in your area
+        {{ $t('Set your location to started searching for restaurant in your area') }}
       </p>
       <q-space class="q-pa-sm"></q-space>
       <q-btn
@@ -25,7 +25,7 @@
           <div class="q-mr-md">
             <q-icon name="las la-search-location" />
           </div>
-          <div>Share location</div>
+          <div>{{ $t('Share location') }}</div>
         </div>
       </q-btn>
       <q-btn
@@ -40,7 +40,7 @@
           <div class="q-mr-md">
             <q-icon name="las la-map-marker" />
           </div>
-          <div>Choose from map</div>
+          <div>{{ $t('Choose from map') }}</div>
         </div>
       </q-btn>
     </div>
@@ -153,7 +153,7 @@ export default {
           } else {
             APIinterface.notify(
               "dark",
-              "This location is not available",
+              this.$t("This location is not available"),
               "error",
               this.$q
             );
@@ -173,7 +173,7 @@ export default {
       if (APIinterface.empty(this.data.place_id)) {
         APIinterface.notify(
           "dark",
-          "Enter your location or select on the map",
+          this.$t("Enter your location or select on the map"),
           "error",
           this.$q
         );

@@ -16,7 +16,7 @@
           'text-white': $q.dark.mode,
           'text-dark': !$q.dark.mode,
         }"
-        >Search</q-toolbar-title
+        >{{ $t('Search') }}</q-toolbar-title
       >
       <NotiButton></NotiButton>
     </q-toolbar>
@@ -25,7 +25,7 @@
     <div class="q-pl-md q-pr-md">
       <q-input
         v-model="q"
-        label="Search food and restaurants"
+        :label="$t('Search food and restaurants')"
         outlined
         lazy-rules
         :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -64,7 +64,7 @@
       >
         <q-tab name="all" no-caps class="no-wrap q-pa-none">
           <q-btn
-            label="All"
+            :label="$t('All')"
             unelevated
             no-caps
             :color="tab == 'all' ? 'primary' : 'mygrey'"
@@ -74,7 +74,7 @@
         </q-tab>
         <q-tab name="restaurant" no-caps class="q-pa-none">
           <q-btn
-            label="Restaurants"
+            :label="$t('Restaurants')"
             unelevated
             no-caps
             :color="tab == 'restaurant' ? 'primary' : 'mygrey'"
@@ -84,7 +84,7 @@
         </q-tab>
         <q-tab name="food" no-caps class="q-pa-none">
           <q-btn
-            label="Food"
+            :label="$t('Food')"
             unelevated
             no-caps
             :color="tab == 'food' ? 'primary' : 'mygrey'"
@@ -173,15 +173,15 @@
       <template v-if="hasFilter && !awaitingSearch">
         <div class="min-height-inherit flex flex-center">
           <div class="full-width text-center q-pb-xl">
-            <div class="text-h5 text-weight-bold">No Restaurants found.</div>
-            <p class="text-grey font12">Sorry, we couldn't find any results</p>
+            <div class="text-h5 text-weight-bold">{{ $t('No Restaurants found.') }}</div>
+            <p class="text-grey font12">{{ $t("Sorry, we couldn't find any results") }}</p>
           </div>
         </div>
       </template>
       <template v-else>
         <div class="q-pl-md q-pr-md">
           <div class="row item-center justify-between">
-            <div class="font13 text-weight-bold text-h5">Recently Search</div>
+            <div class="font13 text-weight-bold text-h5">{{ $t('Recently Search') }}</div>
             <div v-if="hasHistory">
               <q-btn
                 @click="removeHistory"
@@ -215,9 +215,9 @@
                 spinner-color="primary"
                 style="height: 150px; max-width: 130px"
               />
-              <div class="text-h5 text-weight-bold">Search Restaurants</div>
+              <div class="text-h5 text-weight-bold">{{ $t('Search Restaurants') }}</div>
               <p class="text-grey font12">
-                Search your favourite cuisine and restaurants
+                {{ $t('Search your favourite cuisine and restaurants') }}
               </p>
             </div>
           </div>
@@ -252,7 +252,7 @@
       }"
     >
       <div class="row items-center justify-between fit">
-        <div class="text-weight-bold">Checkout</div>
+        <div class="text-weight-bold">{{ $t('Checkout') }}</div>
         <div class="text-weight-bold">
           {{ CartStore.cart_subtotal.value }}
         </div>

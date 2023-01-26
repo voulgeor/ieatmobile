@@ -85,7 +85,7 @@ export default defineComponent({
         if (this.close_count >= 2) {
           this.closeApp();
         } else {
-          APIinterface.showToast("Press BACK again to exit");
+          APIinterface.showToast(this.$t("Press BACK again to exit"));
           setTimeout(() => {
             this.close_count = 0;
           }, 1000);
@@ -97,7 +97,7 @@ export default defineComponent({
       this.checkNetwork();
       Network.addListener("networkStatusChange", (status) => {
         if (status.connected === false) {
-          APIinterface.showToast("No internet connection");
+          APIinterface.showToast(this.$t("No internet connection"));
           this.$router.push("/errornetwork");
         }
       });
@@ -132,7 +132,7 @@ export default defineComponent({
         } else {
           APIinterface.notify(
             "negative",
-            "Error on push permission",
+            this.$t("Error on push permission"),
             "warning",
             this.$q
           );
@@ -154,7 +154,7 @@ export default defineComponent({
         .catch((error) => {
           APIinterface.notify(
             "red-5",
-            "Error subscribing topics" + JSON.stringify(error),
+            this.$t("Error subscribing topics") + JSON.stringify(error),
             "warning",
             this.$q
           );
@@ -201,7 +201,7 @@ export default defineComponent({
         .catch((error) => {
           APIinterface.notify(
             "red-5",
-            "Error on registration" + JSON.stringify(error),
+            this.$t("Error on registration") + JSON.stringify(error),
             "warning",
             this.$q
           );

@@ -45,7 +45,7 @@
         text-color="grey"
         no-caps
         size="lg"
-        label="Skip"
+        :label="$t('Skip')"
         @click="home"
       ></q-btn>
 
@@ -53,7 +53,7 @@
         v-if="slide == 2"
         no-caps
         size="lg"
-        label="Get Started"
+        :label="$t('Get Started')"
         unelevated
         color="primary"
         text-color="white"
@@ -63,7 +63,7 @@
         v-else
         no-caps
         size="lg"
-        label="Next"
+        :label="$t('Next')"
         unelevated
         color="primary"
         text-color="white"
@@ -94,19 +94,19 @@ export default {
     const data = ref([
       {
         image: "onboarding-1.png",
-        title: "Discover Places near you",
+        title: this.$t("Discover Places near you"),
         sub_title:
-          "It's simple to find the food you like. enter your address and let us do the rest.",
+        this.$t("It's simple to find the food you like. enter your address and let us do the rest."),
       },
       {
         image: "onboarding-2.png",
-        title: "Order your customized items",
+        title: this.$t("Order your customized items"),
         sub_title:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id libero pretium",
       },
       {
         image: "onboarding-3.png",
-        title: "Faster delivery",
+        title: this.$t("Faster delivery"),
         sub_title:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id libero pretium",
       },

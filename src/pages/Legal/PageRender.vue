@@ -35,9 +35,9 @@
       </template>
       <template v-if="!DataStore.hasPage && !DataStore.loading_page">
         <div class="text-center full-width">
-          <div class="text-h5 text-weight-bold">No results</div>
+          <div class="text-h5 text-weight-bold">{{ $t('No results') }}</div>
           <p class="text-grey font12">
-            This page is not available please come back later.
+            {{ $t('This page is not available please come back later.') }}
           </p>
         </div>
       </template>

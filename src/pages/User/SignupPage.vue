@@ -17,18 +17,18 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">Sigin Up</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Sigin Up') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
   <q-page padding class="flex flex-center">
     <div class="full-width q-pa-md">
-      <h5 class="text-weight-bold">Create Account</h5>
+      <h5 class="text-weight-bold">{{ $t('Create Account') }}</h5>
       <p class="text-weight-medium q-ma-none">
-        Enter your name, email and password for signup.
+        {{ $t('Enter your name, email and password for signup.') }}
       </p>
       <q-btn
         flat
-        label="Already have an account?"
+        :label="$t('Already have an account?')"
         no-caps
         class="q-pa-none text-weight-bold min-height q-mb-md"
         color="secondary"
@@ -38,7 +38,7 @@
       <q-form @submit="onSubmit">
         <q-input
           v-model="first_name"
-          label="First name"
+          :label="$t('First name')"
           outlined
           lazy-rules
           :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -46,13 +46,13 @@
           borderless
           class="input-borderless"
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
         />
 
         <q-input
           v-model="last_name"
-          label="Last name"
+          :label="$t('Last name')"
           outlined
           lazy-rules
           :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -60,13 +60,13 @@
           borderless
           class="input-borderless"
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
         />
 
         <q-input
           v-model="email_address"
-          label="Email address"
+          :label="$t('Email address')"
           outlined
           lazy-rules
           :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -74,7 +74,7 @@
           borderless
           class="input-borderless"
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
         />
 
@@ -88,7 +88,7 @@
           borderless
           class="input-borderless"
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
         >
           <template v-slot:prepend>
@@ -120,7 +120,7 @@
               <template v-slot:no-option>
                 <q-item>
                   <q-item-section class="text-grey">
-                    No results
+                    {{ $t('No results') }}
                   </q-item-section>
                 </q-item>
               </template>
@@ -131,7 +131,7 @@
         <q-input
           v-model="password"
           :type="field_type"
-          label="Password"
+          :label="$t('Password')"
           outlined
           lazy-rules
           :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -139,7 +139,7 @@
           borderless
           class="input-borderless"
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
         >
           <template v-slot:append>
@@ -157,7 +157,7 @@
         <q-input
           :type="field_type1"
           v-model="cpassword"
-          label="Confirm Password"
+          :label="$t('Confirm Password')"
           outlined
           lazy-rules
           :bg-color="$q.dark.mode ? 'grey600' : 'input'"
@@ -165,7 +165,7 @@
           borderless
           class="input-borderless"
           :rules="[
-            (val) => (val && val.length > 0) || 'This field is required',
+            (val) => (val && val.length > 0) || $t('This field is required'),
           ]"
         >
           <template v-slot:append>
@@ -183,7 +183,7 @@
         <q-btn
           :loading="loading"
           type="submit"
-          label="Sign Up"
+          :label="$t('Sign Up')"
           unelevated
           no-caps
           color="primary text-white"

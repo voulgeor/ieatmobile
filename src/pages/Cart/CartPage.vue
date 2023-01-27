@@ -119,7 +119,7 @@
             title="Most Order Items"
             :merchant_id="CartStore.cart_merchant.merchant_id"
           />
-          <template v-if="CartStore.points_enabled">
+          <template v-if="CartStore.points_enabled && CartStore.mt_disabled_pts!=0">
             <div
               class="q-pa-md font20 text-center"
               style="bottom: 51px"

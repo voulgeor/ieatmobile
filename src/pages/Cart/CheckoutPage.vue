@@ -289,7 +289,7 @@
         <div class="q-pl-md q-pr-md q-mb-sm font13 text-weight-bold q-pt-xs">
           {{ $t('Discount') }}
         </div>
-        <template v-if="CartStore.points_enabled">
+        <template v-if="CartStore.points_enabled && CartStore.mt_disabled_pts!=0">
             <div
               class="q-pa-md font20 text-center"
               style="bottom: 51px"

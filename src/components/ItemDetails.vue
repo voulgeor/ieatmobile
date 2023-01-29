@@ -134,7 +134,7 @@
               :key="index"
               :color="button.color"
               :text-color="button.text_color"
-              :label="button.label"
+              :label="$t(button.label)"
               @click="setActive(button, index)"
             ></q-btn>
           </q-btn-group>
@@ -933,7 +933,7 @@ export default {
           $message = $message.replace("{{restaurant_name}}", $cartMerchantName);
           this.$q
             .dialog({
-              title: "Create new order?",
+              title: this.$t("Create new order?"),
               message: $message,
               persistent: true,
               position: "standard",
@@ -945,7 +945,7 @@ export default {
                 rounded: false,
                 "text-color": "white",
                 size: "md",
-                label: "New order",
+                label: this.$t("New order"),
                 "no-caps": true,
                 class: "radius8",
               },
@@ -955,7 +955,7 @@ export default {
                 color: "mygrey",
                 "text-color": "black",
                 size: "md",
-                label: "Cancel",
+                label: this.$t("Cancel"),
                 "no-caps": true,
                 class: "radius8",
               },

@@ -32,7 +32,7 @@
       <q-separator spaced />
       <q-card-actions>
         <q-btn
-          :label="label.submit"
+          :label="$t(label.submit)"
           :loading="loading"
           @click="onSubmit()"
           unelevated

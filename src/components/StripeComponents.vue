@@ -56,7 +56,7 @@
         <q-card-actions>
           <q-btn
             type="submit"
-            :label="label.submit"
+            :label="$t(label.submit)"
             :loading="loading"
             unelevated
             no-caps

@@ -243,7 +243,7 @@
               <q-btn
                 v-if="lang.code == this.DataStorePersisted.app_language"
                 no-caps
-                :label="lang.title"
+                :label="$t(lang.title)"
                 unelevated
                 text-color="dark"
                 icon-right="las la-angle-right"
@@ -503,7 +503,7 @@ export default {
     inviteFriends() {
       if (this.$q.capacitor) {
         Share.share({
-          title: this.DataStore.invite_friend_settings.title,
+          title: this.$t(this.DataStore.invite_friend_settings.title),
           text: this.DataStore.invite_friend_settings.text,
           url: this.DataStore.invite_friend_settings.url,
           dialogTitle: "",
@@ -518,7 +518,7 @@ export default {
         if (navigator.share) {
           navigator
             .share({
-              title: this.DataStore.invite_friend_settings.title,
+              title: this.$t(this.DataStore.invite_friend_settings.title),
               text: this.DataStore.invite_friend_settings.text,
               url: this.DataStore.invite_friend_settings.url,
             })

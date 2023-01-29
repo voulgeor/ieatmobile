@@ -60,7 +60,7 @@
                 color="primary"
                 text-color="dark"
                 dense
-                label="Adjust Pin"
+                :label="$t('Adjust Pin')"
                 no-caps
                 class="q-pl-sm q-pr-sm"
               />

@@ -73,7 +73,7 @@ const APIinterface = {
 
   dialog(title, message, $q) {
     $q.dialog({
-      title: title,
+      title: this.$t(title),
       message: message,
       transitionShow: "fade",
       transitionHide: "fade",
@@ -83,7 +83,7 @@ const APIinterface = {
         rounded: false,
         "text-color": "white",
         size: "md",
-        label: "Okay",
+        label: this.$t("Okay"),
         "no-caps": true,
       },
     })

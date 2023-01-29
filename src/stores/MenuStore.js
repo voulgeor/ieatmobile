@@ -6,6 +6,8 @@ export const useMenuStore = defineStore("menu", {
     data_info: {},
     data_share: [],
     open_at: {},
+    open: {},
+    end: {},
     opening_hours: {},
     money_config: [],
     maps_config: [],
@@ -46,6 +48,8 @@ export const useMenuStore = defineStore("menu", {
           this.data_distance[merchantSlug] = data.details.distance;
           this.opening_hours[merchantSlug] = data.details.opening_hours;
           this.open_at[merchantSlug] = data.details.open_at;
+          this.open[merchantSlug] = data.details.open;
+          this.end[merchantSlug] = data.details.end;
           this.data_gallery[merchantSlug] = data.details.gallery;
           this.money_config = data.details.config;
 

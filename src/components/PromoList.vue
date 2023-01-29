@@ -86,7 +86,7 @@
                 flat
                 :color="$q.dark.mode ? 'secondary' : 'blue'"
                 no-caps
-                label="Use now"
+                :label="$t('Use now')"
                 dense
                 size="md"
               />

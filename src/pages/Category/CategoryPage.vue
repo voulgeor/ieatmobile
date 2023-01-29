@@ -4,7 +4,7 @@
       <q-btn to="/home" flat round dense icon="arrow_back" color="dark" />
 
       <q-input
-        label="Search category"
+        :label="$t('Search category')"
         dense
         outlined
         color="grey"

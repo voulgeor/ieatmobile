@@ -66,7 +66,7 @@
           outlined
           class="full-width"
           color="warning"
-          label="Your review helps us to make better choices"
+          :label="$t('Your review helps us to make better choices')"
           :rules="[ val => val && val.length > 0 || $t('This field is required')]"
           />
 

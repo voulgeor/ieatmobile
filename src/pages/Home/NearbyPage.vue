@@ -18,7 +18,7 @@
 
     <q-input
     v-model="q"
-    label="Search food and restaurants"
+    :label="$t('Search food and restaurants')"
     dense
     outlined
     color="dark"

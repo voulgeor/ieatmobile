@@ -34,7 +34,7 @@
             flat
             dense
             color="primary"
-            label="Reset"
+            :label="$t('Reset')"
             no-caps
           />
         </div>
@@ -101,7 +101,7 @@
             :key="index"
             :color="button.color"
             :text-color="button.text_color"
-            :label="button.label"
+            :label="$t(button.label)"
             @click="setActive(button, index)"
           ></q-btn>
         </q-btn-group>
@@ -116,7 +116,7 @@
             color="primary"
             unelevated
             text-color="white"
-            label="Apply"
+            :label="$t('Apply')"
             no-caps
             class="full-width"
             size="lg"
@@ -236,7 +236,7 @@ export default {
       if (Object.keys(this.cuisine_data).length > 0) {
         Object.entries(this.cuisine_data).forEach(([key, items]) => {
           this.cuisine.push({
-            label: items.cuisine_name,
+            label: this.$t(items.cuisine_name),
             value: items.cuisine_id,
             color: this.$q.dark.mode ? "grey600" : "mygrey",
             text_color: this.$q.dark.mode ? "grey300" : "dark",

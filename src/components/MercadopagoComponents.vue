@@ -131,7 +131,7 @@
         <q-card-actions>
           <q-btn
             type="submit"
-            :label="label.submit"
+            :label="$t(label.submit)"
             :loading="loading"
             unelevated
             no-caps
@@ -193,7 +193,7 @@
         <q-card-actions>
           <q-btn
             type="submit"
-            :label="label.submit_form"
+            :label="$(label.submit_form)"
             :loading="loading"
             color="primary"
             text-color="white"
@@ -280,7 +280,7 @@ export default {
         .then((result) => {
           Object.entries(result).forEach(([key, items]) => {
             this.identification_type_list.push({
-              label: items.name,
+              label: this.$t(items.name),
               value: items.id,
             });
           });

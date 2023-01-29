@@ -168,7 +168,7 @@
                 flat
                 :color="$q.dark.mode ? 'secondary' : 'blue'"
                 no-caps
-                label="Change"
+                :label="$t('Change')"
                 dense
                 size="md"
               />

@@ -17,7 +17,7 @@
         class="q-mr-sm"
         :color="$q.dark.mode ? 'white' : 'dark'"
       />
-      <q-toolbar-title class="text-weight-bold">{{ $t(Info) }}</q-toolbar-title>
+      <q-toolbar-title class="text-weight-bold">{{ $t('Info') }}</q-toolbar-title>
     </q-toolbar>
   </q-header>
   <q-page class="q-pl-md q-pr-md">
@@ -107,7 +107,7 @@
           <q-expansion-item
             expand-separator
             :label="$t('Today')"
-            :caption="MenuStore.open_at[slug]"
+            :caption="$t('Open') + ' ' + MenuStore.open[slug] + ' - ' +  MenuStore.end[slug]"
           >
             <q-card
               :class="{
@@ -123,7 +123,7 @@
                     style="padding: 0px !important; min-height: 0"
                   >
                     <q-item-section class="text-capitalize">{{
-                      items.day
+                      $t(items.day)
                     }}</q-item-section>
                     <q-item-section caption
                       >{{ items.start_time }} - {{ items.end_time }}

@@ -61,7 +61,7 @@
                   no-caps
                   class="radius8 fit"
                   size="md"
-                  :label="items.label"
+                  :label="$t(items.label)"
                   @click="order_tab = items.value"
                   :color="
                     order_tab == items.value

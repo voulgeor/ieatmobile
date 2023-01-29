@@ -40,7 +40,7 @@
           </p>
           <q-btn
             @click="requestData"
-            label="Request Archive"
+            :label="$t('Request Archive')"
             size="md"
             flat
             dense

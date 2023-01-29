@@ -15,7 +15,7 @@
       <q-input
         v-model="q"
         ref="items"
-        label="Search menu"
+        :label="$t('Search menu')"
         dense
         outlined
         color="grey"

@@ -131,7 +131,7 @@
               'bg-white text-black': !$q.dark.mode,
             }"
           >
-            Or
+            {{ $t('Or') }}
           </div>
         </div>
 

@@ -11,7 +11,7 @@
       {{ $t("We're sorry. We were not able to find a match with your filters.") }}
     </p>
     <q-btn
-      label="Filter again"
+      :label="$t('Filter again')"
       unelevated
       no-caps
       :color="$q.dark.mode ? 'grey600' : 'mygrey'"

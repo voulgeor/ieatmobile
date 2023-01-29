@@ -39,7 +39,7 @@
         <!-- <q-route-tab
           name="orders"
           icon="las la-file-alt"
-          label="Orders"
+          :label="$t('Orders')"
           no-caps
           to="/orders"
         /> -->

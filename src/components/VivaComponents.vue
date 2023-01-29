@@ -21,7 +21,7 @@
           color="warning"
           text-color="black" no-caps
           class="full-width q-mb-md"
-          :label="label.submit"
+          :label="$t(label.submit)"
           size="17px"
           :loading="loading"
           @click="onSubmit()"

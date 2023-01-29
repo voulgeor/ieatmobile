@@ -35,7 +35,7 @@
                 'text-dark': !$q.dark.mode,
               }"
             >
-              {{ PlaceStore.address }}
+              {{ $t(PlaceStore.address) }}
             </div>
           </div>
         </q-btn>

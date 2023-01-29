@@ -394,7 +394,7 @@
       class="bg-grey-1 row q-gutter-md q-pl-md q-pr-md q-pb-sm"
     >
       <q-btn
-        :label="order_label.buy_again"
+        :label="$t(order_label.buy_again)"
         unelevated
         no-caps
         color="mygrey"
@@ -408,7 +408,7 @@
           path: '/account/trackorder',
           query: { order_uuid: this.order_uuid, back_url: 1 },
         }"
-        :label="order_label.track"
+        :label="$t(order_label.track)"
         unelevated
         no-caps
         color="primary text-white"

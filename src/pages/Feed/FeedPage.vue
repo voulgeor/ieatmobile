@@ -20,13 +20,13 @@
         />
         <q-toolbar-title class="text-weight-bold">
           <template v-if="DataStore.featured_data[this.featured_id]">
-            {{ DataStore.featured_data[this.featured_id] }}
+            {{ $t(DataStore.featured_data[this.featured_id]) }}
           </template>
           <template v-else-if="cuisine_name">
-            {{ cuisine_name }}
+            {{ $t(cuisine_name) }}
           </template>
           <template v-else-if="page_title">
-            {{ page_title }}
+            {{ $t(page_title) }}
           </template>
         </q-toolbar-title>
       </q-toolbar>

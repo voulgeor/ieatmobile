@@ -30,9 +30,9 @@
       unelevated
       class="rounded-group2 text-weight-bold line-1"
       :options="[
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'Three', value: 'three' },
+        { label: this.$t('One'), value: 'one' },
+        { label: this.$t('Two'), value: 'two' },
+        { label: this.$t('Three'), value: 'three' },
       ]"
     />
 
@@ -48,9 +48,9 @@
       unelevated
       class="rounded-group2 text-weight-bold line-1"
       :options="[
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'Three', value: 'three' },
+        { label: this.$t('One'), value: 'one' },
+        { label: this.$t('Two'), value: 'two' },
+        { label: this.$t('Three'), value: 'three' },
       ]"
     />
 

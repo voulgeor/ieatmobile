@@ -57,7 +57,7 @@
           text-color="white"
           no-caps
           class="full-width"
-          label="Confirm"
+          :label="$t('Confirm')"
           size="lg"
           @click="saveTransactionInfo"
           :loading="schedStore.loading"

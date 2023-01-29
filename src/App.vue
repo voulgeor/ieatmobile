@@ -13,6 +13,7 @@ import { usePushStore } from "stores/PushStore";
 import auth from "./api/auth";
 import { useDataStore } from "stores/DataStore";
 import { useDataStorePersisted } from "stores/DataStorePersisted";
+import { api } from "boot/axios";
 import { App } from "@capacitor/app";
 import { Network } from "@capacitor/network";
 import { Browser } from '@capacitor/browser';
@@ -68,6 +69,13 @@ export default defineComponent({
       //   }
       }
     });
+
+    let savedLangcode = APIinterface.getStorage("language_code");
+    if (!APIinterface.empty(savedLangcode)) {
+      this.$i18n.locale = savedLangcode;
+  }
+    api.defaults.params = {};
+    api.defaults.params["language"] = this.$i18n.locale;
 
     App.addListener('appRestoredResult', (data) => {
       console.log('Restored state:', data);

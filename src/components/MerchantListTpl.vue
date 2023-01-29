@@ -153,7 +153,7 @@
             'text-dark': !$q.dark.mode,
           }"
         >
-          {{ items.distance_pretty }}
+        {{ items.distance_new }} {{ $t(items.unit) }} {{ $t('away') }}
         </span>
       </div>
     </div>

@@ -116,7 +116,7 @@
           <SimilarItems
             v-if="CartStore.cart_merchant.merchant_id"
             ref="similar_items"
-            title="Most Order Items"
+            :title="$t('Most Order Items')"
             :merchant_id="CartStore.cart_merchant.merchant_id"
           />
           <template v-if="CartStore.points_enabled && CartStore.mt_disabled_pts!=0">

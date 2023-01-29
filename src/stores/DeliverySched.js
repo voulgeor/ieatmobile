@@ -41,7 +41,7 @@ export const useDeliveryschedStore = defineStore("deliverysched", {
           if (Object.keys(data.details.data).length > 0) {
             Object.entries(data.details.data).forEach(([key, items]) => {
               this.transaction_list.push({
-                label: items.service_name,
+                label: this.$t(items.service_name),
                 value: items.service_code,
               });
             });
@@ -51,7 +51,7 @@ export const useDeliveryschedStore = defineStore("deliverysched", {
             Object.entries(data.details.delivery_option).forEach(
               ([key, items]) => {
                 this.delivery_options.push({
-                  label: items.name,
+                  label: this.$t(items.name),
                   value: items.value,
                 });
               }
@@ -101,7 +101,7 @@ export const useDeliveryschedStore = defineStore("deliverysched", {
             Object.entries(data.details.opening_hours.dates).forEach(
               ([key, items]) => {
                 this.delivery_date_list.push({
-                  label: items.name,
+                  label: this.$t(items.name),
                   value: items.value,
                 });
               }
@@ -118,7 +118,7 @@ export const useDeliveryschedStore = defineStore("deliverysched", {
           if (!APIinterface.empty($openingHours[this.delivery_date])) {
             const keystime = $openingHours[this.delivery_date][0];
             this.delivery_time = {
-              label: keystime.pretty_time,
+              label: this.$t(keystime.pretty_time),
               value: keystime.end_time,
               start_time: keystime.start_time,
               end_time: keystime.end_time,
@@ -147,7 +147,7 @@ export const useDeliveryschedStore = defineStore("deliverysched", {
       if (!APIinterface.empty($openingHours[dateSelected])) {
         Object.entries($openingHours[dateSelected]).forEach(([key, items]) => {
           this.delivery_time_list.push({
-            label: items.pretty_time,
+            label: this.$t(items.pretty_time),
             value: items.end_time,
             start_time: items.start_time,
             end_time: items.end_time,

@@ -32,7 +32,7 @@
           <ShareComponents
             v-if="MenuStore.data_info[slug].share"
             ref="share"
-            :title="MenuStore.data_info[slug].share.title"
+            :title="$t(MenuStore.data_info[slug].share.title)"
             :text="MenuStore.data_info[slug].share.text"
             :url="MenuStore.data_info[slug].share.url"
             :dialogTitle="MenuStore.data_info[slug].share.dialogTitle"
@@ -226,7 +226,7 @@
                 <span
                   class="text-weight-medium text-dark font12 text-grey ellipsis fit"
                 >
-                  {{ MenuStore.data_distance[slug].label }}</span
+                {{ MenuStore.data_distance[slug].value }} {{ $t(MenuStore.data_distance[slug].unit) }} {{ $t('away') }}</span
                 >
               </q-chip>
             </div>

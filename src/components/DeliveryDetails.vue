@@ -29,7 +29,7 @@
                 @click="ChangeAddress"
                 flat
                 color="secondary"
-                label="Change"
+                :label="$t('Change')"
                 no-caps
                 dense
               />

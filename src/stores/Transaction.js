@@ -32,7 +32,7 @@ export const useTransactionStore = defineStore("transaction", {
             Object.entries(data.details.services_list).forEach(
               ([key, items]) => {
                 this.transaction_list.push({
-                  label: items.service_name,
+                  label: this.$t(items.service_name),
                   value: items.service_code,
                 });
               }

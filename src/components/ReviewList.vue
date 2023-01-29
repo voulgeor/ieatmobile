@@ -76,7 +76,7 @@
 
     <div class="text-center">
       <q-btn v-if="show_next_page"
-      label="Load more"
+      :label="$t('Load more')"
       unelevated color="primary"
       text-color="dark"
       no-caps

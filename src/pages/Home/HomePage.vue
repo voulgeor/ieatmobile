@@ -98,7 +98,7 @@
               <q-btn
                 flat
                 :color="$q.dark.mode ? 'grey300' : 'secondary'"
-                label="Show All"
+                :label="$t('Show All')"
                 no-caps
                 class="text-weight-600"
                 dense
@@ -214,7 +214,7 @@
             v-for="(tabname, tabkey) in DataStore.featured_data"
             :key="tabname"
             :name="tabkey"
-            :label="tabname"
+            :label="$t(tabname)"
             content-class="text-weight-500 "
           />
         </q-tabs>
@@ -231,7 +231,7 @@
             v-for="(tabname, tabkey) in DataStore.featured_data"
             :key="tabname"
             :name="tabkey"
-            :label="tabname"
+            :label="$t(tabname)"
             class="q-pa-sm"
           >
             <MerchantList

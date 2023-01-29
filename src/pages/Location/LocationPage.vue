@@ -49,7 +49,7 @@
       :showing="loading"
       color="primary"
       size="md"
-      :label="loading_label"
+      :label="$t(loading_label)"
     />
   </q-page>
   <DeliverySched ref="delivery_sched" @after-savetrans="afterSavetrans" />

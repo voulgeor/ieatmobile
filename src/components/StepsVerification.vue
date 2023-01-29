@@ -46,7 +46,7 @@
             unelevated
             no-caps
             class="full-width q-mb-md"
-            label="Submit"
+            :label="$t('Submit')"
             size="lg"
             :disabled="hasCode"
             :loading="loading"

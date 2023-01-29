@@ -96,6 +96,8 @@
 <script>
 import { useDataStore } from "stores/DataStore";
 import { useDataStorePersisted } from "stores/DataStorePersisted";
+import APIinterface from "src/api/APIinterface";
+import { api } from "boot/axios";
 import { useI18n } from 'vue-i18n'
 export default {
   name: "LanguagePage",
@@ -118,6 +120,10 @@ export default {
     setLanguage() {
       this.DataStorePersisted.app_language = this.language;
       this.locale = this.language;
+      this.$i18n.locale = this.language;
+      APIinterface.setStorage("language_code", this.language);
+      api.defaults.params = {};
+      api.defaults.params["language"] = this.$i18n.locale;
       this.$router.push("/account-menu");
     },
     refresh(done) {

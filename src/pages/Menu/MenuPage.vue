@@ -435,7 +435,7 @@
                       </div>
                       <!-- PRICE -->
                       <div>
-                        <template v-if="(MenuStore.options[slug].points_enabled==1 && MenuStore.options_merchant[slug].mt_disabled_pts!=2)">
+                        <template v-if="(MenuStore.options[slug].points_enabled==1 && MenuStore.options_merchant[slug].mt_disabled_pts!=0)">
                             <template v-if="(MenuStore.options[slug].points_disabled_merchant_settings!=1)">
                                 <template v-if="(MenuStore.options[slug].mt_points_based_earn==1)">
                                     <template v-if="(MenuStore.data_items[slug][items_id].points_earned>0)">

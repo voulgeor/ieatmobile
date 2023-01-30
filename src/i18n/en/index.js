@@ -65,6 +65,9 @@ export default {
   'Sorry, no product matched for your search. Please try again.': 'Sorry, no product matched for your search. Please try again.',
   'Legal': 'Legal',
   'Confirm Location': 'Confirm Location',
+  'Add Address': 'Add Address',
+  'No payment Selected': 'No payment Selected',
+  'Enter your location': 'Enter your location',
   'Enter your location or select on the map': 'Enter your location or select on the map',
   "Let's find best restaurant":  "Let's find best restaurant",
   "You don't have any orders here!": "You don't have any orders here!",
@@ -350,5 +353,7 @@ export default {
   'Sigin Up': 'Sigin Up',
   'Enter your phone number and password for sigin.': 'Enter your phone number and password for sigin.',
   'Enter your name, email and password for signup.': 'Enter your name, email and password for signup.',
+  'Share location': 'Share location',
+  'Choose from map': 'Choose from map',
 
 }

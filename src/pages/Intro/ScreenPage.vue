@@ -26,10 +26,10 @@
           />
           <div class="text-center fit q-pt-lg">
             <div class="font16 text-weight-bold q-mb-md line-normal">
-              {{ items.title }}
+              {{ $t(items.title) }}
             </div>
             <div class="text-weight-medium font14 text-grey line-normal">
-              {{ items.sub_title }}
+              {{ $t(items.sub_title) }}
             </div>
           </div>
         </swiper-slide>
@@ -94,19 +94,19 @@ export default {
     const data = ref([
       {
         image: "onboarding-1.png",
-        title: this.$t("Discover Places near you"),
+        title: "Discover Places near you",
         sub_title:
-        this.$t("It's simple to find the food you like. enter your address and let us do the rest."),
+        "It's simple to find the food you like. enter your address and let us do the rest.",
       },
       {
         image: "onboarding-2.png",
-        title: this.$t("Order your customized items"),
+        title: "Order your customized items",
         sub_title:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id libero pretium",
       },
       {
         image: "onboarding-3.png",
-        title: this.$t("Faster delivery"),
+        title: "Faster delivery",
         sub_title:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id libero pretium",
       },

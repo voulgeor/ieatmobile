@@ -115,7 +115,7 @@
         </div>
 
         <q-btn
-          :label="('Confirm Location')"
+          :label="$t('Confirm Location')"
           @click="setLocation"
           :disable="hasAddress || geocoder_loading"
           :loading="loading"
@@ -148,7 +148,7 @@
         <SearchAddress
           ref="search_address"
           @after-selectaddress="afterSelectaddress"
-          :placeholder="('Enter your location')"
+          :placeholder="$t('Enter your location')"
         />
       </q-card-section>
     </q-card>
@@ -324,7 +324,7 @@ export default {
       if (APIinterface.empty(this.data.place_id)) {
         APIinterface.notify(
           "dark",
-          this.$t("Enter your location or select on the map"),
+          $t("Enter your location or select on the map"),
           "error",
           this.$q
         );

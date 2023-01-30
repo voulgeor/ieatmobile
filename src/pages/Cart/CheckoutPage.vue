@@ -250,9 +250,9 @@
             expand-separator
             :label="$t('Order Details')"
             :caption="
-              CartStore.items_count > 0
-                ? `${CartStore.items_count} items`
-                : `${CartStore.items_count} item`
+              CartStore.items_count > 1
+                ? CartStore.items_count + ' ' + $t('items')
+                : CartStore.items_count + ' ' + $t('item')
             "
             class="text-weight-bold"
           >
@@ -897,8 +897,9 @@ export default {
         include_utensils: this.include_utensils,
         payment_uuid: this.payment_uuid,
       };
-      this.loading = true;
-      APIinterface.PlaceOrder($params)
+      if (this.payment_uuid!="") {
+        this.loading = true;
+        APIinterface.PlaceOrder($params)
         .then((data) => {
           if (data.details.payment_instructions.method === "offline") {
             this.CartStore.getCart(true, this.payload);
@@ -916,6 +917,9 @@ export default {
         .then((data) => {
           this.loading = false;
         });
+      }else{
+          APIinterface.notify("dark", this.$t('No payment Selected'), "error", this.$q);
+      }
     },
     doPayment(data) {
       this.$refs[data.payment_code].PaymentRender(data);

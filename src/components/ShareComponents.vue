@@ -34,7 +34,7 @@ export default {
     share() {
       Share.share({
         title: this.$t(this.title),
-        text: this.text,
+        text: this.$t(this.text),
         url: this.url,
         dialogTitle: this.dialogTitle,
       })

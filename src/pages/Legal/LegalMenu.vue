@@ -22,7 +22,8 @@
   </q-header>
   <q-page padding>
     <q-list separator>
-      <template v-for="(items, index) in DataStore.legal_menu" :key="items">
+      <template v-for="(items, index) in this.pages_data" :key="items">
+      <!-- <template v-for="(items2, index2) in DataStore.pages_data[index]" :key="items2"> -->
         <q-item
           clickable
           :to="{
@@ -37,6 +38,7 @@
           </q-item-section>
         </q-item>
       </template>
+      <!-- </template> -->
     </q-list>
   </q-page>
 </template>
@@ -45,9 +47,20 @@
 import { useDataStore } from "stores/DataStore";
 export default {
   name: "LegalMenu",
+  data() {
+    return {
+      pages_data:[],
+    }
+  },
   setup() {
     const DataStore = useDataStore();
     return { DataStore };
+  },
+  created() {
+    this.DataStore.loading_page = true;
+    this.DataStore.getPages();
+    this.pages_data = this.DataStore.pages_data
+    console.log(this.pages_data)
   },
 };
 </script>

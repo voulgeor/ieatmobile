@@ -44,7 +44,7 @@
               ].service_name
             }},
             <span class="text-capitalize">{{
-              CartStore.transaction_info.whento_deliver
+              $t(CartStore.transaction_info.whento_deliver)
             }}</span>
           </div>
 
@@ -61,7 +61,7 @@
                 CartStore.transaction_info.transaction_type
               ].service_name
             }}
-            in {{ CartStore.transaction_info.estimation }} mins
+            {{ $t('in') }} {{ CartStore.transaction_info.estimation }} {{ $t('mins') }}
           </div>
 
           <!-- <div class="font12 text-weight-light ellipsis-2-lines">

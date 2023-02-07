@@ -43,7 +43,7 @@
             spinner-color="primary"
             style="height: 80px; max-width: 80px"
           />
-          <div class="text-h5 text-weight-bold">Your cart is empty</div>
+          <div class="text-h5 text-weight-bold">{{ $t('Your cart is empty') }}</div>
           <p class="text-grey font12">
             {{ $t("You don't have any orders here! let's change that!") }}
           </p>
@@ -69,7 +69,7 @@
               'bg-yellow text-dark': !$q.dark.mode,
             }"
           >
-            {{ CartStore.getErrorMsg }}
+            {{ $t(CartStore.getErrorMsg) }}
           </div>
         </div>
 

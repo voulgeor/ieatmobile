@@ -62,9 +62,9 @@
                 </q-avatar>
               </q-item-section>
               <q-item-section>
-                <q-item-label lines="1">{{ items.title }}</q-item-label>
+                <q-item-label lines="1">{{ $t(items.title) }}</q-item-label>
                 <q-item-label lines="1" caption>{{
-                  items.description
+                  $t(items.description)
                 }}</q-item-label>
               </q-item-section>
               <q-item-section side>

@@ -44,6 +44,7 @@ export const useDataStore = defineStore("datastore", {
     },
     loading_page: false,
     page_data: [],
+    pages_data: {},
     dark_mode: false,
     invite_friend_settings: [],
   }),
@@ -251,6 +252,30 @@ export const useDataStore = defineStore("datastore", {
         .then((data) => {
           this.loading_page = false;
           if (!APIinterface.empty(done)) {
+            done();
+          }
+        });
+    },
+    getPages() {
+      if (APIinterface.empty()) {
+        this.loading_page = true;
+      }
+      APIinterface.fetchDataPost("getPages", "")
+        .then((data) => {
+          console.log(data)
+          Object.entries(data.details).forEach((element,index) => {
+              // Object.entries(pages).forEach((element2,index2) => {
+              this.pages_data[element[1].page_id] = element[1].title
+              // });
+            });
+            console.log(this.pages_data)
+        })
+        .catch((error) => {
+          this.pages_data = [];
+        })
+        .then((data) => {
+          this.loading_page = false;
+          if (!APIinterface.empty()) {
             done();
           }
         });

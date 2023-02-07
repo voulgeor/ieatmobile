@@ -25,7 +25,7 @@
           class="border-grey radius8"
         />
       </q-toolbar>
-      <q-card-section v-if="enabled_voucher == 1">
+      <q-card-section>
         <q-form @submit="onApplyPromocode">
           <div class="row items-center q-col-gutter-sm">
             <div class="col b">

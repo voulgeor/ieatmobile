@@ -100,7 +100,7 @@
                 </template>
                 ,
                 <span class="text-capitalize"
-                  >{{ CartStore.transaction_info.whento_deliver }},</span
+                  >{{ $t(CartStore.transaction_info.whento_deliver) }},</span
                 >
               </div>
 
@@ -118,7 +118,7 @@
                     CartStore.transaction_info.transaction_type
                   ].service_name
                 }}
-                in {{ CartStore.transaction_info.estimation }}, mins
+                {{ $t('in') }} {{ CartStore.transaction_info.estimation }}, {{ $t('mins') }}
               </div>
 
               <div class="font11 text-weight-light ellipsis">
@@ -362,7 +362,7 @@
                   dense
                   size="md"
                 >
-                {{PointsStore.data.button_redeem}}
+                {{ $t(PointsStore.data.button_redeem) }}
               </q-btn>
               </q-item-section>
             </q-item>
@@ -564,7 +564,7 @@
       }"
     >
       <div class="row items-center justify-between fit">
-        <div class="text-weight-bold">Place Order</div>
+        <div class="text-weight-bold">{{ $t('Place Order') }}</div>
         <div v-if="CartStore.cart_total" class="text-weight-bold">
           {{ CartStore.cart_total.value }}
         </div>

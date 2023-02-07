@@ -36,6 +36,7 @@
             :text="MenuStore.data_info[slug].share.text"
             :url="MenuStore.data_info[slug].share.url"
             :dialogTitle="MenuStore.data_info[slug].share.dialogTitle"
+            @click="shareStore"
           />
         </div>
       </q-toolbar>
@@ -583,6 +584,7 @@ import { useMenuStore } from "stores/MenuStore";
 import { useStoreOpen } from "stores/StoreOpen";
 import { useFavoriteStore } from "stores/FavoriteStore";
 import { useDeliveryschedStore } from "stores/DeliverySched";
+import { Share } from "@capacitor/share";
 import { scroll } from "quasar";
 import auth from "src/api/auth";
 
@@ -816,6 +818,44 @@ export default {
     // },
     afterSavefav(data, added) {
       data.saved_store = added;
+    },
+    shareStore() {
+      if (this.$q.capacitor) {
+        Share.share({
+          title: this.$t(this.DataStore.invite_friend_settings.title),
+          text: this.DataStore.invite_friend_settings.text,
+          url: this.DataStore.invite_friend_settings.url,
+          dialogTitle: "",
+        })
+          .then((data) => {
+            //
+          })
+          .catch((error) => {
+            //APIinterface.notify("dark", error, "error", this.$q);
+          });
+      } else {
+        if (navigator.share) {
+          navigator
+            .share({
+              title: this.$t(this.DataStore.invite_friend_settings.title),
+              text: this.DataStore.invite_friend_settings.text,
+              url: this.DataStore.invite_friend_settings.url,
+            })
+            .then(() => console.log("Successful share"))
+            .catch((error) => console.log("Error sharing", error));
+        } else {
+          if (this.$q.capacitor) {
+            APIinterface.showToast(this.$t('Share not supported'));
+          } else {
+            APIinterface.notify(
+              "dark",
+              this.$t('Share not supported'),
+              "error",
+              this.$q
+            );
+          }
+        }
+      }
     },
     itemsFav(item_id) {
       let saveItems = [];

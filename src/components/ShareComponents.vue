@@ -42,7 +42,7 @@ export default {
           //
         })
         .catch((error) => {
-          //APIinterface.notify("dark", error, "error", this.$q);
+          APIinterface.notify("dark", error, "error", this.$q);
         });
     },
   },

@@ -357,7 +357,7 @@
                   />
                 </q-btn>
               </div>
-              <div class="col">
+              <!-- <div class="col">
                 <q-btn
                   flat
                   no-caps
@@ -374,7 +374,7 @@
                     class="text-grey q-ml-sm"
                   />
                 </q-btn>
-              </div>
+              </div> -->
             </div>
           </q-card-actions>
         </q-card>

@@ -33,7 +33,7 @@
             v-if="MenuStore.data_info[slug].share"
             ref="share"
             :title="$t(MenuStore.data_info[slug].share.title)"
-            :text="$t('Check out the'). MenuStore.data_info[slug].restaurant_name . $t('delivery order with') . DataStore.invite_friend_settings.url"
+            :text="$t('Check out the') + ' ' + this.MenuStore.data_info[slug].restaurant_name + ' ' + $t('delivery order with') + ' ' + this.MenuStore.data_info[slug].share.website_title"
             :url="MenuStore.data_info[slug].share.url"
             :dialogTitle="MenuStore.data_info[slug].share.dialogTitle"
             @click="shareStore"

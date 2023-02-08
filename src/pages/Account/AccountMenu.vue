@@ -504,7 +504,7 @@ export default {
       if (this.$q.capacitor) {
         Share.share({
           title: this.$t(this.DataStore.invite_friend_settings.title),
-          text: this.DataStore.invite_friend_settings.text,
+          text: this.$t('Check this app') + ' - ' + this.DataStore.invite_friend_settings.site_url + '. ' + this.$t('I use this app to order food from different restaurants. Try them:'),
           url: this.DataStore.invite_friend_settings.url,
           dialogTitle: "",
         })

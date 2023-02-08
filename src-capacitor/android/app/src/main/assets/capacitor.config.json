@@ -17,11 +17,14 @@
 				"profile",
 				"email"
 			],
-			"serverClientId": "651182431547-n8n4hmtvg2ohkn8foc87p2f56vq5bpi5.apps.googleusercontent.com",
+			"serverClientId": "651182431547-a27cv3of2sdkndpndcjqhh2f2vnupm9i.apps.googleusercontent.com",
 			"forceCodeForRefreshToken": true
 		},
 		"SplashScreen": {
 			"androidScaleType": "CENTER_CROP"
 		}
+	},
+	"server": {
+		"url": "http://192.168.1.219:9500"
 	}
 }

@@ -48,6 +48,7 @@ export default {
       this.loading = true;
       GoogleAuth.signIn()
         .then((data) => {
+          console.log(data);
           const $params = {
             id: data.id,
             email_address: data.email,

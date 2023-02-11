@@ -37,6 +37,13 @@
             {
               "client_id": "616452304767-pkofsv0gtr7jlssgchn35t73k180bb8o.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "616452304767-62sep4iaa27fvlghr8njsu9u613aqova.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.demo.ieat"
+              }
             }
           ]
         }

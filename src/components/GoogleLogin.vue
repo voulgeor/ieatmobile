@@ -41,7 +41,11 @@ export default {
           grantOfflineAccess: true,
         });
       } else {
-        GoogleAuth.initialize();
+        GoogleAuth.initialize({
+          clientId: this.client_id,
+          scopes: ["profile", "email"],
+          grantOfflineAccess: true,
+        });
       }
     },
     Signin() {

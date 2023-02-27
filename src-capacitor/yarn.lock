@@ -119,10 +119,10 @@
   dependencies:
     tslib "^2.1.0"
 
-"@capacitor/core@^4", "@capacitor/core@^4.0.0", "@capacitor/core@^4.1.0", "@capacitor/core@^4.2.0", "@capacitor/core@>=3.0.0", "@capacitor/core@latest":
-  version "4.3.0"
-  resolved "https://registry.npmjs.org/@capacitor/core/-/core-4.3.0.tgz"
-  integrity sha512-zb225feaiHYcttHqw7SnKVj9gjOh3yoM2ol0Efky4kd80qZvqPHt7nRI1XZmGUKid5j3AVggULd5rRke5OEOXQ==
+"@capacitor/core@^4", "@capacitor/core@^4.0.0", "@capacitor/core@^4.1.0", "@capacitor/core@^4.2.0", "@capacitor/core@^4.6.0", "@capacitor/core@>=3.0.0", "@capacitor/core@latest":
+  version "4.7.0"
+  resolved "https://registry.npmjs.org/@capacitor/core/-/core-4.7.0.tgz"
+  integrity sha512-LkjHnIoufojVjCZXogEbotN2utXxfo6TvpSgWaYndRPm/SrPFCWM8bPf/WNd8MozOkPFgcxlZnZlGHFGTeydWQ==
   dependencies:
     tslib "^2.1.0"
 
@@ -150,6 +150,11 @@
   version "3.8.0"
   resolved "https://registry.npmjs.org/@capacitor/ios/-/ios-3.8.0.tgz"
   integrity sha512-a2/inoVG+4L1diOxTK8oXOMliT5tXwJSg5KelJh8YuouYjH8duVRx560qoKQPE9rUbo9VG3pqOK0w3gROSk2yQ==
+
+"@capacitor/ios@^4.7.0":
+  version "4.7.0"
+  resolved "https://registry.npmjs.org/@capacitor/ios/-/ios-4.7.0.tgz"
+  integrity sha512-GeuPXs4hoyQ5bQaSdBxLIGEd+TvO7IAQe00xe3tpEYsP3987SpkNUnhdW5ikUewFJmOtZIp+A8kCgWOJUmKbUg==
 
 "@capacitor/network@^4.0.1":
   version "4.0.1"

@@ -5,7 +5,7 @@ PODS:
   - AppAuth/Core (1.6.0)
   - AppAuth/ExternalUserAgent (1.6.0):
     - AppAuth/Core
-  - Capacitor (4.6.3):
+  - Capacitor (4.7.0):
     - CapacitorCordova
   - CapacitorApp (4.0.1):
     - Capacitor
@@ -28,7 +28,7 @@ PODS:
     - Firebase/Messaging
   - CapacitorCommunityHttp (1.4.1):
     - Capacitor
-  - CapacitorCordova (4.6.3)
+  - CapacitorCordova (4.7.0)
   - CapacitorDevice (4.0.1):
     - Capacitor
   - CapacitorFilesystem (4.1.2):
@@ -203,7 +203,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
-  Capacitor: 744b9eea76ac615076a15f1eb2a754f155012e54
+  Capacitor: 146dc340ebdf751fa1b999919e4423494c243d29
   CapacitorApp: 70ea773d069c24ab188ae7a01237b951920ffacf
   CapacitorAppLauncher: a24c8e4abe0821c48cad0fea1e8106fea43dbadc
   CapacitorBrowser: 05b68799d62b7b864974f59a5af3e4ddcce953f1
@@ -213,7 +213,7 @@ SPEC CHECKSUMS:
   CapacitorCommunityFacebookLogin: 94cbbd5c5ed6ca7322c85325c3cc09c29763720a
   CapacitorCommunityFcm: af38ba6452104d1b3c4eef9007d9856b2805a6e8
   CapacitorCommunityHttp: 7be90668527ef14ee10d08135b0e00fac9cf8247
-  CapacitorCordova: 4c146609d8f3a3ce164ed0996761759c65cc6402
+  CapacitorCordova: b9c6fdd02470c85e39baf9ae638260477a7f46f3
   CapacitorDevice: 70e6a1993d309d5e77c47072ba144e2dd3d5a503
   CapacitorFilesystem: cc5f97e472c739978558d340ad2cc68306f87223
   CapacitorGeolocation: 93f083a72975290636dfad73e8afc5d3a0892982

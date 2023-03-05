@@ -1,4 +1,4 @@
-package com.demo.ieat;
+package com.obsgermany.ieatorder;
 
 import com.getcapacitor.BridgeActivity;
 import android.content.Intent;

@@ -1,5 +1,5 @@
 {
-  "appId": "com.demo.ieat",
+  "appId": "com.obsgermany.ieatorder",
   "appName": "ieat Mobile",
   "bundledWebRuntime": false,
   "npmClient": "npm",
@@ -17,7 +17,7 @@
         "profile",
         "email"
       ],
-      "serverClientId": "616452304767-6tk1fhd8bp90clodiudgcclrbdroirl4.apps.googleusercontent.com",
+      "serverClientId": "616452304767-c0r7jdrogdvimraf0jc3c34kehop60ml.apps.googleusercontent.com",
       "forceCodeForRefreshToken": true
     },
     "SplashScreen": {

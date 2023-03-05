@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">i-eat Mobile</string>
     <string name="title_activity_main">i-eat Mobile</string>
-    <string name="package_name">com.demo.ieat</string>
-    <string name="custom_url_scheme">com.demo.ieat</string>
+    <string name="package_name">com.obsgermany.ieatorder</string>
+    <string name="custom_url_scheme">com.obsgermany.ieatorder</string>
     <string name="facebook_app_id">560685632267441</string>
     <string name="facebook_client_token">13ec7f2ffa57a9708b6c644f97bce597</string>
-    <string name="server_client_id">616452304767-6tk1fhd8bp90clodiudgcclrbdroirl4.apps.googleusercontent.com</string>
+    <string name="server_client_id">616452304767-c0r7jdrogdvimraf0jc3c34kehop60ml.apps.googleusercontent.com</string>
 </resources>

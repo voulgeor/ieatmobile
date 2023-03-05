@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.demo.ieat",
+  "applicationId": "com.obsgermany.ieatorder",
   "variantName": "debug",
   "elements": [
     {

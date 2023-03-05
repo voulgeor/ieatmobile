@@ -5,7 +5,7 @@ const config = {
   api_base_url: "https://i-eat.eu/interface",
   api_payment_url: "https://i-eat.eu/payv1",
   api_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJpLWVhdC5ldSIsInN1YiI6Ijg1ZDA5MWU4LWQ0ZmMtMTFlYy04NjkwLWMwYjg1Y2ExMTM3YyIsImlhdCI6MTY1MjY5NDE1OH0.Ub8uOHqDkpMUsck5QDeT8KUYAJiQEWeAMvYfTBJMi6w",
-  google_client_id: "616452304767-6tk1fhd8bp90clodiudgcclrbdroirl4.apps.googleusercontent.com",
+  google_client_id: "616452304767-c0r7jdrogdvimraf0jc3c34kehop60ml.apps.googleusercontent.com",
   facebook_app_id: "560685632267441",
   topic: "customer",
   channel: "krms-channel",

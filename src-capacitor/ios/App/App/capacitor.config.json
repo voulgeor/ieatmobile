@@ -1,0 +1,27 @@
+{
+	"appId": "com.demo.ieat",
+	"appName": "i-eat Mobile",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "www",
+	"plugins": {
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"sound",
+				"alert"
+			]
+		},
+		"GoogleAuth": {
+			"scopes": [
+				"profile",
+				"email"
+			],
+			"serverClientId": "616452304767-6tk1fhd8bp90clodiudgcclrbdroirl4.apps.googleusercontent.com",
+			"forceCodeForRefreshToken": true
+		},
+		"SplashScreen": {
+			"androidScaleType": "CENTER_CROP"
+		}
+	}
+}

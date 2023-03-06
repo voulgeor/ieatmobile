@@ -63,7 +63,7 @@
                 {{
                   estimation[order_info.service_code][charge_type].estimation
                 }}
-                Mins
+                {{ $t('Mins') }}
               </template>
             </template>
             <template v-else>
@@ -72,7 +72,7 @@
           </div>
           <q-space class="q-pa-sm"></q-space>
           <q-img
-            src="onboarding-3.png"
+            src="/onboarding-3.png"
             spinner-color="primary"
             style="max-width: 100%; height: 150px"
             fit="contain"

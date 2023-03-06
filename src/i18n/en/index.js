@@ -382,4 +382,11 @@ export default {
   'Search Restaurants': 'Search Restaurants',
   'Search your favourite cuisine and restaurants': 'Search your favourite cuisine and restaurants',
   'This store is closed right now, but you can schedule an order later.\n': 'This store is closed right now, but you can schedule an order later.\n',
+  'With 3 simple steps, your items will be delivered at your door': 'With 3 simple steps, your items will be delivered at your door',
+  'Live tracking of your order': 'Live tracking of your order',
+  'View Details': 'View Details',
+  'Order from' : 'Order from',
+  'Delivery' : 'Διανομή',
+  'Track your order' : 'Track your order',
+
 }

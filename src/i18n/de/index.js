@@ -382,4 +382,11 @@ export default {
   'Search Restaurants': 'Shop-Suche',
   'Search your favourite cuisine and restaurants': 'Suchen Sie nach Ihrem Lieblingsgeschäft',
   'This store is closed right now, but you can schedule an order later.\n': 'Das Geschäft ist derzeit geschlossen, aber Sie können eine Bestellung für später planen.\n',
+  'With 3 simple steps, your items will be delivered at your door': 'In 3 einfachen schritten werden ihre artikel an ihre haustür geliefert',
+  'Live tracking of your order': 'Live-Verfolgung ihrer bestellung',
+  'View Details': 'Details anzeigen',
+  'Order from' : 'Bestellung von',
+  'Delivery' : 'Lieferung',
+  'Track your order' : 'Verfolgen Sie Ihre Bestellung',
+
 }

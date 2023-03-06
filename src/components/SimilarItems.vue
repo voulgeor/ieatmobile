@@ -43,7 +43,7 @@
                 class="font12 text-weight-light ellipsis-2-lines fit"
                 v-html="items.item_description"
               ></div>
-              <div class="text-grey-7 font12 text-weight-medium">
+              <div class="text-white-1 font12 text-weight-medium">
                 <template v-if="items.price[0]">
                   <template v-if="items.price[0].discount > 0">
                     {{ items.price[0].pretty_price_after_discount }}

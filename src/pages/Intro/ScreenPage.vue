@@ -102,13 +102,13 @@ export default {
         image: "onboarding-2.png",
         title: "Order your customized items",
         sub_title:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id libero pretium",
+        "With 3 simple steps, your items will be delivered at your door",
       },
       {
         image: "onboarding-3.png",
         title: "Faster delivery",
         sub_title:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id libero pretium",
+        "Live tracking of your order",
       },
     ]);
 

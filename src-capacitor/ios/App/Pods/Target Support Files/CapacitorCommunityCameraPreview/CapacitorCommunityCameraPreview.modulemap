@@ -1,6 +1,0 @@
-framework module CapacitorCommunityCameraPreview {
-  umbrella header "CapacitorCommunityCameraPreview-umbrella.h"
-
-  export *
-  module * { export * }
-}

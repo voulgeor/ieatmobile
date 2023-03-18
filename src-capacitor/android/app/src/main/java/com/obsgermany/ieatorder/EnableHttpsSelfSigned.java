@@ -1,5 +1,5 @@
 
-package com.demo.ieat;
+package com.obsgermany.ieatorder;
 import android.net.http.SslError;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
